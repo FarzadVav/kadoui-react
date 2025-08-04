@@ -1,5 +1,8 @@
 # Add follow codes to your main CSS file
 ```css
+@import "tailwindcss";
+@import "@kadoui/css";
+
 @theme {
   --color-*: initial;
   --color-background-thin: #ffffff;
@@ -28,7 +31,7 @@
 
 ---
 
-# Design system recomendation
+Also, we recomend develop your projects ui with this system:
 ```
   Spacing:
     lvl-1: 0.5
