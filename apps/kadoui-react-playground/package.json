@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
+    "dev": "rm -rf ./next && next dev --turbopack",
+    "build": "rm -rf ./next && next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "kadoui-react": "workspace:*",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "next": "15.4.5"
