@@ -5,6 +5,9 @@
   "author": "Jstation",
   "license": "MIT",
   "type": "module",
+  "scripts": {
+    "build": "tsc"
+  },
   "exports": {
     ".": "./dist/index.js"
   },
