@@ -1,4 +1,4 @@
-import { cn } from "kadoui-utils";
+import { cn } from "@kadoui/utils";
 import { HTMLAttributes } from "react";
 
 export type SlideHeaderPropsT = HTMLAttributes<HTMLHeadingElement>

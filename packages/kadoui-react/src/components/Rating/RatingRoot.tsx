@@ -1,6 +1,6 @@
 "use client"
 
-import { cn } from "kadoui-utils";
+import { cn } from "@kadoui/utils";
 import { HTMLAttributes, useState } from "react";
 
 import { RatingContext, RatingContextT } from "./RatingContext";

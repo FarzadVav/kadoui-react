@@ -1,6 +1,6 @@
 "use client"
 
-import { cn } from "kadoui-utils";
+import { cn } from "@kadoui/utils";
 import type { HTMLAttributes } from "react";
 
 import { ProgressContext } from "./ProgressContext";

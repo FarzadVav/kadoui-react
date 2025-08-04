@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "kadoui-utils";
+import { cn } from "@kadoui/utils";
 import { HTMLAttributes, useEffect, useRef } from "react";
 
 import { OtpContext } from "./OtpContext";

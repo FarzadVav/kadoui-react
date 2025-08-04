@@ -1,7 +1,7 @@
 "use client";
 
 import { HTMLAttributes, use, useEffect } from "react";
-import { cn, selectAccessibleChildren } from "kadoui-utils";
+import { cn, selectAccessibleChildren } from "@kadoui/utils";
 
 import { ContextMenuContext } from "./ContextMenuContext";
 

@@ -1,5 +1,5 @@
 {
-  "name": "kadoui-react-playground",
+  "name": "@kadoui/react-playground",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,14 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "kadoui-react": "workspace:*",
+    "@kadoui/react": "workspace:*",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "next": "15.4.5"
   },
   "devDependencies": {
     "@repo/tsconfig": "workspace:*",
-    "kadoui-css": "workspace:*",
+    "@kadoui/css": "workspace:*",
     "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^19",

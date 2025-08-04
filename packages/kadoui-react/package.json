@@ -1,5 +1,5 @@
 {
-  "name": "kadoui-react",
+  "name": "@kadoui/react",
   "version": "1.0.0",
   "description": "Kadoui primitive components for React",
   "author": "Jstation",
@@ -12,7 +12,7 @@
     ".": "./dist/index.js"
   },
   "keywords": [
-    "kadoui-react",
+    "@kadoui/react",
     "kado",
     "ui",
     "react",
@@ -21,7 +21,7 @@
     "component"
   ],
   "dependencies": {
-    "kadoui-utils": "workspace:*",
+    "@kadoui/utils": "workspace:*",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "next": "15.4.5",

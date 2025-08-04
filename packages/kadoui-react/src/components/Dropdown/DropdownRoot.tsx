@@ -1,6 +1,6 @@
 "use client";
 
-import { cn, selectAccessibleChildren } from "kadoui-utils";
+import { cn, selectAccessibleChildren } from "@kadoui/utils";
 import { HTMLAttributes, KeyboardEvent, useEffect, useRef, useState } from "react";
 
 import { DropdownContext } from "./DropdownContext";

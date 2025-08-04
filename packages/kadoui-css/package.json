@@ -1,5 +1,5 @@
 {
-  "name": "kadoui-css",
+  "name": "@kadoui/css",
   "version": "1.0.0",
   "description": "Kadoui TailwindCSS styles",
   "author": "Jstation",
@@ -10,7 +10,7 @@
     "./postcss": "./postcss.config.js"
   },
   "keywords": [
-    "kadoui-css",
+    "@kadoui/css",
     "kado",
     "ui",
     "css",

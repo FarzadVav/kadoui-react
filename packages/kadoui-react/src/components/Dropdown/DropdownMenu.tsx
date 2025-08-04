@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "kadoui-utils";
+import { cn } from "@kadoui/utils";
 import { HTMLAttributes, use } from "react";
 
 import { DropdownContext } from "./DropdownContext";

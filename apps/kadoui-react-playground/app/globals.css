@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import "kadoui-css";
+@import "@kadoui/css";
 
 @theme {
   --color-*: initial;

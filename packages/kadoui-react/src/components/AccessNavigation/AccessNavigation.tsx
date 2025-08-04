@@ -1,7 +1,7 @@
 "use client";
 
 import { HTMLAttributes, KeyboardEvent } from "react";
-import { selectAccessibleChildren } from "kadoui-utils";
+import { selectAccessibleChildren } from "@kadoui/utils";
 
 export type AccessNavigationPropsT = HTMLAttributes<HTMLDivElement> & {
   direction?: "y" | "x";

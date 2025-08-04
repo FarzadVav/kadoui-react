@@ -1,6 +1,6 @@
 "use client";
 
-import { getBrowserScrollbarWith } from "kadoui-utils";
+import { getBrowserScrollbarWith } from "@kadoui/utils";
 import { HTMLAttributes, MouseEvent, useCallback, useEffect, useRef, useState } from "react";
 
 import { ContextMenuContext, ContextMenuContextT } from "./ContextMenuContext";

@@ -1,5 +1,5 @@
 {
-  "name": "kadoui-utils",
+  "name": "@kadoui/utils",
   "version": "1.0.0",
   "description": "Kadoui logic utils for web frameworks",
   "author": "Jstation",
@@ -12,7 +12,7 @@
     ".": "./dist/index.js"
   },
   "keywords": [
-    "kadoui-utils",
+    "@kadoui/utils",
     "kado",
     "ui",
     "utils"

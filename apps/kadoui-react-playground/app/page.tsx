@@ -1,4 +1,4 @@
-import { AccessNavigation } from "kadoui-react"
+import { AccessNavigation } from "@kadoui/react"
 
 function Page() {
   return (

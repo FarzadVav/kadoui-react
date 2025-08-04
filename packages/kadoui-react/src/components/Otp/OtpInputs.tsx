@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "kadoui-utils";
+import { cn } from "@kadoui/utils";
 import { ClipboardEvent, InputHTMLAttributes, KeyboardEvent, use } from "react";
 
 import { OtpContext } from "./OtpContext";
