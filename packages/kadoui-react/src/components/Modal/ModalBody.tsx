@@ -1,4 +1,4 @@
-import { cn } from "@kadoui/utils";
+import { cn } from "../../utils/cn";
 import type { HTMLAttributes } from "react";
 
 export type ModalBodyPropsT = HTMLAttributes<HTMLDivElement>;

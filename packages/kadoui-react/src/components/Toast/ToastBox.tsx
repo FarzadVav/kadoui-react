@@ -1,4 +1,4 @@
-import { cn } from "@kadoui/utils";
+import { cn } from "../../utils/cn";
 import { CheckIcon, CircleAlertIcon, TriangleAlertIcon, XIcon } from "lucide-react";
 
 import { ToastT } from "./ToastRoot";

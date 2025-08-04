@@ -1,7 +1,8 @@
 "use client"
 
-import { getBrowserScrollbarWith } from "@kadoui/utils";
 import { useState, useEffect, PropsWithChildren } from "react";
+
+import { getBrowserScrollbarWith } from "../../utils/browser";
 
 import { ModalContext } from "./ModalContext";
 

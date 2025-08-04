@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@kadoui/utils";
+import { cn } from "../../utils/cn";
 import { StarIcon } from "lucide-react";
 import { ButtonHTMLAttributes, ReactNode, use } from "react";
 

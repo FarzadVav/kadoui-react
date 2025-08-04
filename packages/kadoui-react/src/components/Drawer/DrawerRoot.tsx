@@ -1,6 +1,6 @@
 "use client"
 
-import { getBrowserScrollbarWith } from "@kadoui/utils";
+import { getBrowserScrollbarWith } from "../../utils/browser";
 import { useState, useEffect, PropsWithChildren } from "react";
 
 import { DrawerContext } from "./DrawerContext";

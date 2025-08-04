@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@kadoui/utils";
+import { cn } from "../../utils/cn";
 import { HTMLAttributes, useEffect, useRef, useState } from "react";
 
 import { CarouselContext } from "./CarouselContext";

@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@kadoui/utils";
+import { cn } from "../../utils/cn";
 import { motion, HTMLMotionProps } from "framer-motion";
 import { ReactNode, use, useEffect, useRef } from "react";
 

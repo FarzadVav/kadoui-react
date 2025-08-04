@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@kadoui/utils";
+import { cn } from "../../utils/cn";
 import { ButtonHTMLAttributes, use } from "react";
 
 import { ShowMoreContext } from "./ShowMoreContext";

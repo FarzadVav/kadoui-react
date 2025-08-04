@@ -1,7 +1,9 @@
 "use client";
 
-import { cn, selectAccessibleChildren } from "@kadoui/utils";
 import { HTMLAttributes, KeyboardEvent, useEffect, useRef, useState } from "react";
+
+import { cn } from "../../utils/cn";
+import { selectAccessibleChildren } from "../../utils/browser";
 
 import { DropdownContext } from "./DropdownContext";
 
