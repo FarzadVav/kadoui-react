@@ -2,13 +2,6 @@
   "name": "kadoui-css",
   "version": "1.0.0",
   "description": "Kadoui TailwindCSS styles",
-  "keywords": [
-    "kadoui-css",
-    "kado",
-    "ui",
-    "css",
-    "tailwind"
-  ],
   "author": "Jstation",
   "license": "MIT",
   "type": "module",
@@ -16,6 +9,13 @@
     ".": "./src/index.css",
     "./postcss": "./postcss.config.js"
   },
+  "keywords": [
+    "kadoui-css",
+    "kado",
+    "ui",
+    "css",
+    "tailwind"
+  ],
   "devDependencies": {
     "postcss": "^8",
     "tailwindcss": "^4"
