@@ -1,0 +1,80 @@
+/* Toast */
+@utility toast {
+  --toast-h: calc(var(--spacing) * 14);
+  --toast-text: var(--text-base);
+  --toast-line: var(--tw-leading, var(--text-base--line-height));
+
+  @apply h-[var(--toast-h)]
+  px-3 rounded-kado f-align gap-3;
+
+  font-size: var(--toast-text);
+  line-height: var(--toast-line);
+}
+/* --- */
+
+/* Sizes */
+@utility toast-sm {
+  --toast-h: calc(var(--spacing) * 13);
+  --toast-text: var(--text-sm);
+  --toast-line: var(--tw-leading, var(--text-sm--line-height));
+}
+
+@utility toast-lg {
+  --toast-h: calc(var(--spacing) * 15);
+  --toast-text: var(--text-lg);
+  --toast-line: var(--tw-leading, var(--text-lg--line-height));
+}
+/* --- */
+
+/* Variants */
+@utility toast-fill {
+  @apply toast; /* Extend */
+
+  @apply bg-palette text-background;
+}
+
+@utility toast-glass {
+  @apply toast; /* Extend */
+
+  @apply bg-palette/10 backdrop-blur-sm;
+}
+
+/* Icon */
+@utility toast-icon {
+  @apply compatible-icon;
+}
+/* --- */
+
+/* Icon variants */
+@utility toast-icon-info {
+  @apply toast-icon; /* Extend */
+
+  &:not(&:where(.toast-fill &)) {
+    @apply text-palette;
+  }
+}
+
+@utility toast-icon-success {
+  @apply toast-icon; /* Extend */
+
+  &:not(&:where(.toast-fill &)) {
+    @apply text-success;
+  }
+}
+
+@utility toast-icon-warning {
+  @apply toast-icon; /* Extend */
+
+  &:not(&:where(.toast-fill &)) {
+    @apply text-warning;
+  }
+}
+
+@utility toast-icon-error {
+  @apply toast-icon; /* Extend */
+
+  &:not(&:where(.toast-fill &)) {
+    @apply text-danger;
+  }
+}
+/* --- */

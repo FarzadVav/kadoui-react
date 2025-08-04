@@ -44,12 +44,24 @@ importers:
       eslint-config-next:
         specifier: 15.4.5
         version: 15.4.5(eslint@9.32.0(jiti@2.5.1))(typescript@5.9.2)
+      kadoui-css:
+        specifier: workspace:*
+        version: link:../../packages/kadoui-css
       tailwindcss:
         specifier: ^4
         version: 4.1.11
       typescript:
         specifier: ^5
         version: 5.9.2
+
+  packages/kadoui-css:
+    devDependencies:
+      postcss:
+        specifier: ^8
+        version: 8.5.6
+      tailwindcss:
+        specifier: ^4
+        version: 4.1.11
 
   packages/tsconfig: {}
 
