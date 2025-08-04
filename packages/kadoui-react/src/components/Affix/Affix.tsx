@@ -1,9 +1,8 @@
 "use client";
 
+import { cn } from "kadoui-utils";
 import { ChevronUpIcon } from "lucide-react";
 import { useState, useEffect, HTMLAttributes } from "react";
-
-import { cn } from "../../utils/cn";
 
 export type AffixPropsT = HTMLAttributes<HTMLButtonElement>
 

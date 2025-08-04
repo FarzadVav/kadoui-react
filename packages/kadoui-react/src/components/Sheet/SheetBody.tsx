@@ -1,9 +1,9 @@
 "use client";
 
 import { use } from "react";
+import { cn } from "kadoui-utils";
 import { HTMLMotionProps, motion } from "framer-motion";
 
-import { cn } from "../../utils/cn";
 import { SheetContext } from "./SheetContext";
 
 export type SheetBodyPropsT = HTMLMotionProps<"div">;

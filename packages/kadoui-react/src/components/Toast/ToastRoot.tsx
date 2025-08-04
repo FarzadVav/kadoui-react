@@ -35,10 +35,13 @@ export function ToastRoot({ defaultDuration }: ToastRootT) {
 
     const lastToast = toasts[toasts.length - 1];
 
-    const duration = lastToast.duration || defaultDuration || 2_000;
-    setTimeout(() => {
-      remove(lastToast.id);
-    }, duration);
+    if (lastToast) {
+      const duration = lastToast?.duration || defaultDuration || 2_000;
+
+      setTimeout(() => {
+        remove(lastToast.id);
+      }, duration);
+    }
   }, [toasts]);
 
   if (!mounted) {

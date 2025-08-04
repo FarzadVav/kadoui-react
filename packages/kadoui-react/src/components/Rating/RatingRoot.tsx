@@ -1,8 +1,8 @@
 "use client"
 
+import { cn } from "kadoui-utils";
 import { HTMLAttributes, useState } from "react";
 
-import { cn } from "../../utils/cn";
 import { RatingContext, RatingContextT } from "./RatingContext";
 
 export type RatingRootPropsT = HTMLAttributes<HTMLDivElement>

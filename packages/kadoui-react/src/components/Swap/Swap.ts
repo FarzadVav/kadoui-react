@@ -4,5 +4,5 @@ import { SwapTrigger } from "./SwapTrigger";
 
 export const Swap = Object.assign(SwapRoot, {
   Trigger: SwapTrigger,
-  Item: SwapItem,
+  Item: SwapItem
 });

@@ -1,9 +1,9 @@
 "use client"
 
+import { cn } from "kadoui-utils";
 import { use, useEffect, useRef } from "react";
 import { AnimatePresence, HTMLMotionProps, motion } from "framer-motion";
 
-import { cn } from "../../utils/cn";
 import { ModalContext } from "./ModalContext";
 
 export type ModalContentPropsT = HTMLMotionProps<"div">;

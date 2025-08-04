@@ -1,9 +1,9 @@
 "use client"
 
+import { getBrowserScrollbarWith } from "kadoui-utils";
 import { useState, useEffect, PropsWithChildren } from "react";
 
 import { DrawerContext } from "./DrawerContext";
-import { getBrowserScrollbarWith } from "../../utils/browser";
 
 export type DrawerRootPropsT = PropsWithChildren;
 

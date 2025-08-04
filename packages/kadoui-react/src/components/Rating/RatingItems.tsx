@@ -1,9 +1,9 @@
 "use client";
 
+import { cn } from "kadoui-utils";
 import { StarIcon } from "lucide-react";
 import { ButtonHTMLAttributes, ReactNode, use } from "react";
 
-import { cn } from "../../utils/cn";
 import { RatingContext } from "./RatingContext";
 
 export type RatingItemsPropsT = ButtonHTMLAttributes<HTMLButtonElement> & {

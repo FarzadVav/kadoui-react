@@ -1,10 +1,10 @@
 "use client";
 
+import { cn, selectAccessibleChildren } from "kadoui-utils";
 import { HTMLAttributes, KeyboardEvent, useEffect, useRef, useState } from "react";
 
-import { cn } from "../../utils/cn";
 import { DropdownContext } from "./DropdownContext";
-import { selectAccessibleChildren } from "../../utils/browser";
+
 
 export type DropdownRootPropsT = HTMLAttributes<HTMLDivElement> & {
   accessHorizontalArrows?: "ArrowRight" | "ArrowLeft";

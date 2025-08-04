@@ -1,9 +1,9 @@
 "use client";
 
+import { cn } from "kadoui-utils";
 import { motion, HTMLMotionProps } from "framer-motion";
 import { ReactNode, use, useEffect, useRef } from "react";
 
-import { cn } from "../../utils/cn";
 import { DrawerContext } from "./DrawerContext";
 
 export type DrawerBodyPropsT = HTMLMotionProps<"div"> & {

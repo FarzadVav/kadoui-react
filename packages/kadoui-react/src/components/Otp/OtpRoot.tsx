@@ -1,8 +1,8 @@
 "use client";
 
+import { cn } from "kadoui-utils";
 import { HTMLAttributes, useEffect, useRef } from "react";
 
-import { cn } from "../../utils/cn";
 import { OtpContext } from "./OtpContext";
 
 export type OtpRootPropsT = HTMLAttributes<HTMLDivElement>;

@@ -1,9 +1,9 @@
 "use client";
 
 import { use } from "react";
+import { cn } from "kadoui-utils";
 import { AnimatePresence, HTMLMotionProps, motion } from "framer-motion";
 
-import { cn } from "../../utils/cn";
 import { Portal } from "../Portal/Portal";
 import { SheetContext } from "./SheetContext";
 import { ClientOnly } from "../ClientOnly/ClientOnly";

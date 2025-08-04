@@ -1,8 +1,8 @@
 "use client"
 
+import { cn } from "kadoui-utils";
 import type { HTMLAttributes } from "react";
 
-import { cn } from "../../utils/cn";
 import { ProgressContext } from "./ProgressContext";
 
 export type ProgressRootPropsT = HTMLAttributes<HTMLDivElement> & {

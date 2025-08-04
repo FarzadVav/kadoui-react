@@ -1,8 +1,7 @@
 "use client";
 
+import { cn } from "kadoui-utils";
 import { useState } from "react";
-
-import { cn } from "../../utils/cn";
 
 export type SpoilerProps = {
   children: React.ReactNode;

@@ -3,16 +3,13 @@
   "compilerOptions": {
     "module": "ESNext",
     "moduleResolution": "Bundler",
-    "allowJs": true,
-    "noEmit": true,
     "outDir": "dist"
   },
   "include": [
-    "src"
+    "src/**/*"
   ],
   "exclude": [
     "dist",
-    "build",
     "node_modules"
   ]
 }

@@ -1,9 +1,9 @@
 "use client"
 
+import { getBrowserScrollbarWith } from "kadoui-utils";
 import { useState, useEffect, PropsWithChildren } from "react";
 
 import { ModalContext } from "./ModalContext";
-import { getBrowserScrollbarWith } from "../../utils/browser";
 
 export type ModalRootPropsT = PropsWithChildren & {
   defaultOpen?: boolean;

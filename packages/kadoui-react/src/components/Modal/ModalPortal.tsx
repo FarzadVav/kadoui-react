@@ -1,9 +1,9 @@
 "use client";
 
 import { use } from "react";
+import { cn } from "kadoui-utils";
 import { motion, AnimatePresence, HTMLMotionProps } from "framer-motion";
 
-import { cn } from "../../utils/cn";
 import { Portal } from "../Portal/Portal";
 import { ModalContext } from "./ModalContext";
 import { ClientOnly } from "../ClientOnly/ClientOnly";

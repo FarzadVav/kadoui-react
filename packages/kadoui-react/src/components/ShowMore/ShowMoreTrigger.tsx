@@ -1,8 +1,8 @@
 "use client";
 
+import { cn } from "kadoui-utils";
 import { ButtonHTMLAttributes, use } from "react";
 
-import { cn } from "../../utils/cn";
 import { ShowMoreContext } from "./ShowMoreContext";
 
 export type ShowMoreTriggerPropsT = ButtonHTMLAttributes<HTMLButtonElement>;

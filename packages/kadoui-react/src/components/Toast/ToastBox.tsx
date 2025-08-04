@@ -1,6 +1,6 @@
+import { cn } from "kadoui-utils";
 import { CheckIcon, CircleAlertIcon, TriangleAlertIcon, XIcon } from "lucide-react";
 
-import { cn } from "../../utils/cn";
 import { ToastT } from "./ToastRoot";
 
 export type ToastBoxPropsT = {

@@ -1,8 +1,8 @@
 "use client";
 
+import { cn } from "kadoui-utils";
 import { HTMLAttributes, useEffect, useRef, useState } from "react";
 
-import { cn } from "../../utils/cn";
 import { CarouselContext } from "./CarouselContext";
 
 export type CarouselRootPropsT = HTMLAttributes<HTMLDivElement>;

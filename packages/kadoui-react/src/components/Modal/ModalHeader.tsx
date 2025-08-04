@@ -1,6 +1,5 @@
+import { cn } from "kadoui-utils";
 import type { HTMLAttributes } from "react";
-
-import { cn } from "../../utils/cn";
 
 export type ModalHeaderPropsT = HTMLAttributes<HTMLDivElement>;
 

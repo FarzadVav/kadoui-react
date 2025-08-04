@@ -1,8 +1,8 @@
 "use client"
 
+import { cn } from "kadoui-utils";
 import type { HTMLAttributes, ReactNode } from "react";
 
-import { cn } from "../../utils/cn";
 import { BreadcrumbsContext } from "./BreadcrumbsContext";
 
 export type BreadcrumbsRootPropsT = HTMLAttributes<HTMLElement> & {

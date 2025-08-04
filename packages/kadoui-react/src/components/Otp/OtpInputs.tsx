@@ -1,8 +1,8 @@
 "use client";
 
+import { cn } from "kadoui-utils";
 import { ClipboardEvent, InputHTMLAttributes, KeyboardEvent, use } from "react";
 
-import { cn } from "../../utils/cn";
 import { OtpContext } from "./OtpContext";
 
 export type OtpInputsPropsT = InputHTMLAttributes<HTMLInputElement> & {
@@ -24,8 +24,9 @@ export function OtpInputs({ className, name, length, onLastChange, ...props }: O
       if (inputIndex >= length) break; // Don't exceed OTP length
 
       const input = inputs?.current[inputIndex];
-      if (input) {
-        input.value = pastedData[i];
+      const indexedPastedData = pastedData[i];
+      if (input && indexedPastedData) {
+        input.value = indexedPastedData;
       }
     }
 
@@ -40,9 +41,10 @@ export function OtpInputs({ className, name, length, onLastChange, ...props }: O
 
   const handleInputChange = (value: string, index: number) => {
     if (value) {
-      const currentInput = inputs?.current[index]
-      if (currentInput) {
-        currentInput.value = currentInput.value[currentInput.value.length - 1]
+      const currentInput = inputs?.current[index];
+      const currentValue = currentInput?.value[currentInput.value.length - 1];
+      if (currentValue) {
+        currentInput.value = currentValue;
       }
 
       const nextInput = inputs?.current[index + 1]

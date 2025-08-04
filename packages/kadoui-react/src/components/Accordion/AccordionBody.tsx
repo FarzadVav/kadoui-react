@@ -1,9 +1,9 @@
 "use client";
 
+import { cn } from "kadoui-utils";
 import { ReactNode, use } from "react";
 import { AnimatePresence, HTMLMotionProps, motion } from "framer-motion";
 
-import { cn } from "../../utils/cn";
 import { AccordionContext } from "./AccordionContext";
 
 export type AccordionBodyPropsT = HTMLMotionProps<"div">;

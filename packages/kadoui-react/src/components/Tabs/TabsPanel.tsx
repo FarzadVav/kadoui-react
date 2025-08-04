@@ -1,8 +1,8 @@
 "use client";
 
+import { cn } from "kadoui-utils";
 import { HTMLAttributes, use } from "react";
 
-import { cn } from "../../utils/cn";
 import { TabsContext } from "./TabsContext";
 
 export type TabsPanelPropsT = HTMLAttributes<HTMLDivElement> & {

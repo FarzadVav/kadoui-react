@@ -1,10 +1,9 @@
 "use client";
 
 import { HTMLAttributes, use, useEffect } from "react";
+import { cn, selectAccessibleChildren } from "kadoui-utils";
 
-import { cn } from "../../utils/cn";
 import { ContextMenuContext } from "./ContextMenuContext";
-import { selectAccessibleChildren } from "../../utils/browser";
 
 export type ContextMenuContentPropsT = HTMLAttributes<HTMLDivElement>;
 

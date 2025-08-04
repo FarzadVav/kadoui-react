@@ -1,8 +1,7 @@
 "use client";
 
 import { HTMLAttributes, KeyboardEvent } from "react";
-
-import { selectAccessibleChildren } from "../../utils/browser";
+import { selectAccessibleChildren } from "kadoui-utils";
 
 export type AccessNavigationPropsT = HTMLAttributes<HTMLDivElement> & {
   direction?: "y" | "x";
@@ -24,13 +23,13 @@ export function AccessNavigation({ direction = "y", dir, onKeyDown, ...p }: Acce
       ev.preventDefault();
       const nextIndex =
         currentIndex === -1 || currentIndex === focusableChildren.length - 1 ? 0 : currentIndex + 1;
-      focusableChildren[nextIndex].focus();
+      focusableChildren[nextIndex]?.focus();
     }
 
     if (ev.key === (direction === "y" ? "ArrowUp" : (currentDir === "ltr" ? "ArrowLeft" : "ArrowRight"))) {
       ev.preventDefault();
       const prevIndex = currentIndex <= 0 ? focusableChildren.length - 1 : currentIndex - 1;
-      focusableChildren[prevIndex].focus();
+      focusableChildren[prevIndex]?.focus();
     }
   }
 

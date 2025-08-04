@@ -1,10 +1,9 @@
 "use client"
 
+import { cn } from "kadoui-utils";
 import { LoaderIcon } from "lucide-react";
 import { useLinkStatus } from "next/link";
 import { PropsWithChildren } from "react";
-
-import { cn } from "../../utils/cn";
 
 export type LinkLoaderPropsT = PropsWithChildren & {
   className?: string;
