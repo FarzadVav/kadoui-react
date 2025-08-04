@@ -31,7 +31,7 @@
 
 ---
 
-Also, we recomend develop your projects ui with this system:
+We also recommend that you develop the ui of your projects with this system:
 ```
   Spacing:
     lvl-1: 0.5
