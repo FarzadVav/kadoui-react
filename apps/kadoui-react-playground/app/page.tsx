@@ -21,6 +21,7 @@ import {
   VenusIcon,
 } from "lucide-react";
 
+import { formatInput } from "@kadoui/react/utils";
 import {
   Tabs,
   Swap,
@@ -48,8 +49,7 @@ import {
   PaginationWithState,
   StepsWithSearchParams,
   PaginationWithSearchParams,
-  Otp,
-  formatInput,
+  Otp
 } from "@kadoui/react";
 
 const FORMS_1 = [
@@ -894,7 +894,7 @@ function Page() {
           ratione quibusdam ducimus iusto illum deserunt sequi facere.
         </ShowMore.Content>
 
-        <ShowMore.Fade />
+        <ShowMore.Fade className="show-more-fade" />
 
         <ShowMore.Trigger className="btn-fill mt-3">Show more</ShowMore.Trigger>
       </ShowMore>
