@@ -1,18 +1,20 @@
 "use client";
 
-import { cn } from "../../utils";
 import { ButtonHTMLAttributes, use } from "react";
 
 import { ShowMoreContext } from "./ShowMoreContext";
 
 export type ShowMoreTriggerPropsT = ButtonHTMLAttributes<HTMLButtonElement>;
 
-export function ShowMoreTrigger({ onClick, className, ...p }: ShowMoreTriggerPropsT) {
+export function ShowMoreTrigger({ onClick, style, ...p }: ShowMoreTriggerPropsT) {
   const { setIsShowMore } = use(ShowMoreContext);
 
   return (
     <button
-      className={cn("relative", className)}
+      style={{
+        position: "relative",
+        ...style
+      }}
       onClick={ev => {
         onClick?.(ev);
         setIsShowMore(prev => !prev);

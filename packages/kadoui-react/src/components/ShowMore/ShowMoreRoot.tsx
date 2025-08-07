@@ -1,6 +1,5 @@
 "use client"
 
-import { cn } from "../../utils";
 import { HTMLAttributes, useEffect, useRef, useState } from "react";
 
 import { ShowMoreContext } from "./ShowMoreContext";
@@ -10,7 +9,7 @@ export type ShowMoreRootPropsT = HTMLAttributes<HTMLDivElement> & {
   defaultExpanded?: boolean;
 }
 
-export function ShowMoreRoot({ maxLines, defaultExpanded = false, className, ...p }: ShowMoreRootPropsT) {
+export function ShowMoreRoot({ maxLines, defaultExpanded = false, style, ...p }: ShowMoreRootPropsT) {
   const [shouldShowMore, setShouldShowMore] = useState(false);
   const [isShowMore, setIsShowMore] = useState(defaultExpanded);
   const [maxHeight, setMaxHeight] = useState(0);
@@ -31,7 +30,7 @@ export function ShowMoreRoot({ maxLines, defaultExpanded = false, className, ...
 
   return (
     <ShowMoreContext value={{ contentRef, isShowMore, setIsShowMore, maxHeight, shouldShowMore }}>
-      <div className={cn("relative", className)} {...p}></div>
+      <div style={{ position: "relative", ...style }} {...p}></div>
     </ShowMoreContext>
   )
 }

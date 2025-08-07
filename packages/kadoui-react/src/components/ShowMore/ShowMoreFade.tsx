@@ -1,18 +1,17 @@
 "use client";
 
-import { cn } from "../../utils";
 import { HTMLAttributes, use } from "react";
 
 import { ShowMoreContext } from "./ShowMoreContext";
 
 export type ShowMoreFadePropsT = HTMLAttributes<HTMLDivElement>;
 
-export function ShowMoreFade({ className, ...p }: ShowMoreFadePropsT) {
+export function ShowMoreFade(p: ShowMoreFadePropsT) {
   const { shouldShowMore, isShowMore } = use(ShowMoreContext);
 
   return (
     shouldShowMore && !isShowMore ? (
-      <div className={cn("absolute inset-0 bg-gradient-to-t from-background from-35% to-transparent", className)} {...p} />
+      <div {...p} />
     ) : null
   )
 }
