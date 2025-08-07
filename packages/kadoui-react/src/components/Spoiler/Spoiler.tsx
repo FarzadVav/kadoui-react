@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "../../utils/cn";
+import { cn } from "../../utils";
 import { useState } from "react";
 
 export type SpoilerProps = {

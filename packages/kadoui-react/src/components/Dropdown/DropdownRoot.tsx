@@ -2,8 +2,8 @@
 
 import { HTMLAttributes, KeyboardEvent, useEffect, useRef, useState } from "react";
 
-import { cn } from "../../utils/cn";
-import { selectAccessibleChildren } from "../../utils/browser";
+import { cn } from "../../utils";
+import { selectAccessibleChildren } from "../../utils";
 
 import { DropdownContext } from "./DropdownContext";
 

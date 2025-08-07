@@ -1,4 +1,3 @@
-// Components
 export * from "./components/AccessNavigation/AccessNavigation";
 export * from "./components/Accordion/Accordion";
 export * from "./components/Affix/Affix";
@@ -27,8 +26,3 @@ export * from "./components/Swap/Swap";
 export * from "./components/Tabs/Tabs";
 export * from "./components/Toast/Toast";
 export * from "./components/Toggle/Toggle";
-
-// Utils
-export * from "./utils/browser";
-export * from "./utils/cn";
-export * from "./utils/form";

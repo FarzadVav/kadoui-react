@@ -1,6 +1,6 @@
 "use client"
 
-import { cn } from "../../utils/cn";
+import { cn } from "../../utils";
 import { HTMLAttributes, useState } from "react";
 
 import { RatingContext, RatingContextT } from "./RatingContext";

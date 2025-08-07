@@ -2,8 +2,8 @@
 
 import { HTMLAttributes, use, useEffect } from "react";
 
-import { cn } from "../../utils/cn";
-import { selectAccessibleChildren } from "../../utils/browser";
+import { cn } from "../../utils";
+import { selectAccessibleChildren } from "../../utils";
 
 import { ContextMenuContext } from "./ContextMenuContext";
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "../../utils/cn";
+import { cn } from "../../utils";
 import { HTMLAttributes, useEffect, useRef, useState } from "react";
 
 import { CarouselContext } from "./CarouselContext";

@@ -2,7 +2,7 @@
 
 import { useState, useEffect, PropsWithChildren } from "react";
 
-import { getBrowserScrollbarWith } from "../../utils/browser";
+import { getBrowserScrollbarWith } from "../../utils";
 
 import { ModalContext } from "./ModalContext";
 

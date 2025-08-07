@@ -2,7 +2,7 @@
 
 import { HTMLAttributes, use } from "react";
 
-import { cn } from "../../utils/cn";
+import { cn } from "../../utils";
 import { DropdownContext } from "./DropdownContext";
 
 export type DropdownMenuPropsT = HTMLAttributes<HTMLDivElement> & {

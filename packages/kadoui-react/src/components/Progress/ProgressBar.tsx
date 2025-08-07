@@ -1,7 +1,7 @@
 "use client"
 
 import { use } from "react";
-import { cn } from "../../utils/cn";
+import { cn } from "../../utils";
 import { HTMLMotionProps, motion } from "framer-motion";
 
 import { ProgressContext } from "./ProgressContext";

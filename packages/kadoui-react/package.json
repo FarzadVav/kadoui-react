@@ -9,7 +9,8 @@
     "build": "tsc"
   },
   "exports": {
-    ".": "./dist/index.js"
+    ".": "./dist/index.js",
+    "./utils": "./dist/utils.js"
   },
   "keywords": [
     "@kadoui/react",

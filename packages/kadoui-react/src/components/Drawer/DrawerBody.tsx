@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "../../utils/cn";
+import { cn } from "../../utils";
 import { motion, HTMLMotionProps } from "framer-motion";
 import { ReactNode, use, useEffect, useRef } from "react";
 

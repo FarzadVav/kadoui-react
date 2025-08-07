@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "../../utils/cn";
+import { cn } from "../../utils";
 import { StarIcon } from "lucide-react";
 import { ButtonHTMLAttributes, ReactNode, use } from "react";
 

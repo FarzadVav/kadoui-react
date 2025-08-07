@@ -1,6 +1,6 @@
 "use client"
 
-import { cn } from "../../utils/cn";
+import { cn } from "../../utils";
 import { HTMLAttributes } from "react";
 
 export type TabsListPropsT = HTMLAttributes<HTMLDivElement>;

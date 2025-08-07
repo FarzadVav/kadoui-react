@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "../../utils/cn";
+import { cn } from "../../utils";
 import { HTMLAttributes, useEffect, useRef } from "react";
 
 import { OtpContext } from "./OtpContext";

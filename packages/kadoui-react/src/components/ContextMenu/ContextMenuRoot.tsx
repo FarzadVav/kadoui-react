@@ -2,7 +2,7 @@
 
 import { HTMLAttributes, MouseEvent, useCallback, useEffect, useRef, useState } from "react";
 
-import { getBrowserScrollbarWith } from "../../utils/browser";
+import { getBrowserScrollbarWith } from "../../utils";
 import { ContextMenuContext, ContextMenuContextT } from "./ContextMenuContext";
 
 export type ContextMenuRootPropsT = HTMLAttributes<HTMLDivElement>;

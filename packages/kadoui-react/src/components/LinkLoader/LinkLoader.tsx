@@ -1,6 +1,6 @@
 "use client"
 
-import { cn } from "../../utils/cn";
+import { cn } from "../../utils";
 import { LoaderIcon } from "lucide-react";
 import { useLinkStatus } from "next/link";
 import { PropsWithChildren } from "react";

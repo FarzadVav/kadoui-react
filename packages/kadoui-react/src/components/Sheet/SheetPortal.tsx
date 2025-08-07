@@ -1,7 +1,7 @@
 "use client";
 
 import { use } from "react";
-import { cn } from "../../utils/cn";
+import { cn } from "../../utils";
 import { AnimatePresence, HTMLMotionProps, motion } from "framer-motion";
 
 import { Portal } from "../Portal/Portal";

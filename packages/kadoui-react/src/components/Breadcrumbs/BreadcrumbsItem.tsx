@@ -1,6 +1,6 @@
 "use client"
 
-import { cn } from "../../utils/cn";
+import { cn } from "../../utils";
 import { type HTMLAttributes, use } from "react";
 
 import { BreadcrumbsContext } from "./BreadcrumbsContext";

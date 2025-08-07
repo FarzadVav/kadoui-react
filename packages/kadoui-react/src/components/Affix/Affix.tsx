@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "../../utils/cn";
+import { cn } from "../../utils";
 import { ChevronUpIcon } from "lucide-react";
 import { useState, useEffect, HTMLAttributes } from "react";
 

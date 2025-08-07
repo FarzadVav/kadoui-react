@@ -2,7 +2,7 @@
 
 import { HTMLAttributes, KeyboardEvent } from "react";
 
-import { selectAccessibleChildren } from "../../utils/browser";
+import { selectAccessibleChildren } from "../../utils";
 
 export type AccessNavigationPropsT = HTMLAttributes<HTMLDivElement> & {
   direction?: "y" | "x";

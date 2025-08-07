@@ -1,4 +1,4 @@
-import { cn } from "../../utils/cn";
+import { cn } from "../../utils";
 import { HTMLAttributes } from "react";
 
 export type SheetContentPropsT = HTMLAttributes<HTMLDivElement>;
