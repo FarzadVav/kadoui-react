@@ -1,6 +1,5 @@
 "use client";
 
-import { cn } from "../../utils/cn";
 import { ClipboardEvent, InputHTMLAttributes, KeyboardEvent, use } from "react";
 
 import { OtpContext } from "./OtpContext";
@@ -10,7 +9,7 @@ export type OtpInputsPropsT = InputHTMLAttributes<HTMLInputElement> & {
   onLastChange?: (otp: string) => void;
 }
 
-export function OtpInputs({ className, name, length, onLastChange, ...props }: OtpInputsPropsT) {
+export function OtpInputs({ name, length, onLastChange, ...props }: OtpInputsPropsT) {
   const { inputs, getInputsValue } = use(OtpContext);
 
   const handlePaste = (ev: ClipboardEvent<HTMLInputElement>, startIndex: number) => {
@@ -73,7 +72,6 @@ export function OtpInputs({ className, name, length, onLastChange, ...props }: O
       onPaste={ev => handlePaste(ev, index)}
       onKeyDown={ev => handleBackspace(ev, index)}
       onChange={ev => handleInputChange(ev.target.value, index)}
-      className={cn("input-outline input-square text-center", className)}
       ref={el => {
         if (inputs) {
           inputs.current[index] = el;

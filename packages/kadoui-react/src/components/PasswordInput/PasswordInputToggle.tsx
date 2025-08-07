@@ -25,7 +25,7 @@ export function PasswordInputToggle({ onClick, children, ...props }: PasswordInp
           {isVisible ? (
             <motion.div
               key="visible"
-              className="compatible-icon"
+              className="compatible-icon f-center"
               initial={{ opacity: 0, y: "-25%" }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: "25%" }}
@@ -36,7 +36,7 @@ export function PasswordInputToggle({ onClick, children, ...props }: PasswordInp
           ) : (
             <motion.div
               key="hidden"
-              className="compatible-icon"
+              className="compatible-icon f-center"
               initial={{ opacity: 0, y: "-25%" }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: "25%" }}

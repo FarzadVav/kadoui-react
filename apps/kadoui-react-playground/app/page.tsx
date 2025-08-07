@@ -312,9 +312,9 @@ function Page() {
           <PasswordInput.Toggle className="btn btn-sm btn-square" />
         </PasswordInput>
 
-        <AccessNavigation dir="ltr" className="f-align gap-3" direction="x">
+        <AccessNavigation className="f-align gap-3" direction="x">
           <Otp>
-            <Otp.Inputs length={4} onLastChange={(otp) => console.log(otp)} />
+            <Otp.Inputs className="input-outline input-square text-center" length={4} onLastChange={(otp) => console.log(otp)} />
             <Otp.HiddenInput />
           </Otp>
         </AccessNavigation>
