@@ -274,49 +274,51 @@ function Page() {
           </select>
         </label>
 
-        <label className="input-outline input-sm" htmlFor="input-1">
-          <span className="indicator-tr indicator-sm">33</span>
-          <SearchIcon className="compatible-icon" />
-          <input
-            type="text"
-            id="input-1"
-            name="input-1"
-            className="input-field"
-            placeholder="Search something 1..."
-            onChange={(ev) => {
-              ev.target.value = formatInput(
-                ev.target.value,
-                /^[0-9\u06F0-\u06F9]*$/,
-              );
-            }}
-          />
-          <p>Do it.</p>
-        </label>
+        <div className="w-full overflow-hidden space-y-6 pt-6 pr-6">
+          <label className="input-outline input-sm" htmlFor="input-1">
+            <span className="indicator-tr indicator-sm">33</span>
+            <SearchIcon className="compatible-icon" />
+            <input
+              type="text"
+              id="input-1"
+              name="input-1"
+              className="input-field"
+              placeholder="Search something 1..."
+              onChange={(ev) => {
+                ev.target.value = formatInput(
+                  ev.target.value,
+                  /^[0-9\u06F0-\u06F9]*$/,
+                );
+              }}
+            />
+            <p>Do it.</p>
+          </label>
 
-        <label className="input-soft input" htmlFor="input-3">
-          <span className="indicator-tr indicator">33</span>
-          <SearchIcon className="compatible-icon" />
-          <input
-            className="input-field"
-            type="text"
-            name="input-3"
-            id="input-3"
-            placeholder="Search something 3..."
-          />
-        </label>
+          <label className="input-soft input" htmlFor="input-3">
+            <span className="indicator-tr indicator">33</span>
+            <SearchIcon className="compatible-icon" />
+            <input
+              className="input-field"
+              type="text"
+              name="input-3"
+              id="input-3"
+              placeholder="Search something 3..."
+            />
+          </label>
 
-        <PasswordInput className="input-outline" htmlFor="password-input">
-          <span className="indicator-tr indicator-lg">33</span>
-          <LockIcon className="compatible-icon" />
-          <PasswordInput.Field
-            id="password-input"
-            className="input-field"
-            placeholder="Your safe password"
-          />
-          <PasswordInput.Toggle className="btn btn-sm btn-square" visibleChildren={<EyeIcon className="compatible-icon" />}>
-            <EyeClosedIcon className="compatible-icon" />
-          </PasswordInput.Toggle>
-        </PasswordInput>
+          <PasswordInput className="input-outline" htmlFor="password-input">
+            <span className="indicator-tr indicator-lg">33</span>
+            <LockIcon className="compatible-icon" />
+            <PasswordInput.Field
+              id="password-input"
+              className="input-field"
+              placeholder="Your safe password"
+            />
+            <PasswordInput.Toggle className="btn btn-sm btn-square" visibleChildren={<EyeIcon className="compatible-icon" />}>
+              <EyeClosedIcon className="compatible-icon" />
+            </PasswordInput.Toggle>
+          </PasswordInput>
+        </div>
 
         <AccessNavigation className="f-align gap-3" direction="x">
           <Otp className="otp">
@@ -561,13 +563,13 @@ function Page() {
         </Suspense>
       </div>
 
-      <div className="w-96 separate-t">
+      <div className="w-96 max-w-full separate-t">
         <StepsWithState steps={FORMS_1}>
           <StepsWithState.Controls />
         </StepsWithState>
       </div>
 
-      <div className="w-96 separate-t">
+      <div className="w-96 max-w-full separate-t">
         <Suspense>
           <StepsWithSearchParams steps={FORMS_2}>
             <StepsWithSearchParams.Controls />
@@ -797,7 +799,7 @@ function Page() {
         </Tabs>
       </div>
 
-      <ContextMenu className="h-32 w-96 relative border-4 border-dashed border-primary/10 mt-6">
+      <ContextMenu className="h-32 w-96 max-w-full relative border-4 border-dashed border-primary/10 mt-6">
         <span className="absolute inset-center">Context menu!</span>
 
         <ContextMenu.Content className="context-menu-content">
@@ -990,7 +992,7 @@ function Page() {
 
       <AccessNavigation direction="x" className="mt-6">
         <Breadcrumbs
-          className="f-center gap-3 palette-foreground"
+          className="f-align flex-wrap gap-3 palette-foreground"
           separator={<ArrowRightIcon className="icon-size-1" />}
         >
           <Breadcrumbs.Item className="f-align gap-1.5">

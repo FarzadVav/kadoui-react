@@ -19,12 +19,14 @@ export function SheetRoot({ children }: SheetRootPropsT) {
   const [isOpen, setOpen] = useState(false);
 
   useEffect(() => {
+    const bodyElem = document.body;
+
     const removeOverflow = () => {
-      document.body.classList.remove("overflow-hidden");
+      bodyElem.style.overflow = "unset";
     };
 
     if (isOpen) {
-      document.body.classList.add("overflow-hidden");
+      bodyElem.style.overflow = "hidden";
     } else {
       removeOverflow();
     }
