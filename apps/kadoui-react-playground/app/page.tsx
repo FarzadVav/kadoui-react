@@ -527,9 +527,13 @@ function Page() {
       <div className="separate-y">
         <PaginationWithState pageLength={5}>
           <AccessNavigation className="f-align gap-3" direction="x">
-            <PaginationWithState.PrevBtn className="btn-fill" />
+            <PaginationWithState.PrevBtn className="btn-fill">
+              Prev
+            </PaginationWithState.PrevBtn>
             <PaginationWithState.Counts />
-            <PaginationWithState.NextBtn className="btn-fill" />
+            <PaginationWithState.NextBtn className="btn-fill">
+              Next
+            </PaginationWithState.NextBtn>
           </AccessNavigation>
         </PaginationWithState>
       </div>
@@ -538,9 +542,13 @@ function Page() {
         <Suspense>
           <PaginationWithSearchParams pageLength={5}>
             <AccessNavigation className="f-align gap-3" direction="x">
-              <PaginationWithSearchParams.PrevBtn className="btn-fill" />
+              <PaginationWithSearchParams.PrevBtn className="btn-fill">
+                Prev
+              </PaginationWithSearchParams.PrevBtn>
               <PaginationWithSearchParams.Counts />
-              <PaginationWithSearchParams.NextBtn className="btn-fill" />
+              <PaginationWithSearchParams.NextBtn className="btn-fill">
+                Next
+              </PaginationWithSearchParams.NextBtn>
             </AccessNavigation>
           </PaginationWithSearchParams>
         </Suspense>

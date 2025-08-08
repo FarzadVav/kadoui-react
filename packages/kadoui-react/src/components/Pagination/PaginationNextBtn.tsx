@@ -1,7 +1,6 @@
 "use client";
 
 import { HTMLAttributes, use } from "react";
-import { ChevronRightIcon } from "lucide-react";
 
 import { PaginationContext } from "./PaginationContext";
 
@@ -9,7 +8,7 @@ export type PaginationNextBtnPropsT = HTMLAttributes<HTMLButtonElement> & {
   disabled?: boolean;
 };
 
-export function PaginationNextBtn({ onClick, disabled, children, ...props }: PaginationNextBtnPropsT) {
+export function PaginationNextBtn({ onClick, disabled, ...p }: PaginationNextBtnPropsT) {
   const { page, pageLength, nextPage } = use(PaginationContext);
 
   return (
@@ -19,9 +18,7 @@ export function PaginationNextBtn({ onClick, disabled, children, ...props }: Pag
         onClick?.(ev);
         nextPage();
       }}
-      {...props}
-    >
-      {children || <ChevronRightIcon className="compatible-icon" />}
-    </button>
+      {...p}
+    />
   )
 }
