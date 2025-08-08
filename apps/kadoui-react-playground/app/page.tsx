@@ -29,7 +29,6 @@ import { formatInput } from "@kadoui/react/utils";
 import {
   Tabs,
   Swap,
-  Slide,
   Sheet,
   Modal,
   Drawer,
@@ -367,44 +366,6 @@ function Page() {
           modi necessitatibus laboriosam!
         </p>
       ))}
-
-      <ClientOnly>
-        <Slide>
-          <Slide.Toggle className="btn-fill palette-foreground">
-            Open a slide!
-          </Slide.Toggle>
-
-          <Slide.Portal className="slide-portal">
-            <Slide.Header className="slide-header">
-              <div className="container">
-                <Slide.Toggle className="btn-fill palette-foreground">
-                  Close slide
-                </Slide.Toggle>
-              </div>
-            </Slide.Header>
-
-            <Slide.Body className="slide-body">
-              <div className="container">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Maxime repellendus numquam repellat in asperiores, harum quo
-                  eum placeat veritatis reprehenderit provident aut, modi
-                  temporibus earum qui eos doloremque. Error ducimus maiores
-                  sed! Totam fugiat ex accusamus sed, illo animi magni,
-                  excepturi facilis mollitia velit, provident nihil quo dolorem
-                  sint. Ratione eum, veniam ullam, qui blanditiis dolore
-                  exercitationem, adipisci recusandae sint nihil laudantium.
-                  Porro repellat, autem incidunt quisquam dolor voluptas nisi,
-                  ipsam dicta laborum ratione eius ex iste repudiandae
-                  recusandae voluptatem assumenda nobis pariatur aliquam illo
-                  blanditiis. Odio iste placeat incidunt amet magnam, ipsam, at
-                  ratione voluptate animi maiores repellat ullam.
-                </p>
-              </div>
-            </Slide.Body>
-          </Slide.Portal>
-        </Slide>
-      </ClientOnly>
 
       <div className="separate-y palette-foreground">
         <Sheet>
