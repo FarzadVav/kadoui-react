@@ -715,42 +715,42 @@ function Page() {
       <div className="separate-y">
         <Tabs activeTab={activeTab} setActiveTab={setActiveTab}>
           <AccessNavigation direction="x">
-            <Tabs.List>
+            <Tabs.List className="tabs-list">
               <Tabs.Tab
-                className={activeTab === "1" ? "btn-fill" : "btn-soft"}
                 value="1"
+                className={activeTab === "1" ? "btn-fill" : "btn-soft"}
               >
                 Tab 1
               </Tabs.Tab>
               <Tabs.Tab
-                className={activeTab === "2" ? "btn-fill" : "btn-soft"}
                 value="2"
+                className={activeTab === "2" ? "btn-fill" : "btn-soft"}
               >
                 Tab 2
               </Tabs.Tab>
               <Tabs.Tab
-                className={activeTab === "3" ? "btn-fill" : "btn-soft"}
                 value="3"
+                className={activeTab === "3" ? "btn-fill" : "btn-soft"}
               >
                 Tab 3
               </Tabs.Tab>
             </Tabs.List>
           </AccessNavigation>
 
-          <Tabs.Panel key={"1"} value="1">
+          <Tabs.Panel className="tabs-panel" key={"1"} value="1">
             Tab 1: Lorem, ipsum dolor sit amet consectetur adipisicing elit.
             Voluptates, animi nisi, magni quis dolore cum molestias ipsam
             accusantium sunt repudiandae repellendus perspiciatis cumque unde
             commodi reprehenderit distinctio nostrum quisquam nihil?
           </Tabs.Panel>
 
-          <Tabs.Panel key={"2"} value="2">
+          <Tabs.Panel className="tabs-panel" key={"2"} value="2">
             Tab 2: Lorem, ipsum dolor sit amet consectetur adipisicing elit.
             Voluptates, animi nisi, magni quis dolore cum molestias ipsam
             accusantium sunt repudiandae quisquam nihil?
           </Tabs.Panel>
 
-          <Tabs.Panel key={"3"} value="3">
+          <Tabs.Panel className="tabs-panel" key={"3"} value="3">
             Tab 3: Lorem, ipsum dolor sit amet consectetur adipisicing elit.
             Voluptates, animi nisi, magni quis dolore cum molestias ipsam
             accusantium sunt repudiandae repellendus perspiciatis cumque unde
