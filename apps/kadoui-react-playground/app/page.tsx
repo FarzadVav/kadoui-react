@@ -455,14 +455,19 @@ function Page() {
 
       <AccessNavigation className="separate-t">
         <Accordion>
-          <Accordion.Toggle className="btn-fill mt-3">
-            components
+          <Accordion.Toggle className="btn-fill group/accordion">
+            <ChevronRightIcon className="compatible-icon transition-transform group-[.accordion-active]/accordion:rotate-90" />
+            <span>components</span>
           </Accordion.Toggle>
-          <Accordion.Body>
+
+          <Accordion.Body className="accordion-body">
             <Accordion>
-              <Accordion.Toggle className="btn-ghost mt-3">ui</Accordion.Toggle>
+              <div className="pl-3 pt-3">
+                <Accordion.Toggle className="btn-ghost">ui</Accordion.Toggle>
+              </div>
+
               <Accordion.Body>
-                <p>
+                <p className="pl-6 pt-3">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
                   similique fugit eligendi soluta nam, doloribus esse, illum eos
                   rerum vitae quod, mollitia veniam reprehenderit adipisci
@@ -471,7 +476,7 @@ function Page() {
               </Accordion.Body>
             </Accordion>
 
-            <p className="mt-3">
+            <p className="pl-3 pt-3">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
               similique fugit eligendi soluta nam, doloribus esse, illum eos
               rerum vitae quod, mollitia veniam reprehenderit adipisci quisquam
@@ -481,9 +486,13 @@ function Page() {
         </Accordion>
 
         <Accordion>
-          <Accordion.Toggle className="btn-fill mt-3">hooks</Accordion.Toggle>
+          <Accordion.Toggle className="btn-fill group/accordion mt-3">
+            <ChevronRightIcon className="compatible-icon transition-transform group-[.accordion-active]/accordion:rotate-90" />
+            <span>hooks</span>
+          </Accordion.Toggle>
+
           <Accordion.Body>
-            <p>
+            <p className="pl-3 pt-3">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
               similique fugit eligendi soluta nam, doloribus esse, illum eos
               rerum vitae quod, mollitia veniam reprehenderit adipisci quisquam
@@ -493,9 +502,12 @@ function Page() {
         </Accordion>
 
         <Accordion>
-          <Accordion.Toggle className="btn-fill mt-3">utils</Accordion.Toggle>
+          <Accordion.Toggle className="btn-fill group/accordion mt-3">
+            <ChevronRightIcon className="compatible-icon transition-transform group-[.accordion-active]/accordion:rotate-90" />
+            <span>utils</span>
+          </Accordion.Toggle>
           <Accordion.Body>
-            <p>
+            <p className="pl-3 pt-3">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
               similique fugit eligendi soluta nam, doloribus esse, illum eos
               rerum vitae quod, mollitia veniam reprehenderit adipisci quisquam

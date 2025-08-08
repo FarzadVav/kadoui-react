@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+/* Utilities */
 @import "./styles/base.css";
 @import "./styles/palettes.css";
 @import "./styles/utils.css";
@@ -16,5 +17,10 @@
 @import "./styles/kbds.css";
 @import "./styles/tables.css";
 @import "./styles/alerts.css";
-@import "./styles/components.css";
 @import "./styles/other.css";
+
+/* Components */
+@import "./styles/components/affix.css";
+@import "./styles/components/carousel.css";
+@import "./styles/components/show-more.css";
+@import "./styles/components/accordion.css";
