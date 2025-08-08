@@ -2,7 +2,6 @@
 
 import { HTMLAttributes, KeyboardEvent, useEffect, useRef, useState } from "react";
 
-import { cn } from "../../utils";
 import { selectAccessibleChildren } from "../../utils";
 
 import { DropdownContext } from "./DropdownContext";
@@ -12,7 +11,7 @@ export type DropdownRootPropsT = HTMLAttributes<HTMLDivElement> & {
   accessHorizontalArrows?: "ArrowRight" | "ArrowLeft";
 }
 
-export function DropdownRoot({ accessHorizontalArrows, onKeyDown, className, ...p }: DropdownRootPropsT) {
+export function DropdownRoot({ accessHorizontalArrows, onKeyDown, ...p }: DropdownRootPropsT) {
   const [isOpen, setOpen] = useState(false);
 
   const toggleRef = useRef<HTMLButtonElement>(null);
@@ -76,11 +75,8 @@ export function DropdownRoot({ accessHorizontalArrows, onKeyDown, className, ...
   }
 
   return (
-    <DropdownContext value={{
-      isOpen, setOpen, toggleRef, menuRef
-    }}>
+    <DropdownContext value={{ isOpen, setOpen, toggleRef, menuRef }}>
       <div
-        className={cn("relative w-fit max-w-full", className)}
         onKeyDown={ev => {
           onKeyDown?.(ev);
           handleKeyDown(ev);

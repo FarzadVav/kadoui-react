@@ -2,14 +2,13 @@
 
 import { HTMLAttributes, use } from "react";
 
-import { cn } from "../../utils";
 import { DropdownContext } from "./DropdownContext";
 
 export type DropdownMenuPropsT = HTMLAttributes<HTMLDivElement> & {
   preventClose?: boolean;
 }
 
-export function DropdownMenu({ preventClose, onClick, className, ...p }: DropdownMenuPropsT) {
+export function DropdownMenu({ preventClose, onClick, ...p }: DropdownMenuPropsT) {
   const { menuRef, isOpen } = use(DropdownContext);
 
   return (
@@ -23,10 +22,6 @@ export function DropdownMenu({ preventClose, onClick, className, ...p }: Dropdow
 
           onClick?.(ev);
         }}
-        className={cn(
-          "absolute w-max z-10",
-          className
-        )}
         {...p}
       />
     ) : null

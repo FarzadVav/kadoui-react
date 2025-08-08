@@ -692,9 +692,9 @@ function Page() {
       </Modal>
 
       <AccessNavigation>
-        <Dropdown className="mt-6 palette-foreground">
+        <Dropdown className="dropdown mt-6 palette-foreground">
           <Dropdown.Toggle className="btn-fill">Dropdown!</Dropdown.Toggle>
-          <Dropdown.Menu preventClose className="popover popover-b">
+          <Dropdown.Menu preventClose className="dropdown-menu popover popover-b">
             <div className="menu-y">
               <button className="btn-ghost">Item is here</button>
               <Dropdown accessHorizontalArrows="ArrowRight">
