@@ -569,15 +569,17 @@ function Page() {
             onChange={(ev) => setUsername(ev.target.value)}
           />
         </label>
-        <Clipboard className="btn-fill popover-group" text={username}>
-          <div className="popover-t">
-            <p className="popover-content-fill popover-content-sm">
+        <div className="popover-group">
+          <div className="popover popover-tr">
+            <p className="popover-content popover-content-sm">
               {username}
             </p>
           </div>
 
-          <span>Copy</span>
-        </Clipboard>
+          <Clipboard className="btn-fill" text={username} copiedChildren={<span>Copied</span>}>
+            <span>Copy</span>
+          </Clipboard>
+        </div>
       </div>
 
       <Modal>

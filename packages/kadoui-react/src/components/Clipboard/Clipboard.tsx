@@ -1,16 +1,15 @@
 "use client";
 
-import { CopyCheckIcon, CopyIcon } from "lucide-react";
-import { ButtonHTMLAttributes, MouseEvent } from "react";
-
 import { useClipboard } from "@mantine/hooks";
+import { ButtonHTMLAttributes, MouseEvent, ReactNode } from "react";
 
 export type ClipboardPropsT = ButtonHTMLAttributes<HTMLButtonElement> & {
   text: string;
   timeout?: number;
+  copiedChildren?: ReactNode;
 }
 
-export function Clipboard({ onClick, children, text, timeout = 3_000, ...props }: ClipboardPropsT) {
+export function Clipboard({ copiedChildren, onClick, children, text, timeout = 3_000, ...props }: ClipboardPropsT) {
   const { copy, copied } = useClipboard({ timeout });
 
   const handleClick = (ev: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => {
@@ -24,13 +23,7 @@ export function Clipboard({ onClick, children, text, timeout = 3_000, ...props }
       onClick={handleClick}
       {...props}
     >
-      {copied ? (
-        <CopyCheckIcon className="compatible-icon" />
-      ) : (
-        <CopyIcon className="compatible-icon" />
-      )}
-
-      {children}
+      {copiedChildren && copied ? copiedChildren : children}
     </button>
   );
 }
