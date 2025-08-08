@@ -39,10 +39,8 @@ import {
   Carousel,
   ShowMore,
   Progress,
-  addToast,
   Accordion,
   Clipboard,
-  ClientOnly,
   ContextMenu,
   Breadcrumbs,
   PasswordInput,
@@ -182,17 +180,7 @@ function Page() {
             </p>
           </div>
 
-          <button
-            className="btn-fill btn-sm"
-            onClick={() =>
-              addToast({
-                data: "Toast Title",
-                variant: "toast-glass",
-                size: "toast-sm",
-                status: "success",
-              })
-            }
-          >
+          <button className="btn-fill btn-sm">
             <span>Click 1</span>
           </button>
         </div>
@@ -205,16 +193,7 @@ function Page() {
             </p>
           </div>
 
-          <button
-            className="btn-fill"
-            onClick={() =>
-              addToast({
-                data: "Toast Title",
-                variant: "toast-glass",
-                status: "success",
-              })
-            }
-          >
+          <button className="btn-fill">
             <span>Click 2</span>
           </button>
         </div>
@@ -227,17 +206,7 @@ function Page() {
             </p>
           </div>
 
-          <button
-            className="btn-fill btn-lg"
-            onClick={() =>
-              addToast({
-                data: "Toast Title",
-                variant: "toast-glass",
-                size: "toast-lg",
-                status: "success",
-              })
-            }
-          >
+          <button className="btn-fill btn-lg">
             <span>Click 3</span>
           </button>
         </div>

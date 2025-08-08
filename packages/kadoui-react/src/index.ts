@@ -23,5 +23,3 @@ export * from "./components/Spoiler/Spoiler";
 export * from "./components/Steps/Steps";
 export * from "./components/Swap/Swap";
 export * from "./components/Tabs/Tabs";
-export * from "./components/Toast/Toast";
-export * from "./components/Toggle/Toggle";

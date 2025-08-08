@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
+import { ArrowUpIcon } from "lucide-react";
 import { Geist, Geist_Mono } from "next/font/google";
 
 import "./globals.css";
-import { Affix, ToastRoot } from "@kadoui/react";
-import { ArrowUpIcon } from "lucide-react";
+import { Affix } from "@kadoui/react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,16 +25,14 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <div id="root">{children}</div>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <div id="root">
+          {children}
 
-        <Affix className="affix-r btn-fill btn-square group/affix not-[.affix-active]:scale-90">
-          <ArrowUpIcon className="compatible-icon transition-transform duration-300 group-not-[.affix-active]/affix:translate-y-full" />
-        </Affix>
-
-        <ToastRoot />
+          <Affix className="affix-r btn-fill btn-square group/affix not-[.affix-active]:scale-90">
+            <ArrowUpIcon className="compatible-icon transition-transform duration-300 group-not-[.affix-active]/affix:translate-y-full" />
+          </Affix>
+        </div>
       </body>
     </html>
   );
