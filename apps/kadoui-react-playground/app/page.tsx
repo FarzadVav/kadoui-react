@@ -736,7 +736,7 @@ function Page() {
       <p className="mt-6">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, error
         cum nostrum libero iusto, nam laudantium debitis sed perferendis optio
-        nulla totam <Spoiler>explicabo distinctio quis</Spoiler> delectus rem
+        nulla totam <Spoiler className="spoiler"><Spoiler.Blur className="spoiler-blur">explicabo distinctio quis</Spoiler.Blur></Spoiler> delectus rem
         culpa commodi quos!
       </p>
 
@@ -992,20 +992,20 @@ function Page() {
 
       <AccessNavigation direction="x" className="mt-6">
         <Breadcrumbs
-          className="f-align flex-wrap gap-3 palette-foreground"
+          className="breadcrumbs palette-foreground"
           separator={<ArrowRightIcon className="icon-size-1" />}
         >
-          <Breadcrumbs.Item className="f-align gap-1.5">
+          <Breadcrumbs.Item className="breadcrumbs-item">
             <Link href="" className="btn-ghost btn-link">
               Home
             </Link>
           </Breadcrumbs.Item>
-          <Breadcrumbs.Item className="f-align gap-1.5">
+          <Breadcrumbs.Item className="breadcrumbs-item">
             <Link href="" className="btn-ghost btn-link">
               Products
             </Link>
           </Breadcrumbs.Item>
-          <Breadcrumbs.Item className="f-align gap-1.5">
+          <Breadcrumbs.Item className="breadcrumbs-item">
             <Link href="" className="btn-ghost btn-link">
               Electronics
             </Link>
