@@ -1004,8 +1004,8 @@ function Page() {
         </Breadcrumbs>
       </AccessNavigation>
 
-      <Progress value={75}>
-        <Progress.Bar />
+      <Progress className="progress" value={75}>
+        <Progress.Bar className="progress-bar" />
       </Progress>
 
       <div className="alert alert-sm mt-6">
