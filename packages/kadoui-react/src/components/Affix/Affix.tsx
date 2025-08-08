@@ -1,12 +1,12 @@
 "use client";
 
-import { cn } from "../../utils";
-import { ChevronUpIcon } from "lucide-react";
 import { useState, useEffect, HTMLAttributes } from "react";
 
-export type AffixPropsT = HTMLAttributes<HTMLButtonElement>
+export type AffixPropsT = HTMLAttributes<HTMLButtonElement> & {
+  position: "top-left" | "top-right" | "bottom-left" | "bottom-right";
+}
 
-export const Affix = ({ className, onClick, "aria-label": ariaLabel, children, ...props }: AffixPropsT) => {
+export const Affix = ({ style, onClick, position, ...p }: AffixPropsT) => {
   const [isVisible, setIsVisible] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -45,15 +45,33 @@ export const Affix = ({ className, onClick, "aria-label": ariaLabel, children, .
         onClick?.(ev)
         scrollToTop()
       }}
-      aria-label={ariaLabel || "Scroll to top"}
-      className={cn(
-        "fixed bottom-3 right-4 transition-all z-50",
-        isVisible ? "" : "opacity-0 translate-y-3 pointer-events-none",
-        className
-      )}
-      {...props}
-    >
-      {children || <ChevronUpIcon className="compatible-icon" />}
-    </button>
+      style={{
+        zIndex: 50,
+        position: "fixed",
+        transition: "all 150ms ease",
+        ...(
+          position.startsWith("top")
+            ? { top: 12 }
+            : { bottom: 12 }
+        ),
+        ...(
+          position.endsWith("left")
+            ? { left: 12 }
+            : { right: 12 }
+        ),
+        ...(
+          isVisible
+            ? {}
+            : {
+              opacity: 0,
+              visibility: "hidden",
+              pointerEvents: "none",
+              translate: "0 12px",
+            }
+        ),
+        ...style
+      }}
+      {...p}
+    />
   );
 }

@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 
 import "./globals.css";
 import { Affix, ToastRoot } from "@kadoui/react";
+import { ArrowUpIcon } from "lucide-react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,7 +30,9 @@ export default function RootLayout({
       >
         <div id="root">{children}</div>
 
-        <Affix className="btn-fill btn-square" />
+        <Affix position="top-right" className="btn-fill btn-square">
+          <ArrowUpIcon className="compatible-icon" />
+        </Affix>
 
         <ToastRoot />
       </body>
