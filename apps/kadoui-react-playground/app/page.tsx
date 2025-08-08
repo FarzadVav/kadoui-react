@@ -185,7 +185,7 @@ function Page() {
           </button>
         </div>
 
-        <div className="popover-group palette-success">
+        <div className="popover-group ">
           <div className="popover popover-b max-w-40">
             <p className="popover-content">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla,
@@ -198,7 +198,7 @@ function Page() {
           </button>
         </div>
 
-        <div className="popover-group palette-foreground">
+        <div className="popover-group ">
           <div className="popover popover-b max-w-64">
             <p className="popover-content popover-content-lg">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla,
@@ -213,7 +213,7 @@ function Page() {
       </div>
 
       <div className="p-6 h-96 bg-foreground mt-6">
-        <div className="popover-group palette-background">
+        <div className="popover-group ">
           <div className="popover popover-b w-full">
             <p className="popover-content">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla,
@@ -336,7 +336,7 @@ function Page() {
         </p>
       ))}
 
-      <div className="separate-y palette-foreground">
+      <div className="separate-y ">
         <Sheet>
           <Sheet.Toggle className="btn-fill">
             Open sheet
@@ -651,7 +651,7 @@ function Page() {
       </Modal>
 
       <AccessNavigation>
-        <Dropdown className="dropdown mt-6 palette-foreground">
+        <Dropdown className="dropdown mt-6 ">
           <Dropdown.Toggle className="btn-fill">Dropdown!</Dropdown.Toggle>
           <Dropdown.Menu preventClose className="dropdown-menu popover popover-b">
             <div className="menu-y">
@@ -740,11 +740,11 @@ function Page() {
         </Tabs>
       </div>
 
-      <ContextMenu className="h-32 w-96 max-w-full relative border-4 border-dashed border-primary/10 mt-6">
+      <ContextMenu className="h-32 w-96 max-w-full relative border-4 border-dashed border-separate mt-6">
         <span className="absolute inset-center">Context menu!</span>
 
         <ContextMenu.Content className="context-menu-content">
-          <AccessNavigation className="menu-y palette-foreground">
+          <AccessNavigation className="menu-y ">
             <button className="btn-ghost">
               <TrashIcon className="compatible-icon" />
               <span>DELETE</span>
@@ -926,14 +926,14 @@ function Page() {
         </div>
       </div>
 
-      <div className="alert alert-lg palette-danger mt-3">
+      <div className="alert alert-lg  mt-3">
         <InfoIcon className="compatible-icon" />
         <span>Oops, something went wrong. Try again.</span>
       </div>
 
       <AccessNavigation direction="x" className="mt-6">
         <Breadcrumbs
-          className="breadcrumbs palette-foreground"
+          className="breadcrumbs "
           separator={<ArrowRightIcon className="icon-size-1" />}
         >
           <Breadcrumbs.Item className="breadcrumbs-item">
@@ -966,17 +966,17 @@ function Page() {
         <span>Oops, something went wrong. Try again.</span>
       </div>
 
-      <div className="alert palette-foreground mt-3">
+      <div className="alert  mt-3">
         <InfoIcon className="compatible-icon" />
         <span>Oops, something went wrong. Try again.</span>
       </div>
 
-      <div className="alert palette-success mt-3">
+      <div className="alert  mt-3">
         <InfoIcon className="compatible-icon" />
         <span>Oops, something went wrong. Try again.</span>
       </div>
 
-      <div className="alert palette-warning mt-3">
+      <div className="alert  mt-3">
         <InfoIcon className="compatible-icon" />
         <span>Oops, something went wrong. Try again.</span>
       </div>

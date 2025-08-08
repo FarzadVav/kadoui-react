@@ -2,7 +2,6 @@
 
 /* Utilities */
 @import "./styles/base.css";
-@import "./styles/palettes.css";
 @import "./styles/utils.css";
 @import "./styles/buttons.css";
 @import "./styles/inputs.css";
@@ -10,7 +9,6 @@
 @import "./styles/indicators.css";
 @import "./styles/menus.css";
 @import "./styles/popovers.css";
-@import "./styles/toasts.css";
 @import "./styles/avatars.css";
 @import "./styles/sliders.css";
 @import "./styles/cards.css";

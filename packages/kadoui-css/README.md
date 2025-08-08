@@ -9,11 +9,10 @@
   --color-background: #fafafa;
   --color-background-thick: #efefef;
   --color-foreground: #151515;
-  --color-primary: #9070ff;
-  --color-success: #108a00;
-  --color-warning: #f3bd1b;
-  --color-danger: #d60000;
-  --color-palette: var(--color-primary);
+  --color-beautifulRed: #9F0000;
+  /* You can add any colors */
+
+  --color-palette: var(--color-foreground);
   --color-brush: var(--color-background);
 
   --radius-kado: 0.375rem;
@@ -26,7 +25,21 @@
   --color-foreground: #fafafa;
 }
 
- @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+/* If you add a color, please add its palette as well */
+@utility palette-background {
+  --color-palette: var(--color-background);
+  --color-brush: var(--color-foreground);
+}
+
+@utility palette-foreground {
+  --color-palette: var(--color-foreground);
+}
+
+@utility palette-beautifulRed {
+  --color-palette: var(--color-beautifulRed);
+}
 ```
 
 ---
