@@ -314,7 +314,7 @@ function Page() {
         </PasswordInput>
 
         <AccessNavigation className="f-align gap-3" direction="x">
-          <Otp>
+          <Otp className="otp">
             <Otp.Inputs className="input-outline input-square text-center" length={4} onLastChange={(otp) => console.log(otp)} />
             <Otp.HiddenInput />
           </Otp>
