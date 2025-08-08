@@ -244,20 +244,20 @@ function Page() {
         </div>
       </div>
 
-      <div className="f-align gap-3">
-        <div className="p-6 h-96 bg-foreground">
-          <div className="popover-group palette-background">
-            <div className="popover popover-b w-full">
-              <p className="popover-content">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla,
-                assumenda.
-              </p>
-            </div>
-
-            <button className="btn-fill">FILL BACKGROUND</button>
+      <div className="p-6 h-96 bg-foreground mt-6">
+        <div className="popover-group palette-background">
+          <div className="popover popover-b w-full">
+            <p className="popover-content">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla,
+              assumenda.
+            </p>
           </div>
-        </div>
 
+          <button className="btn-fill">FILL BACKGROUND</button>
+        </div>
+      </div>
+
+      <div className="f-align gap-3 mt-6">
         <button className="btn-outline">OUTLINE</button>
         <button className="btn-soft">SOFT</button>
         <button className="btn-ghost">GHOST</button>
@@ -372,8 +372,8 @@ function Page() {
             Open a slide!
           </Slide.Toggle>
 
-          <Slide.Portal>
-            <Slide.Header>
+          <Slide.Portal className="slide-portal">
+            <Slide.Header className="slide-header">
               <div className="container">
                 <Slide.Toggle className="btn-fill palette-foreground">
                   Close slide
@@ -381,7 +381,7 @@ function Page() {
               </div>
             </Slide.Header>
 
-            <Slide.Content>
+            <Slide.Body className="slide-body">
               <div className="container">
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -399,7 +399,7 @@ function Page() {
                   ratione voluptate animi maiores repellat ullam.
                 </p>
               </div>
-            </Slide.Content>
+            </Slide.Body>
           </Slide.Portal>
         </Slide>
       </ClientOnly>

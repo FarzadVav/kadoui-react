@@ -1,8 +1,8 @@
 "use client";
 
-import { cn } from "../../utils";
 import { HTMLAttributes, use } from "react";
 
+import { cn } from "../../utils";
 import { Portal } from "../Portal/Portal";
 import { SlideContext } from "./SlideContext";
 
@@ -15,8 +15,7 @@ export function SlidePortal({ className, ...props }: SlidePortalPropsT) {
     <Portal>
       <div
         className={cn(
-          "w-screen h-dvh bg-background fixed top-0 left-0 transition-all duration-700",
-          isOpen ? "" : "faint -translate-x-full",
+          isOpen ? "slide-active" : "",
           className
         )}
         {...props}

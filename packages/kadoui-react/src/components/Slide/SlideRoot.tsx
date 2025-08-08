@@ -4,9 +4,11 @@ import { PropsWithChildren, useEffect, useState } from "react";
 
 import { SlideContext } from "./SlideContext";
 
-export type SlideRootPropsT = PropsWithChildren;
+export type SlideRootPropsT = PropsWithChildren & {
+  defaultDuration?: number;
+};
 
-export function SlideRoot({ children }: SlideRootPropsT) {
+export function SlideRoot({ defaultDuration = 500, children }: SlideRootPropsT) {
   const [isOpen, setOpen] = useState(false);
 
   useEffect(() => {
@@ -14,20 +16,26 @@ export function SlideRoot({ children }: SlideRootPropsT) {
     if (!rootElem) {
       return;
     };
+    rootElem.style.transition = `${defaultDuration}ms ease-in-out`;
 
     const bodyElem = document.body;
 
+    const removeStyles = () => {
+      rootElem.style.translate = "unset";
+      setTimeout(() => {
+        bodyElem.style.overflow = "unset";
+      }, defaultDuration);
+    }
+
     if (isOpen) {
-      bodyElem.classList.add("overflow-hidden");
-      rootElem.classList.add("translate-x-full");
+      bodyElem.style.overflow = "hidden";
+      rootElem.style.translate = "100% 0"
     } else {
-      bodyElem.classList.remove("overflow-hidden");
-      rootElem.classList.remove("translate-x-full");
+      removeStyles();
     };
 
     return () => {
-      bodyElem.classList.remove("overflow-hidden");
-      rootElem.classList.remove("translate-x-full");
+      removeStyles();
     };
   }, [isOpen]);
 

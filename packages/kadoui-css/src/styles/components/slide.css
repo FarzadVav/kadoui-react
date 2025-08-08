@@ -1,0 +1,11 @@
+@utility slide-portal {
+  @apply w-screen h-dvh bg-background fixed top-0 left-0 transition-all duration-500 not-[.slide-active]:ignore not-[.slide-active]:-translate-x-full;
+}
+
+@utility slide-header {
+  @apply h-20 f-align border-b border-foreground/10;
+}
+
+@utility slide-body {
+  @apply h-[calc(100dvh-5rem)] py-3 overflow-y-auto;
+}

@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "@kadoui/css";
 
+.sss {}
+
 @theme {
   --color-*: initial;
   --color-background-thin: #ffffff;
