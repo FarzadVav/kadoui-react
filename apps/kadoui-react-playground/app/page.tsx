@@ -68,8 +68,8 @@ const FORMS_1 = [
         </p>
 
         <AccessNavigation className="f-center gap-3 mt-3" direction="x">
-          <StepsWithState.PrevBtn className="btn-fill" />
-          <StepsWithState.NextBtn className="btn-fill" />
+          <StepsWithState.PrevBtn className="btn-fill">Prev</StepsWithState.PrevBtn>
+          <StepsWithState.NextBtn className="btn-fill">Next</StepsWithState.NextBtn>
         </AccessNavigation>
       </>
     ),
@@ -86,8 +86,8 @@ const FORMS_1 = [
         </p>
 
         <AccessNavigation className="f-center gap-3 mt-3" direction="x">
-          <StepsWithState.PrevBtn className="btn-fill" />
-          <StepsWithState.NextBtn className="btn-fill" />
+          <StepsWithState.PrevBtn className="btn-fill">Prev</StepsWithState.PrevBtn>
+          <StepsWithState.NextBtn className="btn-fill">Next</StepsWithState.NextBtn>
         </AccessNavigation>
       </>
     ),
@@ -106,8 +106,8 @@ const FORMS_2 = [
         </p>
 
         <AccessNavigation className="f-center gap-3 mt-3" direction="x">
-          <StepsWithSearchParams.PrevBtn className="btn-fill" />
-          <StepsWithSearchParams.NextBtn className="btn-fill" />
+          <StepsWithSearchParams.PrevBtn className="btn-fill">Prev</StepsWithSearchParams.PrevBtn>
+          <StepsWithSearchParams.NextBtn className="btn-fill">Next</StepsWithSearchParams.NextBtn>
         </AccessNavigation>
       </>
     ),
@@ -124,8 +124,8 @@ const FORMS_2 = [
         </p>
 
         <AccessNavigation className="f-center gap-3 mt-3" direction="x">
-          <StepsWithSearchParams.PrevBtn className="btn-fill" />
-          <StepsWithSearchParams.NextBtn className="btn-fill" />
+          <StepsWithSearchParams.PrevBtn className="btn-fill">Prev</StepsWithSearchParams.PrevBtn>
+          <StepsWithSearchParams.NextBtn className="btn-fill">Next</StepsWithSearchParams.NextBtn>
         </AccessNavigation>
       </>
     ),
@@ -142,8 +142,8 @@ const FORMS_2 = [
         </p>
 
         <AccessNavigation className="f-center gap-3 mt-3" direction="x">
-          <StepsWithSearchParams.PrevBtn className="btn-fill" />
-          <StepsWithSearchParams.NextBtn className="btn-fill" />
+          <StepsWithSearchParams.PrevBtn className="btn-fill">Prev</StepsWithSearchParams.PrevBtn>
+          <StepsWithSearchParams.NextBtn className="btn-fill">Next</StepsWithSearchParams.NextBtn>
         </AccessNavigation>
       </>
     ),
@@ -526,14 +526,25 @@ function Page() {
 
       <div className="w-96 max-w-full separate-t">
         <StepsWithState steps={FORMS_1}>
-          <StepsWithState.Controls />
+          <div className="f-center gap-3">
+            <StepsWithState.IndexBtn className="btn-fill btn-square" index={1}>1</StepsWithState.IndexBtn>
+            <StepsWithState.IndexBtn className="btn-fill btn-square" index={2}>2</StepsWithState.IndexBtn>
+          </div>
+
+          <StepsWithState.Render />
         </StepsWithState>
       </div>
 
       <div className="w-96 max-w-full separate-t">
         <Suspense>
           <StepsWithSearchParams steps={FORMS_2}>
-            <StepsWithSearchParams.Controls />
+            <div className="f-center gap-3">
+              <StepsWithSearchParams.IndexBtn className="btn-fill btn-square" index={1}>1</StepsWithSearchParams.IndexBtn>
+              <StepsWithSearchParams.IndexBtn className="btn-fill btn-square" index={2}>2</StepsWithSearchParams.IndexBtn>
+              <StepsWithSearchParams.IndexBtn className="btn-fill btn-square" index={3}>3</StepsWithSearchParams.IndexBtn>
+            </div>
+
+            <StepsWithSearchParams.Render />
           </StepsWithSearchParams>
         </Suspense>
       </div>

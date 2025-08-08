@@ -1,7 +1,6 @@
 "use client";
 
 import { HTMLAttributes, use } from "react";
-import { ChevronRightIcon } from "lucide-react";
 
 import { StepsContext } from "./StepsContext";
 
@@ -9,7 +8,7 @@ export type StepsNextBtnPropsT = HTMLAttributes<HTMLButtonElement> & {
   disabled?: boolean;
 }
 
-export function StepsNextBtn({ onClick, disabled, children, ...props }: StepsNextBtnPropsT) {
+export function StepsNextBtn({ onClick, disabled, ...p }: StepsNextBtnPropsT) {
   const { step, steps, nextStep } = use(StepsContext);
 
   return (
@@ -19,9 +18,7 @@ export function StepsNextBtn({ onClick, disabled, children, ...props }: StepsNex
         onClick?.(ev);
         nextStep();
       }}
-      {...props}
-    >
-      {children || <ChevronRightIcon className="compatible-icon" />}
-    </button>
+      {...p}
+    />
   );
 }

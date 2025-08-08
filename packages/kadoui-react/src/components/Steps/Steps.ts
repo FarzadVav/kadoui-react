@@ -1,11 +1,13 @@
+import { StepsRender } from "./StepsRender";
 import { StepsPrevBtn } from "./StepsPrevBtn";
 import { StepsNextBtn } from "./StepsNextBtn";
-import { StepsControls } from "./StepsControls";
+import { StepsIndexBtn } from "./StepsIndexBtn";
 import { StepsStateRoot } from "./StepsStateRoot";
 import { StepsSearchParamsRoot } from "./StepsSearchParamsRoot";
 
 const baseComponents = {
-  Controls: StepsControls,
+  Render: StepsRender,
+  IndexBtn: StepsIndexBtn,
   PrevBtn: StepsPrevBtn,
   NextBtn: StepsNextBtn
 }

@@ -1,7 +1,6 @@
 "use client";
 
 import { HTMLAttributes, use } from "react";
-import { ChevronLeftIcon } from "lucide-react";
 
 import { StepsContext } from "./StepsContext";
 
@@ -9,7 +8,7 @@ export type StepsPrevBtnPropsT = HTMLAttributes<HTMLButtonElement> & {
   disabled?: boolean;
 }
 
-export function StepsPrevBtn({ onClick, disabled, children, ...props }: StepsPrevBtnPropsT) {
+export function StepsPrevBtn({ onClick, disabled, ...p }: StepsPrevBtnPropsT) {
   const { step, prevStep } = use(StepsContext);
 
   return (
@@ -19,9 +18,7 @@ export function StepsPrevBtn({ onClick, disabled, children, ...props }: StepsPre
         onClick?.(ev);
         prevStep();
       }}
-      {...props}
-    >
-      {children || <ChevronLeftIcon className="compatible-icon" />}
-    </button>
+      {...p}
+    />
   );
 }
