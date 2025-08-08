@@ -1,14 +1,14 @@
 "use client";
 
-import { ButtonHTMLAttributes, use } from "react";
-import { EyeClosedIcon, EyeIcon } from "lucide-react";
-import { AnimatePresence, motion } from "framer-motion";
+import { ButtonHTMLAttributes, ReactNode, use } from "react";
 
 import { PasswordInputContext } from "./PasswordInputContext";
 
-export type PasswordInputTogglePropsT = ButtonHTMLAttributes<HTMLButtonElement>;
+export type PasswordInputTogglePropsT = ButtonHTMLAttributes<HTMLButtonElement> & {
+  visibleChildren: ReactNode;
+};
 
-export function PasswordInputToggle({ onClick, children, ...props }: PasswordInputTogglePropsT) {
+export function PasswordInputToggle({ visibleChildren, onClick, children, ...props }: PasswordInputTogglePropsT) {
   const { isVisible, setIsVisible } = use(PasswordInputContext);
 
   return (
@@ -20,33 +20,7 @@ export function PasswordInputToggle({ onClick, children, ...props }: PasswordInp
       }}
       {...props}
     >
-      {children || (
-        <AnimatePresence initial={false} mode="wait">
-          {isVisible ? (
-            <motion.div
-              key="visible"
-              className="compatible-icon f-center"
-              initial={{ opacity: 0, y: "-25%" }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: "25%" }}
-              transition={{ duration: 0.1 }}
-            >
-              <EyeIcon className="size-full" />
-            </motion.div>
-          ) : (
-            <motion.div
-              key="hidden"
-              className="compatible-icon f-center"
-              initial={{ opacity: 0, y: "-25%" }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: "25%" }}
-              transition={{ duration: 0.1 }}
-            >
-              <EyeClosedIcon className="size-full" />
-            </motion.div>
-          )}
-        </AnimatePresence>
-      )}
+      {isVisible ? visibleChildren : children}
     </button>
   );
 }

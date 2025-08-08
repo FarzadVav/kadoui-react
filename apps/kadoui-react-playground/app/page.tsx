@@ -6,6 +6,8 @@ import {
   ArrowRightIcon,
   CheckIcon,
   ChevronRightIcon,
+  EyeClosedIcon,
+  EyeIcon,
   FlagIcon,
   FlameIcon,
   GridIcon,
@@ -310,7 +312,9 @@ function Page() {
             className="input-field"
             placeholder="Your safe password"
           />
-          <PasswordInput.Toggle className="btn btn-sm btn-square" />
+          <PasswordInput.Toggle className="btn btn-sm btn-square" visibleChildren={<EyeIcon className="compatible-icon" />}>
+            <EyeClosedIcon className="compatible-icon" />
+          </PasswordInput.Toggle>
         </PasswordInput>
 
         <AccessNavigation className="f-align gap-3" direction="x">
