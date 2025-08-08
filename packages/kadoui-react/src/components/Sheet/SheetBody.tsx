@@ -1,20 +1,18 @@
 "use client";
 
 import { use } from "react";
-import { cn } from "../../utils";
 import { HTMLMotionProps, motion } from "framer-motion";
 
 import { SheetContext } from "./SheetContext";
 
 export type SheetBodyPropsT = HTMLMotionProps<"div">;
 
-export function SheetBody({ className, ...props }: SheetBodyPropsT) {
-  const { drawerRef, controls, y, closeHandler: handleClose } = use(SheetContext);
+export function SheetBody(p: SheetBodyPropsT) {
+  const { controls, y, closeHandler: handleClose } = use(SheetContext);
 
   return (
     <motion.div
-      id="drawer"
-      ref={drawerRef}
+      id="sheet"
       onClick={(ev) => ev.stopPropagation()}
       initial={{ y: "100%" }}
       animate={{ y: "0%" }}
@@ -26,10 +24,6 @@ export function SheetBody({ className, ...props }: SheetBodyPropsT) {
       transition={{
         ease: "easeInOut",
       }}
-      className={cn(
-        "absolute bottom-0 h-[75%] w-full overflow-hidden bg-background",
-        className
-      )}
       onDragEnd={() => {
         if ((y?.get() || 0) >= 100) {
           handleClose();
@@ -43,7 +37,7 @@ export function SheetBody({ className, ...props }: SheetBodyPropsT) {
         top: 0,
         bottom: 0.5,
       }}
-      {...props}
+      {...p}
     />
   );
 }

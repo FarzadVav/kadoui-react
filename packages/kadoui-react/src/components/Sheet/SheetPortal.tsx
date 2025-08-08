@@ -1,7 +1,6 @@
 "use client";
 
 import { use } from "react";
-import { cn } from "../../utils";
 import { AnimatePresence, HTMLMotionProps, motion } from "framer-motion";
 
 import { Portal } from "../Portal/Portal";
@@ -10,7 +9,7 @@ import { ClientOnly } from "../ClientOnly/ClientOnly";
 
 export type SheetPortalPropsT = HTMLMotionProps<"div">;
 
-export function SheetPortal({ className, ...props }: SheetPortalPropsT) {
+export function SheetPortal(p: SheetPortalPropsT) {
   const { isOpen, closeHandler: handleClose, scope } = use(SheetContext);
 
   return (
@@ -24,8 +23,7 @@ export function SheetPortal({ className, ...props }: SheetPortalPropsT) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className={cn("fixed inset-0 z-50 bg-foreground/10", className)}
-              {...props}
+              {...p}
             />
           ) : null}
         </AnimatePresence>

@@ -1,7 +1,5 @@
 "use client";
 
-import { cn } from "../../utils";
-import { StarIcon } from "lucide-react";
 import { ButtonHTMLAttributes, ReactNode, use } from "react";
 
 import { RatingContext } from "./RatingContext";
@@ -10,15 +8,12 @@ export type RatingItemsPropsT = ButtonHTMLAttributes<HTMLButtonElement> & {
   count: number;
   value: number;
   onValueChange: (newValue: number) => void;
-  element?: ReactNode;
-  activeElement?: ReactNode;
+  element: ReactNode;
+  activeElement: ReactNode;
 }
 
-export function RatingItems({ count, value, onValueChange, element, activeElement, className, ...p }: RatingItemsPropsT) {
+export function RatingItems({ count, value, onValueChange, element, activeElement, ...p }: RatingItemsPropsT) {
   const { hoverValue, setHoverValue } = use(RatingContext);
-
-  const defaultElement = element || <StarIcon className="icon-size-3 text-palette" />;
-  const defaultActiveElement = activeElement || <StarIcon className="icon-size-3 text-palette fill-palette" />;
 
   const displayValue = hoverValue !== null ? hoverValue : value;
 
@@ -32,17 +27,13 @@ export function RatingItems({ count, value, onValueChange, element, activeElemen
           key={index}
           role="radio"
           type="button"
-          className={cn(
-            "transition-all px-0.5 not-active:hover:-translate-y-0.5",
-            className
-          )}
           aria-checked={itemValue === value}
           onClick={() => onValueChange(itemValue)}
           onMouseEnter={() => setHoverValue(itemValue)}
           aria-label={`${itemValue} out of ${count} stars`}
           {...p}
         >
-          {isActive ? defaultActiveElement : defaultElement}
+          {isActive ? activeElement : element}
         </button>
       )
     })

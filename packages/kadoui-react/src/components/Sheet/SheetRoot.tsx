@@ -1,6 +1,5 @@
 "use client";
 
-import { useElementSize } from "@mantine/hooks";
 import { PropsWithChildren, useEffect, useState } from "react";
 import {
   useDragControls,
@@ -13,8 +12,6 @@ import { SheetContext } from "./SheetContext";
 export type SheetRootPropsT = PropsWithChildren;
 
 export function SheetRoot({ children }: SheetRootPropsT) {
-  const { ref: drawerRef, height } = useElementSize();
-
   const y = useMotionValue(0);
   const controls = useDragControls();
   const [scope, animate] = useAnimate();
@@ -41,15 +38,15 @@ export function SheetRoot({ children }: SheetRootPropsT) {
     });
 
     const yStart = typeof y.get() === "number" ? y.get() : 0;
-    await animate("#drawer", {
-      y: [yStart, height],
+    await animate("#sheet", {
+      y: [yStart, "100%"],
     });
 
     setOpen(false);
   };
 
   return (
-    <SheetContext value={{ isOpen, setOpen, closeHandler, drawerRef, scope, controls, y }}>
+    <SheetContext value={{ isOpen, setOpen, closeHandler, scope, controls, y }}>
       {children}
     </SheetContext>
   );

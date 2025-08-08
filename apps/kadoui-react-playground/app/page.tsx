@@ -19,6 +19,7 @@ import {
   Moon,
   RefreshCwIcon,
   SearchIcon,
+  StarIcon,
   SunIcon,
   TrashIcon,
   VenusIcon,
@@ -403,16 +404,18 @@ function Page() {
         </Slide>
       </ClientOnly>
 
-      <div className="separate-y">
+      <div className="separate-y palette-foreground">
         <Sheet>
-          <Sheet.Toggle className="btn-glass palette-foreground">
+          <Sheet.Toggle className="btn-fill">
             Open sheet
           </Sheet.Toggle>
 
-          <Sheet.Portal>
-            <Sheet.Body>
-              <Sheet.Header />
-              <Sheet.Content>
+          <Sheet.Portal className="sheet-portal">
+            <Sheet.Body className="sheet-body">
+              <Sheet.Header className="sheet-header text-center font-bold">
+                Pick your subscription
+              </Sheet.Header>
+              <Sheet.Content className="sheet-content">
                 <p>
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                   Excepturi velit eligendi, consequuntur commodi dicta
@@ -442,7 +445,7 @@ function Page() {
                   doloribus nobis ipsam.
                 </p>
 
-                <Sheet.Toggle className="btn-fill w-full palette-foreground">
+                <Sheet.Toggle className="btn-fill w-full">
                   I got it!
                 </Sheet.Toggle>
               </Sheet.Content>
@@ -844,19 +847,26 @@ function Page() {
       </Carousel>
 
       <div className="separate-y">
-        <Rating>
+        <Rating className="rating">
           <Rating.Items
             count={5}
             value={starRating}
+            className="rating-items"
             onValueChange={setStarRating}
+            element={
+              <StarIcon className="icon-size-5 color-foreground rounded-full" />
+            }
+            activeElement={
+              <StarIcon className="icon-size-5 fill-foreground color-background rounded-full" />
+            }
           />
         </Rating>
 
-        <Rating className="mt-3">
+        <Rating className="rating mt-3">
           <Rating.Items
             count={7}
             value={starRating2}
-            className="active:scale-90"
+            className="rating-items"
             onValueChange={setStarRating2}
             element={
               <div className="icon-size-5 bg-foreground/50 rounded-full" />
