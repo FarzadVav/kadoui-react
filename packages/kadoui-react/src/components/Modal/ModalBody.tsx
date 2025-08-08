@@ -1,12 +1,39 @@
-import { cn } from "../../utils";
-import type { HTMLAttributes } from "react";
+"use client"
 
-export type ModalBodyPropsT = HTMLAttributes<HTMLDivElement>;
+import { use, useEffect, useRef } from "react";
+import { AnimatePresence, HTMLMotionProps, motion } from "framer-motion";
 
-export function ModalBody({ children, className, ...props }: ModalBodyPropsT) {
+import { ModalContext } from "./ModalContext";
+
+export type ModalBodyPropsT = HTMLMotionProps<"div">;
+
+export function ModalBody({ onClick, ...props }: ModalBodyPropsT) {
+  const { isOpen } = use(ModalContext);
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (isOpen) {
+      const indexElement = contentRef.current?.querySelector("[data-modal='index']") as HTMLElement | null | undefined;
+      indexElement?.focus();
+    };
+  }, [isOpen]);
+
   return (
-    <div className={cn("py-3 px-1.5 mx-1.5 max-h-[calc(100%-4rem)] overflow-y-auto", className)} {...props}>
-      {children}
-    </div>
+    <AnimatePresence>
+      {isOpen ? (
+        <motion.div
+          ref={contentRef}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.9 }}
+          transition={{ ease: "easeInOut" }}
+          onClick={ev => {
+            onClick?.(ev);
+            ev.stopPropagation();
+          }}
+          {...props}
+        />
+      ) : null}
+    </AnimatePresence>
   );
 }

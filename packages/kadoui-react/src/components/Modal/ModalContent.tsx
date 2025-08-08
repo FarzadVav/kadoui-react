@@ -1,44 +1,9 @@
-"use client"
+import type { HTMLAttributes } from "react";
 
-import { cn } from "../../utils";
-import { use, useEffect, useRef } from "react";
-import { AnimatePresence, HTMLMotionProps, motion } from "framer-motion";
+export type ModalContentPropsT = HTMLAttributes<HTMLDivElement>;
 
-import { ModalContext } from "./ModalContext";
-
-export type ModalContentPropsT = HTMLMotionProps<"div">;
-
-export function ModalContent({ onClick, className, ...props }: ModalContentPropsT) {
-  const { isOpen } = use(ModalContext);
-  const contentRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (isOpen) {
-      const indexElement = contentRef.current?.querySelector("[data-modal='index']") as HTMLElement | null | undefined;
-      indexElement?.focus();
-    };
-  }, [isOpen]);
-
+export function ModalContent(p: ModalContentPropsT) {
   return (
-    <AnimatePresence>
-      {isOpen ? (
-        <motion.div
-          ref={contentRef}
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.9 }}
-          transition={{ ease: "easeInOut" }}
-          onClick={ev => {
-            onClick?.(ev);
-            ev.stopPropagation();
-          }}
-          className={cn(
-            "bg-background rounded-2xl w-max max-w-[90%] h-full max-h-[90%]",
-            className,
-          )}
-          {...props}
-        />
-      ) : null}
-    </AnimatePresence>
+    <div {...p} />
   );
 }

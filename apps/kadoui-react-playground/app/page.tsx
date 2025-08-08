@@ -586,14 +586,14 @@ function Page() {
       <Modal>
         <Modal.Toggle className="btn-fill mt-6">Open modal {":)"}</Modal.Toggle>
 
-        <Modal.Portal>
-          <Modal.Content>
-            <Modal.Header>
+        <Modal.Portal className="modal-portal">
+          <Modal.Body className="modal-body">
+            <Modal.Header className="modal-header">
               <p className="font-bold text-xl text-center w-full">
                 Select your girl:
               </p>
             </Modal.Header>
-            <Modal.Body className="space-y-3">
+            <Modal.Content className="modal-content space-y-3">
               <label className="input-outline">
                 <input
                   type="text"
@@ -687,8 +687,8 @@ function Page() {
                 <CheckIcon className="compatible-icon" />
                 <span>I got it</span>
               </Modal.Toggle>
-            </Modal.Body>
-          </Modal.Content>
+            </Modal.Content>
+          </Modal.Body>
         </Modal.Portal>
       </Modal>
 

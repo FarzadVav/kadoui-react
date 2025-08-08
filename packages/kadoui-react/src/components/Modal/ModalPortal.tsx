@@ -1,7 +1,6 @@
 "use client";
 
 import { use } from "react";
-import { cn } from "../../utils";
 import { motion, AnimatePresence, HTMLMotionProps } from "framer-motion";
 
 import { Portal } from "../Portal/Portal";
@@ -10,7 +9,7 @@ import { ClientOnly } from "../ClientOnly/ClientOnly";
 
 export type ModalPortalPropsT = HTMLMotionProps<"div">;
 
-export function ModalPortal({ onClick, className, ...props }: ModalPortalPropsT) {
+export function ModalPortal({ onClick, ...p }: ModalPortalPropsT) {
   const { isOpen, setOpen } = use(ModalContext);
 
   return (
@@ -26,11 +25,7 @@ export function ModalPortal({ onClick, className, ...props }: ModalPortalPropsT)
                 onClick?.(ev);
                 setOpen(false);
               }}
-              className={cn(
-                "fixed inset-0 z-50 f-center bg-foreground/10",
-                className
-              )}
-              {...props}
+              {...p}
             />
           ) : null}
         </AnimatePresence>
