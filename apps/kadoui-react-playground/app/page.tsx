@@ -949,20 +949,20 @@ function Page() {
 
       <AccessNavigation direction="x" className="mt-6">
         <Breadcrumbs
-          className="palette-foreground"
+          className="f-center gap-3 palette-foreground"
           separator={<ArrowRightIcon className="icon-size-1" />}
         >
-          <Breadcrumbs.Item>
+          <Breadcrumbs.Item className="f-align gap-1.5">
             <Link href="" className="btn-ghost btn-link">
               Home
             </Link>
           </Breadcrumbs.Item>
-          <Breadcrumbs.Item>
+          <Breadcrumbs.Item className="f-align gap-1.5">
             <Link href="" className="btn-ghost btn-link">
               Products
             </Link>
           </Breadcrumbs.Item>
-          <Breadcrumbs.Item>
+          <Breadcrumbs.Item className="f-align gap-1.5">
             <Link href="" className="btn-ghost btn-link">
               Electronics
             </Link>

@@ -30,8 +30,8 @@ export default function RootLayout({
       >
         <div id="root">{children}</div>
 
-        <Affix position="top-right" className="btn-fill btn-square">
-          <ArrowUpIcon className="compatible-icon" />
+        <Affix className="affix-r btn-fill btn-square group/affix not-[.affix-active]:scale-90">
+          <ArrowUpIcon className="compatible-icon transition-transform duration-300 group-not-[.affix-active]/affix:translate-y-full" />
         </Affix>
 
         <ToastRoot />
