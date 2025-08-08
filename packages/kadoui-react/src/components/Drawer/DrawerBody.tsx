@@ -1,6 +1,5 @@
 "use client";
 
-import { cn } from "../../utils";
 import { motion, HTMLMotionProps } from "framer-motion";
 import { ReactNode, use, useEffect, useRef } from "react";
 
@@ -10,7 +9,7 @@ export type DrawerBodyPropsT = HTMLMotionProps<"div"> & {
   position?: "top" | "right" | "bottom" | "left";
 };
 
-export function DrawerBody({ position, dir, children, className, ...props }: DrawerBodyPropsT) {
+export function DrawerBody({ position, dir, children, ...p }: DrawerBodyPropsT) {
   const { isOpen } = use(DrawerContext);
 
   const bodyRef = useRef<HTMLDivElement>(null);
@@ -33,7 +32,6 @@ export function DrawerBody({ position, dir, children, className, ...props }: Dra
     <motion.div
       ref={bodyRef}
       onClick={ev => ev.stopPropagation()}
-      className={cn("absolute bg-background p-3 overflow-y-auto", className)}
       initial={
         direction === "y"
           ? { x: currentPosition === "left" ? "-100%" : "100%" }
@@ -59,7 +57,7 @@ export function DrawerBody({ position, dir, children, className, ...props }: Dra
         )
       }}
       transition={{ ease: "easeInOut" }}
-      {...props}
+      {...p}
     >
       {children as ReactNode}
     </motion.div>

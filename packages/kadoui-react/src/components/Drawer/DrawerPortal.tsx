@@ -1,7 +1,6 @@
 "use client";
 
 import { use } from "react";
-import { cn } from "../../utils";
 import { motion, AnimatePresence, HTMLMotionProps } from "framer-motion";
 
 import { Portal } from "../Portal/Portal";
@@ -10,7 +9,7 @@ import { ClientOnly } from "../ClientOnly/ClientOnly";
 
 export type DrawerPortalPropsT = HTMLMotionProps<"div">;
 
-export function DrawerPortal({ onClick, className, ...props }: DrawerPortalPropsT) {
+export function DrawerPortal({ onClick, ...p }: DrawerPortalPropsT) {
   const { isOpen, setOpen } = use(DrawerContext);
 
   return (
@@ -26,11 +25,7 @@ export function DrawerPortal({ onClick, className, ...props }: DrawerPortalProps
                 onClick?.(ev);
                 setOpen(false);
               }}
-              className={cn(
-                "fixed inset-0 z-50 bg-foreground/50",
-                className
-              )}
-              {...props}
+              {...p}
             />
           ) : null}
         </AnimatePresence>

@@ -1020,8 +1020,8 @@ function Page() {
           Open Drawer {":)"}
         </Drawer.Toggle>
 
-        <Drawer.Portal>
-          <Drawer.Body className="space-y-3" position="bottom">
+        <Drawer.Portal className="drawer-portal">
+          <Drawer.Body className="drawer-body space-y-3" position="bottom">
             <label className="input-outline">
               <input
                 type="text"
