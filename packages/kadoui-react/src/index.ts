@@ -8,7 +8,7 @@ export * from "./components/Clipboard/Clipboard";
 export * from "./components/ContextMenu/ContextMenu";
 export * from "./components/Drawer/Drawer";
 export * from "./components/Dropdown/Dropdown";
-export * from "./components/LinkLoader/LinkLoader";
+export * from "./components/LoaderLink/LoaderLink";
 export * from "./components/Modal/Modal";
 export * from "./components/Otp/Otp";
 export * from "./components/Pagination/Pagination";

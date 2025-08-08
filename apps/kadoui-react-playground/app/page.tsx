@@ -12,6 +12,7 @@ import {
   HashIcon,
   InfoIcon,
   ListTodoIcon,
+  LoaderIcon,
   LockIcon,
   Moon,
   RefreshCwIcon,
@@ -40,7 +41,6 @@ import {
   Accordion,
   Clipboard,
   ClientOnly,
-  LinkLoader,
   ContextMenu,
   Breadcrumbs,
   PasswordInput,
@@ -49,7 +49,8 @@ import {
   PaginationWithState,
   StepsWithSearchParams,
   PaginationWithSearchParams,
-  Otp
+  Otp,
+  LoaderLink
 } from "@kadoui/react";
 
 const FORMS_1 = [
@@ -448,9 +449,9 @@ function Page() {
 
       <Link className="mt-6 btn-fill w-fit" href={"/test"}>
         <span>Dashboard</span>
-        <LinkLoader>
+        <LoaderLink loader={<LoaderIcon className="compatible-icon animate-spin" />}>
           <GridIcon className="compatible-icon" />
-        </LinkLoader>
+        </LoaderLink>
       </Link>
 
       <AccessNavigation className="separate-t">
