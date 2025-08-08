@@ -784,7 +784,7 @@ function Page() {
       <ContextMenu className="h-32 w-96 relative border-4 border-dashed border-primary/10 mt-6">
         <span className="absolute inset-center">Context menu!</span>
 
-        <ContextMenu.Content>
+        <ContextMenu.Content className="context-menu-content">
           <AccessNavigation className="menu-y palette-foreground">
             <button className="btn-ghost">
               <TrashIcon className="compatible-icon" />

@@ -4,7 +4,6 @@ import { HTMLAttributes, use, useEffect } from "react";
 
 import { cn } from "../../utils";
 import { selectAccessibleChildren } from "../../utils";
-
 import { ContextMenuContext } from "./ContextMenuContext";
 
 export type ContextMenuContentPropsT = HTMLAttributes<HTMLDivElement>;
@@ -38,9 +37,7 @@ export function ContextMenuContent({ onContextMenu, className, ...p }: ContextMe
         onContextMenu?.(ev);
       }}
       className={cn(
-        "z-50 fixed",
-        position ? "transition-all" : "",
-        isOpen ? "" : "hidden",
+        isOpen ? "context-menu-active" : null,
         className
       )}
       style={{
