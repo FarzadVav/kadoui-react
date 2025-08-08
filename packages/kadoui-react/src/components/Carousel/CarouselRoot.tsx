@@ -1,13 +1,12 @@
 "use client";
 
-import { cn } from "../../utils";
 import { HTMLAttributes, useEffect, useRef, useState } from "react";
 
 import { CarouselContext } from "./CarouselContext";
 
 export type CarouselRootPropsT = HTMLAttributes<HTMLDivElement>;
 
-export function CarouselRoot({ children, className, ...props }: CarouselRootPropsT) {
+export function CarouselRoot(p: CarouselRootPropsT) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [leftOpacity, setLeftOpacity] = useState(0);
   const [rightOpacity, setRightOpacity] = useState(1);
@@ -50,26 +49,8 @@ export function CarouselRoot({ children, className, ...props }: CarouselRootProp
   }, []);
 
   return (
-    <CarouselContext value={{ scrollRef }}>
-      <div className={cn("relative", className)} {...props}>
-        {/* Left Fade */}
-        <div
-          className="pointer-events-none absolute right-0 top-0 h-full w-1/6 bg-gradient-to-l from-background from-5% to-transparent z-10 transition-opacity"
-          style={{ opacity: leftOpacity }}
-        />
-        {/* --- */}
-
-        {/* Scrollable container */}
-        {children}
-        {/* --- */}
-
-        {/* Right Fade */}
-        <div
-          className="pointer-events-none absolute left-0 top-0 h-full w-1/6 bg-gradient-to-r from-background from-5% to-transparent z-10 transition-opacity"
-          style={{ opacity: rightOpacity }}
-        />
-        {/* --- */}
-      </div>
+    <CarouselContext value={{ scrollRef, leftOpacity, rightOpacity }}>
+      <div {...p} />
     </CarouselContext>
   );
 }

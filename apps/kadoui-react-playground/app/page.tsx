@@ -788,8 +788,10 @@ function Page() {
         </ContextMenu.Content>
       </ContextMenu>
 
-      <Carousel className="mt-6">
-        <Carousel.Container className="items-start gap-3">
+      <Carousel className="carousel mt-6">
+        <Carousel.Container className="carousel-container gap-3">
+          <Carousel.LeftFade className="carousel-left-fade" />
+
           {Array.from({ length: 12 }).map(() => (
             <div
               className="w-[90%] min-w-[90%] sm:w-2/5 sm:min-w-2/5"
@@ -809,6 +811,8 @@ function Page() {
               iure dicta? Esse fugiat quam nostrum? Quo.
             </div>
           ))}
+
+          <Carousel.RightFade className="carousel-right-fade" />
         </Carousel.Container>
       </Carousel>
 

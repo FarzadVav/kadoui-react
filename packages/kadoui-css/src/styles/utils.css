@@ -2,12 +2,14 @@
 @utility container {
   @apply max-w-5xl px-3 mx-auto;
 }
+
 /* --- */
 
 /* Scroll bars */
 @utility no-scrollbar {
   scrollbar-width: none;
 }
+
 /* --- */
 
 /* Flex boxex */
@@ -16,7 +18,7 @@
 }
 
 @utility f-align-scroll {
-  @apply f-align overflow-x-auto pb-1.5;
+  @apply flex overflow-x-auto pb-1.5;
 
   &.no-scrollbar {
     @apply pb-0;
@@ -26,19 +28,21 @@
 @utility f-center {
   @apply f-align justify-center;
 }
+
 /* --- */
 
 /* Joins */
 @utility join {
-  @apply f-align ltr:*:not-first:rounded-l-none ltr:*:not-last:rounded-r-none
-  rtl:*:not-first:rounded-r-none rtl:*:not-last:rounded-l-none;
+  @apply f-align ltr:*:not-first:rounded-l-none ltr:*:not-last:rounded-r-none rtl:*:not-first:rounded-r-none rtl:*:not-last:rounded-l-none;
 }
 
 @utility join-border {
-  @apply join; /* Extend */
+  @apply join;
+  /* Extend */
 
   @apply ltr:*:not-first:border-l rtl:*:not-first:border-r *:border-brush;
 }
+
 /* --- */
 
 /*
@@ -96,6 +100,7 @@
 @utility inset-center {
   @apply top-center left-center;
 }
+
 /* --- */
 
 @utility border-separator {
@@ -126,6 +131,7 @@
 @utility separate-x {
   @apply px-3 mx-3 border-x border-separator;
 }
+
 /* --- */
 
 /* Icon sizes */
@@ -152,4 +158,5 @@
 @utility icon-size-5 {
   @apply size-7 min-w-7;
 }
+
 /* --- */
