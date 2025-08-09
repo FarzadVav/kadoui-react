@@ -171,58 +171,8 @@ function Page() {
         </p>
       </div>
 
-      <div className="f-align gap-3 relative">
-        <div className="popover-group">
-          <div className="popover popover-b max-w-32">
-            <p className="popover-content popover-content-sm">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla,
-              assumenda.
-            </p>
-          </div>
-
-          <button className="btn-fill btn-sm">
-            <span>Click 1</span>
-          </button>
-        </div>
-
-        <div className="popover-group ">
-          <div className="popover popover-b max-w-40">
-            <p className="popover-content">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla,
-              assumenda.
-            </p>
-          </div>
-
-          <button className="btn-fill">
-            <span>Click 2</span>
-          </button>
-        </div>
-
-        <div className="popover-group ">
-          <div className="popover popover-b max-w-64">
-            <p className="popover-content popover-content-lg">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla,
-              assumenda.
-            </p>
-          </div>
-
-          <button className="btn-fill btn-lg">
-            <span>Click 3</span>
-          </button>
-        </div>
-      </div>
-
-      <div className="p-6 h-96 bg-foreground mt-6">
-        <div className="popover-group ">
-          <div className="popover popover-b w-full">
-            <p className="popover-content">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla,
-              assumenda.
-            </p>
-          </div>
-
-          <button className="btn-fill">FILL BACKGROUND</button>
-        </div>
+      <div className="p-6 h-96 bg-foreground palette-background mt-6">
+        <button className="btn-fill">FILL BACKGROUND</button>
       </div>
 
       <div className="f-align gap-3 mt-6">
