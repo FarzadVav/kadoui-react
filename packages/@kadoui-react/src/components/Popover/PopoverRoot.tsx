@@ -15,7 +15,7 @@ export function PopoverRoot({ mode = "click", accessHorizontalArrows, onKeyDown,
   const [isOpen, setOpen] = useState(false);
 
   const toggleRef = useRef<HTMLButtonElement>(null);
-  const menuRef = useRef<HTMLDivElement>(null);
+  const bodyRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const closeHandler = () => {
@@ -34,11 +34,11 @@ export function PopoverRoot({ mode = "click", accessHorizontalArrows, onKeyDown,
   }, [isOpen]);
 
   const selectFirstMenuChild = () => {
-    if (!menuRef.current) {
+    if (!bodyRef.current) {
       return;
     }
 
-    const children = selectAccessibleChildren(menuRef.current);
+    const children = selectAccessibleChildren(bodyRef.current);
     const firstChild = children[0];
 
     if (!firstChild) {
@@ -75,7 +75,7 @@ export function PopoverRoot({ mode = "click", accessHorizontalArrows, onKeyDown,
   }
 
   return (
-    <PopoverContext value={{ isOpen, setOpen, toggleRef, menuRef, mode }}>
+    <PopoverContext value={{ isOpen, setOpen, toggleRef, bodyRef, mode }}>
       <div
         onKeyDown={ev => {
           onKeyDown?.(ev);

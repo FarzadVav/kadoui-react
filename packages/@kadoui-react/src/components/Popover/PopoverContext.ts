@@ -4,7 +4,7 @@ export type PopoverContextT = {
   isOpen: boolean;
   setOpen: Dispatch<SetStateAction<boolean>>;
   toggleRef: RefObject<HTMLButtonElement | null>;
-  menuRef: RefObject<HTMLDivElement | null>;
+  bodyRef: RefObject<HTMLDivElement | null>;
   mode: "click" | "hover" | "both";
 }
 

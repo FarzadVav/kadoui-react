@@ -651,26 +651,26 @@ function Page() {
       </Modal>
 
       <AccessNavigation>
-        <Popover className="relative w-max max-w-full mt-6" mode="both">
+        <Popover className="popover mt-6" mode="both">
           <Popover.Toggle className="btn-fill">Popover!</Popover.Toggle>
-          <Popover.Menu preventClose className="absolute w-max z-10 popover popover-b">
+          <Popover.Body preventClose className="popover-body-b">
             <div className="menu-y">
               <button className="btn-ghost">Item is here</button>
-              <Popover accessHorizontalArrows="ArrowRight">
+              <Popover accessHorizontalArrows="ArrowRight" className="popover" mode="both">
                 <Popover.Toggle className="btn-ghost">
                   <span>Item two</span>
                   <ChevronRightIcon className="compatible-icon" />
                 </Popover.Toggle>
-                <Popover.Menu preventClose className="popover popover-r">
+                <Popover.Body className="popover-body-r">
                   <div className="menu-y shadow">
                     <button className="btn-ghost">Child 1</button>
                     <button className="btn-ghost">Child 2</button>
                   </div>
-                </Popover.Menu>
+                </Popover.Body>
               </Popover>
               <button className="btn-ghost">Item for 3</button>
             </div>
-          </Popover.Menu>
+          </Popover.Body>
         </Popover>
       </AccessNavigation>
 
