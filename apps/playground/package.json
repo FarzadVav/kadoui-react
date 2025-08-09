@@ -1,6 +1,5 @@
 {
-  "name": "@kadoui/react-playground",
-  "version": "0.1.0",
+  "name": "playground",
   "private": true,
   "scripts": {
     "dev": "rm -rf ./next && next dev --turbopack",
@@ -16,8 +15,8 @@
     "next": "15.4.5"
   },
   "devDependencies": {
-    "@repo/tsconfig": "workspace:*",
-    "@kadoui/css": "workspace:*",
+    "tsconfig": "workspace:*",
+    "@kadoui/css": "^1.2.6",
     "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^19",

@@ -1,5 +1,5 @@
 {
-  "extends": "@repo/tsconfig",
+  "extends": "tsconfig",
   "compilerOptions": {
     "module": "ESNext",
     "moduleResolution": "Bundler",
