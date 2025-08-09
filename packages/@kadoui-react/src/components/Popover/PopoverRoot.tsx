@@ -2,16 +2,16 @@
 
 import { HTMLAttributes, KeyboardEvent, useEffect, useRef, useState } from "react";
 
+import { PopoverContext, PopoverContextT } from "./PopoverContext";
 import { selectAccessibleChildren } from "../../utils";
 
-import { DropdownContext } from "./DropdownContext";
 
-
-export type DropdownRootPropsT = HTMLAttributes<HTMLDivElement> & {
+export type PopoverRootPropsT = HTMLAttributes<HTMLDivElement> & {
+  mode?: PopoverContextT["mode"];
   accessHorizontalArrows?: "ArrowRight" | "ArrowLeft";
 }
 
-export function DropdownRoot({ accessHorizontalArrows, onKeyDown, ...p }: DropdownRootPropsT) {
+export function PopoverRoot({ mode = "click", accessHorizontalArrows, onKeyDown, onMouseEnter, onMouseLeave, ...p }: PopoverRootPropsT) {
   const [isOpen, setOpen] = useState(false);
 
   const toggleRef = useRef<HTMLButtonElement>(null);
@@ -75,14 +75,28 @@ export function DropdownRoot({ accessHorizontalArrows, onKeyDown, ...p }: Dropdo
   }
 
   return (
-    <DropdownContext value={{ isOpen, setOpen, toggleRef, menuRef }}>
+    <PopoverContext value={{ isOpen, setOpen, toggleRef, menuRef, mode }}>
       <div
         onKeyDown={ev => {
           onKeyDown?.(ev);
           handleKeyDown(ev);
         }}
+        onMouseEnter={ev => {
+          onMouseEnter?.(ev);
+          if (["hover", "both"].includes(mode)) {
+            ev.stopPropagation();
+            setOpen(true);
+          }
+        }}
+        onMouseLeave={ev => {
+          onMouseLeave?.(ev);
+          if (["hover", "both"].includes(mode)) {
+            ev.stopPropagation();
+            setOpen(false);
+          }
+        }}
         {...p}
       />
-    </DropdownContext>
+    </PopoverContext>
   )
 }

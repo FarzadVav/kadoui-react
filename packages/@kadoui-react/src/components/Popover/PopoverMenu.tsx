@@ -2,14 +2,14 @@
 
 import { HTMLAttributes, use } from "react";
 
-import { DropdownContext } from "./DropdownContext";
+import { PopoverContext } from "./PopoverContext";
 
-export type DropdownMenuPropsT = HTMLAttributes<HTMLDivElement> & {
+export type PopoverMenuPropsT = HTMLAttributes<HTMLDivElement> & {
   preventClose?: boolean;
 }
 
-export function DropdownMenu({ preventClose, onClick, ...p }: DropdownMenuPropsT) {
-  const { menuRef, isOpen } = use(DropdownContext);
+export function PopoverMenu({ preventClose, onClick, ...p }: PopoverMenuPropsT) {
+  const { menuRef, isOpen } = use(PopoverContext);
 
   return (
     isOpen ? (

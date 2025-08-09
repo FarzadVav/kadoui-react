@@ -35,7 +35,6 @@ import {
   QrCode,
   Rating,
   Spoiler,
-  Dropdown,
   Carousel,
   ShowMore,
   Progress,
@@ -50,7 +49,8 @@ import {
   StepsWithSearchParams,
   PaginationWithSearchParams,
   Otp,
-  LoaderLink
+  LoaderLink,
+  Popover
 } from "@kadoui/react";
 
 const FORMS_1 = [
@@ -651,27 +651,27 @@ function Page() {
       </Modal>
 
       <AccessNavigation>
-        <Dropdown className="dropdown mt-6 ">
-          <Dropdown.Toggle className="btn-fill">Dropdown!</Dropdown.Toggle>
-          <Dropdown.Menu preventClose className="dropdown-menu popover popover-b">
+        <Popover className="relative w-max max-w-full mt-6" mode="both">
+          <Popover.Toggle className="btn-fill">Popover!</Popover.Toggle>
+          <Popover.Menu preventClose className="absolute w-max z-10 popover popover-b">
             <div className="menu-y">
               <button className="btn-ghost">Item is here</button>
-              <Dropdown accessHorizontalArrows="ArrowRight">
-                <Dropdown.Toggle className="btn-ghost">
+              <Popover accessHorizontalArrows="ArrowRight">
+                <Popover.Toggle className="btn-ghost">
                   <span>Item two</span>
                   <ChevronRightIcon className="compatible-icon" />
-                </Dropdown.Toggle>
-                <Dropdown.Menu preventClose className="popover popover-r">
+                </Popover.Toggle>
+                <Popover.Menu preventClose className="popover popover-r">
                   <div className="menu-y shadow">
                     <button className="btn-ghost">Child 1</button>
                     <button className="btn-ghost">Child 2</button>
                   </div>
-                </Dropdown.Menu>
-              </Dropdown>
+                </Popover.Menu>
+              </Popover>
               <button className="btn-ghost">Item for 3</button>
             </div>
-          </Dropdown.Menu>
-        </Dropdown>
+          </Popover.Menu>
+        </Popover>
       </AccessNavigation>
 
       <p className="mt-6">
