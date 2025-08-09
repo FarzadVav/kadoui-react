@@ -7,11 +7,12 @@ import { PopoverContext } from "./PopoverContext";
 export type PopoverTogglePropsT = HTMLAttributes<HTMLButtonElement>;
 
 export function PopoverToggle({ onClick, ...props }: PopoverTogglePropsT) {
-  const { mode, toggleRef, setOpen } = use(PopoverContext);
+  const { mode, toggleRef, isOpen, setOpen } = use(PopoverContext);
 
   return (
     <button
       ref={toggleRef}
+      data-state={isOpen ? "active" : "inactive"}
       onClick={ev => {
         onClick?.(ev);
         ev.stopPropagation();

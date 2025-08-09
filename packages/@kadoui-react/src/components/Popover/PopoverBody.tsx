@@ -15,6 +15,7 @@ export function PopoverBody({ preventClose, onClick, ...p }: PopoverBodyPropsT) 
     isOpen ? (
       <div
         ref={bodyRef}
+        data-state={isOpen ? "active" : "inactive"}
         onClick={ev => {
           if (preventClose) {
             ev.stopPropagation();

@@ -77,6 +77,7 @@ export function PopoverRoot({ mode = "click", accessHorizontalArrows, onKeyDown,
   return (
     <PopoverContext value={{ isOpen, setOpen, toggleRef, bodyRef, mode }}>
       <div
+        data-state={isOpen ? "active" : "inactive"}
         onKeyDown={ev => {
           onKeyDown?.(ev);
           handleKeyDown(ev);
