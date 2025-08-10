@@ -6,7 +6,7 @@ import { CarouselContext } from "./CarouselContext";
 
 export type CarouselRootPropsT = HTMLAttributes<HTMLDivElement>;
 
-export function CarouselRoot(p: CarouselRootPropsT) {
+export function CarouselRoot({ dir, ...p }: CarouselRootPropsT) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [leftOpacity, setLeftOpacity] = useState(0);
   const [rightOpacity, setRightOpacity] = useState(1);
@@ -26,11 +26,13 @@ export function CarouselRoot(p: CarouselRootPropsT) {
 
     const scrollRatio = Math.abs(+(scrollLeft / maxScroll));
 
-    const left = Math.min(1, scrollRatio * 2);
-    const right = Math.min(1, (1 - scrollRatio) * 2);
+    const left = +(Math.min(1, scrollRatio * 2).toFixed(1));
+    const right = +(Math.min(1, (1 - scrollRatio) * 2).toFixed(1));
 
-    setLeftOpacity(+left.toFixed(1));
-    setRightOpacity(+right.toFixed(1));
+    const currentDir: "ltr" | "rtl" = (dir || document.documentElement.getAttribute("dir") || "ltr") as ("ltr" | "rtl");
+
+    setLeftOpacity(currentDir === "ltr" ? right : left);
+    setRightOpacity(currentDir === "ltr" ? left : right);
   };
 
   useEffect(() => {
