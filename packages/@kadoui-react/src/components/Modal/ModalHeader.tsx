@@ -2,8 +2,14 @@ import type { HTMLAttributes } from "react";
 
 export type ModalHeaderPropsT = HTMLAttributes<HTMLDivElement>;
 
-export function ModalHeader(p: ModalHeaderPropsT) {
+export function ModalHeader({ onClick, ...p }: ModalHeaderPropsT) {
   return (
-    <div {...p} />
+    <div
+      onClick={(ev) => {
+        onClick?.(ev);
+        ev.stopPropagation();
+      }}
+      {...p}
+    />
   );
 }
