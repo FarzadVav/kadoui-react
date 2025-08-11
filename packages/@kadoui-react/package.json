@@ -6,7 +6,8 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "push": "npm run build && npm publish"
   },
   "exports": {
     ".": "./dist/index.js",
