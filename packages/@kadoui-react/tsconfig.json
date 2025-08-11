@@ -6,12 +6,6 @@
     "jsx": "react-jsx",
     "outDir": "dist"
   },
-  "include": [
-    "src"
-  ],
-  "exclude": [
-    "dist",
-    "build",
-    "node_modules"
-  ]
+  "include": ["src"],
+  "exclude": ["dist", "build", "node_modules"]
 }
