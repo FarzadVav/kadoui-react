@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { ButtonHTMLAttributes, use } from "react";
 
@@ -13,7 +13,7 @@ export function ModalToggle({ onClick, ...props }: ModalTogglePropsT) {
     <button
       onClick={(ev) => {
         onClick?.(ev);
-        setOpen(prev => !prev);
+        setOpen((prev) => !prev);
       }}
       {...props}
     />

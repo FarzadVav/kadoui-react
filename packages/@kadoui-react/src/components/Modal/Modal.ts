@@ -10,5 +10,5 @@ export const Modal = Object.assign(ModalRoot, {
   Portal: ModalPortal,
   Body: ModalBody,
   Header: ModalHeader,
-  Content: ModalContent
+  Content: ModalContent,
 });

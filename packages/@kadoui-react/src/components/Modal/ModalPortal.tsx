@@ -21,7 +21,7 @@ export function ModalPortal({ onClick, ...p }: ModalPortalPropsT) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              onClick={ev => {
+              onClick={(ev) => {
                 onClick?.(ev);
                 setOpen(false);
               }}
