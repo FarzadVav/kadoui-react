@@ -1,17 +1,26 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { HTMLAttributes, KeyboardEvent, useEffect, useRef, useState } from "react";
 
-import { PopoverContext, PopoverContextT } from "./PopoverContext";
 import { selectAccessibleChildren } from "../../utils";
-
+import { PopoverContext, PopoverContextT } from "./PopoverContext";
 
 export type PopoverRootPropsT = HTMLAttributes<HTMLDivElement> & {
   mode?: PopoverContextT["mode"];
   accessHorizontalArrows?: "ArrowRight" | "ArrowLeft";
-}
+};
 
-export function PopoverRoot({ mode = "click", accessHorizontalArrows, onKeyDown, onMouseEnter, onMouseLeave, ...p }: PopoverRootPropsT) {
+export function PopoverRoot({
+  mode = "click",
+  accessHorizontalArrows,
+  onKeyDown,
+  onMouseEnter,
+  onMouseLeave,
+  ...p
+}: PopoverRootPropsT) {
+  const pathname = usePathname();
+
   const [isOpen, setOpen] = useState(false);
 
   const toggleRef = useRef<HTMLButtonElement>(null);
@@ -20,12 +29,16 @@ export function PopoverRoot({ mode = "click", accessHorizontalArrows, onKeyDown,
   useEffect(() => {
     const closeHandler = () => {
       setOpen(false);
-    }
+    };
 
     window.addEventListener("click", closeHandler);
 
     return () => window.removeEventListener("click", closeHandler);
   }, []);
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   useEffect(() => {
     if (isOpen) {
@@ -46,7 +59,7 @@ export function PopoverRoot({ mode = "click", accessHorizontalArrows, onKeyDown,
     }
 
     firstChild.focus();
-  }
+  };
 
   const handleKeyDown = (ev: KeyboardEvent<HTMLDivElement>) => {
     if (!accessHorizontalArrows) {
@@ -72,24 +85,24 @@ export function PopoverRoot({ mode = "click", accessHorizontalArrows, onKeyDown,
         toggleRef.current?.focus();
       }
     }
-  }
+  };
 
   return (
     <PopoverContext value={{ isOpen, setOpen, toggleRef, bodyRef, mode }}>
       <div
         data-state={isOpen ? "active" : "inactive"}
-        onKeyDown={ev => {
+        onKeyDown={(ev) => {
           onKeyDown?.(ev);
           handleKeyDown(ev);
         }}
-        onMouseEnter={ev => {
+        onMouseEnter={(ev) => {
           onMouseEnter?.(ev);
           if (["hover", "both"].includes(mode)) {
             ev.stopPropagation();
             setOpen(true);
           }
         }}
-        onMouseLeave={ev => {
+        onMouseLeave={(ev) => {
           onMouseLeave?.(ev);
           if (["hover", "both"].includes(mode)) {
             ev.stopPropagation();
@@ -99,5 +112,5 @@ export function PopoverRoot({ mode = "click", accessHorizontalArrows, onKeyDown,
         {...p}
       />
     </PopoverContext>
-  )
+  );
 }

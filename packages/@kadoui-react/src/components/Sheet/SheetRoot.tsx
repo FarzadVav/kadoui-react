@@ -1,22 +1,25 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { PropsWithChildren, useEffect, useState } from "react";
-import {
-  useDragControls,
-  useMotionValue,
-  useAnimate,
-} from "framer-motion";
+import { useDragControls, useMotionValue, useAnimate } from "framer-motion";
 
 import { SheetContext } from "./SheetContext";
 
 export type SheetRootPropsT = PropsWithChildren;
 
 export function SheetRoot({ children }: SheetRootPropsT) {
+  const pathname = usePathname();
+
   const y = useMotionValue(0);
   const controls = useDragControls();
   const [scope, animate] = useAnimate();
 
   const [isOpen, setOpen] = useState(false);
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   useEffect(() => {
     const bodyElem = document.body;

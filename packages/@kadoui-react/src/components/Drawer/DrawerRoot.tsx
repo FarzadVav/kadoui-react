@@ -1,20 +1,27 @@
-"use client"
+"use client";
 
-import { getBrowserScrollbarWith } from "../../utils";
+import { usePathname } from "next/navigation";
 import { useState, useEffect, PropsWithChildren } from "react";
 
 import { DrawerContext } from "./DrawerContext";
+import { getBrowserScrollbarWith } from "../../utils";
 
 export type DrawerRootPropsT = PropsWithChildren;
 
 export function DrawerRoot({ children }: DrawerRootPropsT) {
+  const pathname = usePathname();
+
   const [isOpen, setOpen] = useState(false);
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   useEffect(() => {
     const handleEscape = (ev: KeyboardEvent) => {
       if (ev.key === "Escape") {
         setOpen(false);
-      };
+      }
     };
 
     document.addEventListener("keydown", handleEscape);
@@ -23,7 +30,7 @@ export function DrawerRoot({ children }: DrawerRootPropsT) {
       document.removeEventListener("keydown", handleEscape);
       document.body.style.overflow = "unset";
     };
-  }, [])
+  }, []);
 
   useEffect(() => {
     const scrollbarWidth = getBrowserScrollbarWith();
@@ -34,12 +41,8 @@ export function DrawerRoot({ children }: DrawerRootPropsT) {
     } else {
       document.body.style.overflow = "unset";
       document.body.style.paddingRight = "0px";
-    };
+    }
   }, [isOpen]);
 
-  return (
-    <DrawerContext value={{ isOpen, setOpen }}>
-      {children}
-    </DrawerContext>
-  );
+  return <DrawerContext value={{ isOpen, setOpen }}>{children}</DrawerContext>;
 }
