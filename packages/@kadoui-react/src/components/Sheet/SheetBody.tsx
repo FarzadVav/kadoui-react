@@ -8,8 +8,8 @@ import { SheetContext } from "./SheetContext";
 export type SheetBodyPropsT = HTMLMotionProps<"div">;
 
 export function SheetBody({ onPointerDown, ...p }: SheetBodyPropsT) {
-  const { y, closeHandler: handleClose } = use(SheetContext);
   const controls = useDragControls();
+  const { y, closeHandler: handleClose } = use(SheetContext);
 
   return (
     <motion.div
