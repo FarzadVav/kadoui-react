@@ -321,7 +321,6 @@ function Page() {
 
           <Sheet.Portal className="sheet-portal">
             <Sheet.Body className="sheet-body">
-              <div className="h-12 f-center">header</div>
               <Sheet.Header className="sheet-header text-center font-bold">
                 Pick your subscription
               </Sheet.Header>
