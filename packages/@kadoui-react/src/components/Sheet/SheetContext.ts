@@ -1,12 +1,11 @@
+import { AnimationScope, MotionValue } from "framer-motion";
 import { createContext, Dispatch, SetStateAction } from "react";
-import { AnimationScope, DragControls, MotionValue } from "framer-motion";
 
 export type SheetContextT = {
   isOpen: boolean;
   setOpen: Dispatch<SetStateAction<boolean>>;
   closeHandler: () => void;
   scope?: AnimationScope<any>;
-  controls?: DragControls;
   y?: MotionValue<number>;
 }
 

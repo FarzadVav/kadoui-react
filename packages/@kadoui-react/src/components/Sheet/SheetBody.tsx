@@ -1,14 +1,15 @@
 "use client";
 
 import { use } from "react";
-import { HTMLMotionProps, motion } from "framer-motion";
+import { HTMLMotionProps, motion, useDragControls } from "framer-motion";
 
 import { SheetContext } from "./SheetContext";
 
 export type SheetBodyPropsT = HTMLMotionProps<"div">;
 
-export function SheetBody(p: SheetBodyPropsT) {
-  const { controls, y, closeHandler: handleClose } = use(SheetContext);
+export function SheetBody({ onPointerDown, ...p }: SheetBodyPropsT) {
+  const { y, closeHandler: handleClose } = use(SheetContext);
+  const controls = useDragControls();
 
   return (
     <motion.div
@@ -19,8 +20,13 @@ export function SheetBody(p: SheetBodyPropsT) {
       exit={{ y: "100%" }}
       style={{ y }}
       drag="y"
-      dragControls={controls}
       dragListener={false}
+      dragControls={controls}
+      onPointerDown={(ev) => {
+        ev.stopPropagation();
+        controls?.start(ev);
+        onPointerDown?.(ev);
+      }}
       transition={{
         ease: "easeInOut",
       }}
