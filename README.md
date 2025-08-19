@@ -1,2 +1,1 @@
-### Kadoui monorepo
-# The TailwindCSS styles with primitive logics 
+# Kadoui primitive components for React

@@ -2,9 +2,10 @@
   "name": "@kadoui/react",
   "version": "1.7.7",
   "description": "Kadoui primitive components for React",
-  "author": "ArrowUp",
+  "author": "FarzadVav",
   "license": "MIT",
   "type": "module",
+  "repository": "https://github.com/FarzadVav/kadoui-react",
   "scripts": {
     "build": "tsc",
     "push": "npm run build && git push && npm publish"
