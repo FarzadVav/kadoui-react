@@ -3,11 +3,11 @@
 import { useLinkStatus } from "next/link";
 import { PropsWithChildren, ReactNode } from "react";
 
-export type LoaderLinkPropsT = PropsWithChildren & {
+export type LinkLoaderPropsT = PropsWithChildren & {
   loader: ReactNode;
 }
 
-export function LoaderLink({ loader, children }: LoaderLinkPropsT) {
+export function LinkLoader({ loader, children }: LinkLoaderPropsT) {
   const { pending } = useLinkStatus();
 
   return pending ? loader : children;
