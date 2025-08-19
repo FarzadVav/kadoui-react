@@ -24,3 +24,4 @@ export * from "./components/Steps/Steps";
 export * from "./components/Swap/Swap";
 export * from "./components/Tabs/Tabs";
 export * from "./components/Submit/Submit";
+export * from "./components/ThemeAdapter/ThemeAdapter";
