@@ -1,12 +1,14 @@
 {
   "name": "@kadoui/next",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "description": "Kadoui primitive components for Next",
   "author": "FarzadVav",
   "license": "MIT",
   "type": "module",
   "repository": "https://github.com/FarzadVav/kadoui-react",
-  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsc",
     "push": "tsc && git push && npm publish"

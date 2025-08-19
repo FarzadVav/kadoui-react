@@ -1,14 +1,17 @@
 {
   "name": "@kadoui/react",
-  "version": "1.7.9",
+  "version": "1.8.0",
   "description": "Kadoui primitive components for React",
   "author": "FarzadVav",
   "license": "MIT",
   "type": "module",
   "repository": "https://github.com/FarzadVav/kadoui-react",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsc",
-    "push": "npm run build && git push && npm publish"
+    "push": "tsc && git push && npm publish"
   },
   "exports": {
     ".": "./dist/index.js",
