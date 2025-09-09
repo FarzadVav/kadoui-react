@@ -1,6 +1,6 @@
 {
   "name": "@kadoui/react",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "description": "Kadoui primitive components for React",
   "author": "FarzadVav",
   "license": "MIT",
@@ -15,7 +15,8 @@
   },
   "exports": {
     ".": "./dist/index.js",
-    "./utils": "./dist/utils.js"
+    "./utils": "./dist/utils.js",
+    "./next": "./dist/next.js"
   },
   "keywords": [
     "@kadoui/react",
