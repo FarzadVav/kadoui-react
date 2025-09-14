@@ -11,7 +11,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "push": "tsc && git push && npm publish"
+    "publish": "tsc && npm publish"
   },
   "exports": {
     ".": "./dist/index.js",
