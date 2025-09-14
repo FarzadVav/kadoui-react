@@ -1,1104 +1,133 @@
-"use client";
-
-import Link from "next/link";
-import { Suspense, useState } from "react";
-import {
-  ArrowRightIcon,
-  CheckIcon,
-  ChevronRightIcon,
-  EyeClosedIcon,
-  EyeIcon,
-  FlagIcon,
-  FlameIcon,
-  GridIcon,
-  HashIcon,
-  InfoIcon,
-  ListTodoIcon,
-  LoaderIcon,
-  LockIcon,
-  Moon,
-  RefreshCwIcon,
-  SearchIcon,
-  StarIcon,
-  SunIcon,
-  TrashIcon,
-  VenusIcon,
-} from "lucide-react";
-
-import { formatInput } from "@kadoui/react/utils";
-import {
-  Tabs,
-  Swap,
-  Sheet,
-  Modal,
-  Drawer,
-  QrCode,
-  Rating,
-  Spoiler,
-  Carousel,
-  ShowMore,
-  Progress,
-  Accordion,
-  Clipboard,
-  ContextMenu,
-  Breadcrumbs,
-  PasswordInput,
-  StepsWithState,
-  AccessNavigation,
-  PaginationWithState,
-  StepsWithSearchParams,
-  PaginationWithSearchParams,
-  Otp,
-  LoaderLink,
-  Popover,
-} from "@kadoui/react";
-
-const FORMS_1 = [
-  {
-    name: "Hello world",
-    component: (
-      <>
-        <p>
-          One: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis officiis
-          quia, dolores similique, cumque ut vel aspernatur non vitae voluptas reiciendis?
-          Veniam, voluptates impedit soluta blanditiis ad nam eligendi dignissimos.
-        </p>
-
-        <AccessNavigation
-          className="f-center gap-3 mt-3"
-          direction="x">
-          <StepsWithState.PrevBtn className="btn-fill">Prev</StepsWithState.PrevBtn>
-          <StepsWithState.NextBtn className="btn-fill">Next</StepsWithState.NextBtn>
-        </AccessNavigation>
-      </>
-    ),
-  },
-  {
-    name: "Beauty game",
-    component: (
-      <>
-        <p>
-          Two: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis officiis
-          quia, dolores similique, cumque ut vel aspernatur non vitae voluptas reiciendis?
-          Veniam, voluptates impedit soluta blanditiis ad nam eligendi dignissimos.
-        </p>
-
-        <AccessNavigation
-          className="f-center gap-3 mt-3"
-          direction="x">
-          <StepsWithState.PrevBtn className="btn-fill">Prev</StepsWithState.PrevBtn>
-          <StepsWithState.NextBtn className="btn-fill">Next</StepsWithState.NextBtn>
-        </AccessNavigation>
-      </>
-    ),
-  },
-];
-const FORMS_2 = [
-  {
-    name: "Hello world",
-    component: (
-      <>
-        <p>
-          One: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis officiis
-          quia, dolores similique, cumque ut vel aspernatur non vitae voluptas reiciendis?
-          Veniam, voluptates impedit soluta blanditiis ad nam eligendi dignissimos.
-        </p>
-
-        <AccessNavigation
-          className="f-center gap-3 mt-3"
-          direction="x">
-          <StepsWithSearchParams.PrevBtn className="btn-fill">
-            Prev
-          </StepsWithSearchParams.PrevBtn>
-          <StepsWithSearchParams.NextBtn className="btn-fill">
-            Next
-          </StepsWithSearchParams.NextBtn>
-        </AccessNavigation>
-      </>
-    ),
-  },
-  {
-    name: "Beauty game",
-    component: (
-      <>
-        <p>
-          Two: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis officiis
-          quia, dolores similique, cumque ut vel aspernatur non vitae voluptas reiciendis?
-          Veniam, voluptates impedit soluta blanditiis ad nam eligendi dignissimos.
-        </p>
-
-        <AccessNavigation
-          className="f-center gap-3 mt-3"
-          direction="x">
-          <StepsWithSearchParams.PrevBtn className="btn-fill">
-            Prev
-          </StepsWithSearchParams.PrevBtn>
-          <StepsWithSearchParams.NextBtn className="btn-fill">
-            Next
-          </StepsWithSearchParams.NextBtn>
-        </AccessNavigation>
-      </>
-    ),
-  },
-  {
-    name: "Finish",
-    component: (
-      <>
-        <p>
-          Two: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis officiis
-          quia, dolores similique, cumque ut vel aspernatur non vitae voluptas reiciendis?
-          Veniam, voluptates impedit soluta blanditiis ad nam eligendi dignissimos.
-        </p>
-
-        <AccessNavigation
-          className="f-center gap-3 mt-3"
-          direction="x">
-          <StepsWithSearchParams.PrevBtn className="btn-fill">
-            Prev
-          </StepsWithSearchParams.PrevBtn>
-          <StepsWithSearchParams.NextBtn className="btn-fill">
-            Next
-          </StepsWithSearchParams.NextBtn>
-        </AccessNavigation>
-      </>
-    ),
-  },
-];
+import { ChevronDownIcon } from "lucide-react";
+import { AccessNavigation, Accordion } from "@kadoui/react";
 
 function Page() {
-  const [activeTab, setActiveTab] = useState("1");
-  const [username, setUsername] = useState("");
-  const [starRating, setStarRating] = useState(3);
-  const [starRating2, setStarRating2] = useState(1);
-
   return (
-    <div className="container my-4 space-y-3">
-      <div className="f-align gap-3">
-        <p className="badge badge-sm">
-          <HashIcon className="compatible-icon" />
-          <span>Badge 1</span>
-        </p>
-        <p className="badge">
-          <HashIcon className="compatible-icon" />
-          <span>Badge 2</span>
-        </p>
-        <p className="badge badge-lg">
-          <HashIcon className="compatible-icon" />
-          <span>Badge 3</span>
-        </p>
-      </div>
-
-      <div className="p-6 h-96 bg-foreground palette-background mt-6">
-        <button className="btn-fill">FILL BACKGROUND</button>
-      </div>
-
-      <div className="f-align gap-3 mt-6">
-        <button className="btn-outline">OUTLINE</button>
-        <button className="btn-soft">SOFT</button>
-        <button className="btn-ghost">GHOST</button>
-      </div>
-
-      <div className="space-y-6 separate-y">
-        <label className="input-ghost">
-          <ListTodoIcon className="compatible-icon" />
-          <select
-            className="input-field"
-            defaultValue={"1"}>
-            <option value="1">Choose your wh</option>
-            <option value="2">Why</option>
-            <option value="3">Where</option>
-            <option value="4">Who</option>
-          </select>
-        </label>
-
-        <div className="w-full overflow-hidden space-y-6 pt-6 pr-6">
-          <label
-            className="input-outline input-sm"
-            htmlFor="input-1">
-            <span className="indicator-tr indicator-sm">33</span>
-            <SearchIcon className="compatible-icon" />
-            <input
-              type="text"
-              id="input-1"
-              name="input-1"
-              className="input-field"
-              placeholder="Search something 1..."
-              onChange={(ev) => {
-                ev.target.value = formatInput(ev.target.value, /^[0-9\u06F0-\u06F9]*$/);
-              }}
-            />
-            <p>Do it.</p>
-          </label>
-
-          <label
-            className="input-soft input"
-            htmlFor="input-3">
-            <span className="indicator-tr indicator">33</span>
-            <SearchIcon className="compatible-icon" />
-            <input
-              className="input-field"
-              type="text"
-              name="input-3"
-              id="input-3"
-              placeholder="Search something 3..."
-            />
-          </label>
-
-          <PasswordInput
-            className="input-outline"
-            htmlFor="password-input">
-            <span className="indicator-tr indicator-lg">33</span>
-            <LockIcon className="compatible-icon" />
-            <PasswordInput.Field
-              id="password-input"
-              className="input-field"
-              placeholder="Your safe password"
-            />
-            <PasswordInput.Toggle
-              className="btn btn-sm btn-square"
-              visibleChildren={<EyeIcon className="compatible-icon" />}>
-              <EyeClosedIcon className="compatible-icon" />
-            </PasswordInput.Toggle>
-          </PasswordInput>
-        </div>
-
-        <AccessNavigation
-          className="f-align gap-3"
-          direction="x">
-          <Otp className="otp">
-            <Otp.Inputs
-              className="input-outline input-square text-center"
-              length={4}
-              onLastChange={(otp) => console.log(otp)}
-            />
-            <Otp.HiddenInput />
-          </Otp>
-        </AccessNavigation>
-      </div>
-
-      <AccessNavigation className="menu-y menu-lg relative">
-        <button className="btn-fill btn-lg">Lorem, ipsum dolor</button>
-        <button className="btn-outline btn-lg">Lorem, ipsum dolor 1</button>
-        <button className="btn-soft btn-lg">Lorem, ipsum dolor 2</button>
-        <button className="btn-ghost btn-lg">Lorem, ipsum dolor 3</button>
-      </AccessNavigation>
-
-      <div className="f-align gap-3">
-        <div className="bg-background-thick avatar avatar-sm" />
-        <div className="bg-background-thick avatar" />
-        <div className="bg-background-thick avatar avatar-lg" />
-      </div>
-
-      <div className="f-align max-sm:flex-col gap-3">
-        <p>
-          Press <span className="kbd kbd-sm">Ctrl</span> +{" "}
-          <span className="kbd kbd-sm">Alt</span> + <span className="kbd kbd-sm">T</span>{" "}
-          for new tab.
-        </p>
-        <p>
-          Press <span className="kbd">Ctrl</span> + <span className="kbd">Alt</span> +{" "}
-          <span className="kbd">T</span> for new tab.
-        </p>
-        <p>
-          Press <span className="kbd kbd-lg">Ctrl</span> +{" "}
-          <span className="kbd kbd-lg">Alt</span> + <span className="kbd kbd-lg">T</span>{" "}
-          for new tab.
-        </p>
-      </div>
-
-      {Array.from({ length: 10 }).map((_, i) => (
-        <p key={i}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt beatae
-          exercitationem fugit officiis, quisquam nostrum, sequi commodi atque porro
-          quibusdam quo animi repellendus! Ipsa nostrum quae eaque modi necessitatibus
-          laboriosam!
-        </p>
-      ))}
-
-      <div className="separate-y ">
-        <Sheet>
-          <Sheet.Toggle className="btn-fill">Open sheet</Sheet.Toggle>
-
-          <Sheet.Portal className="sheet-portal">
-            <Sheet.Body className="sheet-body">
-              <Sheet.Header className="sheet-header text-center font-bold">
-                Pick your subscription
-              </Sheet.Header>
-              <Sheet.Content className="sheet-content">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi
-                  velit eligendi, consequuntur commodi dicta laboriosam neque sunt
-                  incidunt modi odit eum eos enim non inventore accusantium est nisi
-                  soluta distinctio quibusdam pariatur tempore ullam deleniti dolor? Iusto
-                  totam sunt saepe quidem dolor vero voluptatibus soluta maiores error
-                  recusandae commodi, assumenda quaerat maxime adipisci unde veritatis rem
-                  dolore. Eos nisi vitae odio accusamus eaque quis debitis expedita
-                  quisquam reprehenderit assumenda repellat perferendis ratione ad qui
-                  dignissimos corrupti nemo, doloremque recusandae tempore quos placeat
-                  possimus aliquid! Amet eligendi delectus ipsum quis ratione nisi magnam
-                  ducimus soluta est unde, necessitatibus, perspiciatis expedita ullam
-                  veritatis minima incidunt fuga temporibus. Minima expedita nisi
-                  praesentium iste. Eius dignissimos veniam error dolores quis, voluptas
-                  assumenda facere nobis vitae. Eaque asperiores corporis molestias
-                  aliquam reiciendis esse harum incidunt iure adipisci quas quae quisquam
-                  odio similique sequi, sapiente ut optio dignissimos. Ut rem provident
-                  sint dolores aperiam, eius, tenetur dolorum excepturi placeat cumque,
-                  consequatur ipsa rerum quam omnis explicabo est optio natus. In
-                  excepturi quisquam praesentium corrupti saepe ad iusto, atque soluta
-                  eaque voluptate voluptates, vel minus suscipit, deserunt quos explicabo
-                  labore vitae facilis minima. Eum deleniti voluptates ex, ratione, itaque
-                  sunt atque officia enim provident doloribus nobis ipsam.
-                </p>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis iste
-                  incidunt quae? Cumque incidunt officiis eligendi sit necessitatibus
-                  nobis! Laboriosam itaque minima animi. Eveniet minima voluptate a nemo,
-                  veniam tempore!
-                </p>
-
-                <Sheet.Toggle className="btn-fill w-full">I got it!</Sheet.Toggle>
-              </Sheet.Content>
-            </Sheet.Body>
-          </Sheet.Portal>
-        </Sheet>
-      </div>
-
-      <Link
-        className="mt-6 btn-fill w-fit"
-        href={"/test"}>
-        <span>Dashboard</span>
-        <LoaderLink loader={<LoaderIcon className="compatible-icon animate-spin" />}>
-          <GridIcon className="compatible-icon" />
-        </LoaderLink>
-      </Link>
-
-      <AccessNavigation className="separate-t">
-        <Accordion>
-          <Accordion.Toggle className="btn-fill group/accordion">
-            <ChevronRightIcon className="compatible-icon transition-transform group-[.accordion-active]/accordion:rotate-90" />
-            <span>components</span>
-          </Accordion.Toggle>
-
-          <Accordion.Body className="accordion-body">
-            <Accordion>
-              <div className="pl-3 pt-3">
-                <Accordion.Toggle className="btn-ghost">ui</Accordion.Toggle>
-              </div>
-
-              <Accordion.Body>
-                <p className="pl-6 pt-3">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil similique
-                  fugit eligendi soluta nam, doloribus esse, illum eos rerum vitae quod,
-                  mollitia veniam reprehenderit adipisci quisquam corrupti blanditiis
-                  perferendis enim.
-                </p>
-              </Accordion.Body>
-            </Accordion>
-
-            <p className="pl-3 pt-3">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil similique
-              fugit eligendi soluta nam, doloribus esse, illum eos rerum vitae quod,
-              mollitia veniam reprehenderit adipisci quisquam corrupti blanditiis
-              perferendis enim.
-            </p>
-          </Accordion.Body>
-        </Accordion>
-
-        <Accordion>
-          <Accordion.Toggle className="btn-fill group/accordion mt-3">
-            <ChevronRightIcon className="compatible-icon transition-transform group-[.accordion-active]/accordion:rotate-90" />
-            <span>hooks</span>
-          </Accordion.Toggle>
-
-          <Accordion.Body>
-            <p className="pl-3 pt-3">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil similique
-              fugit eligendi soluta nam, doloribus esse, illum eos rerum vitae quod,
-              mollitia veniam reprehenderit adipisci quisquam corrupti blanditiis
-              perferendis enim.
-            </p>
-          </Accordion.Body>
-        </Accordion>
-
-        <Accordion>
-          <Accordion.Toggle className="btn-fill group/accordion mt-3">
-            <ChevronRightIcon className="compatible-icon transition-transform group-[.accordion-active]/accordion:rotate-90" />
-            <span>utils</span>
-          </Accordion.Toggle>
-          <Accordion.Body>
-            <p className="pl-3 pt-3">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil similique
-              fugit eligendi soluta nam, doloribus esse, illum eos rerum vitae quod,
-              mollitia veniam reprehenderit adipisci quisquam corrupti blanditiis
-              perferendis enim.
-            </p>
-          </Accordion.Body>
-        </Accordion>
-      </AccessNavigation>
-
-      <QrCode
-        options={{ width: 200 }}
-        value="https://nextjs.org"
-        className="rounded-kado shadow hover:shadow-lg transition-shadow"
-      />
-
-      <div className="separate-y">
-        <PaginationWithState pageLength={5}>
-          <AccessNavigation
-            className="f-align gap-3"
-            direction="x">
-            <PaginationWithState.PrevBtn className="btn-fill">
-              Prev
-            </PaginationWithState.PrevBtn>
-            <PaginationWithState.Counts />
-            <PaginationWithState.NextBtn className="btn-fill">
-              Next
-            </PaginationWithState.NextBtn>
-          </AccessNavigation>
-        </PaginationWithState>
-      </div>
-
-      <div className="separate-y">
-        <Suspense>
-          <PaginationWithSearchParams pageLength={5}>
-            <AccessNavigation
-              className="f-align gap-3"
-              direction="x">
-              <PaginationWithSearchParams.PrevBtn className="btn-fill">
-                Prev
-              </PaginationWithSearchParams.PrevBtn>
-              <PaginationWithSearchParams.Counts />
-              <PaginationWithSearchParams.NextBtn className="btn-fill">
-                Next
-              </PaginationWithSearchParams.NextBtn>
-            </AccessNavigation>
-          </PaginationWithSearchParams>
-        </Suspense>
-      </div>
-
-      <div className="w-96 max-w-full separate-t">
-        <StepsWithState steps={FORMS_1}>
-          <div className="f-center gap-3">
-            <StepsWithState.IndexBtn
-              className="btn-fill btn-square"
-              index={1}>
-              1
-            </StepsWithState.IndexBtn>
-            <StepsWithState.IndexBtn
-              className="btn-fill btn-square"
-              index={2}>
-              2
-            </StepsWithState.IndexBtn>
-          </div>
-
-          <StepsWithState.Render />
-        </StepsWithState>
-      </div>
-
-      <div className="w-96 max-w-full separate-t">
-        <Suspense>
-          <StepsWithSearchParams steps={FORMS_2}>
-            <div className="f-center gap-3">
-              <StepsWithSearchParams.IndexBtn
-                className="btn-fill btn-square"
-                index={1}>
-                1
-              </StepsWithSearchParams.IndexBtn>
-              <StepsWithSearchParams.IndexBtn
-                className="btn-fill btn-square"
-                index={2}>
-                2
-              </StepsWithSearchParams.IndexBtn>
-              <StepsWithSearchParams.IndexBtn
-                className="btn-fill btn-square"
-                index={3}>
-                3
-              </StepsWithSearchParams.IndexBtn>
-            </div>
-
-            <StepsWithSearchParams.Render />
-          </StepsWithSearchParams>
-        </Suspense>
-      </div>
-
-      <div className="f-align gap-1.5 mt-6">
-        <label className="input-outline">
-          <input
-            type="text"
-            className="input-field"
-            placeholder="Your username"
-            value={username}
-            onChange={(ev) => setUsername(ev.target.value)}
-          />
-        </label>
-        <div className="popover-group">
-          <div className="popover popover-tr">
-            <p className="popover-content popover-content-sm">{username}</p>
-          </div>
-
-          <Clipboard
-            className="btn-fill"
-            text={username}
-            copiedChildren={<span>Copied</span>}>
-            <span>Copy</span>
-          </Clipboard>
-        </div>
-      </div>
-
-      <Modal>
-        <Modal.Toggle className="btn-fill mt-6">Open modal {":)"}</Modal.Toggle>
-
-        <Modal.Portal className="modal-portal">
-          <Modal.Body className="modal-body">
-            <Modal.Header className="modal-header">
-              <p className="font-bold text-xl text-center w-full">Select your girl:</p>
-            </Modal.Header>
-            <Modal.Content className="modal-content space-y-3">
-              <label className="input-outline">
-                <input
-                  type="text"
-                  data-modal="index"
-                  className="input-field"
-                  placeholder="Search by name"
-                />
-              </label>
-
-              <div className="f-align gap-3">
-                <VenusIcon className="icon-size-3" />
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus,
-                  deleniti!
-                </p>
-              </div>
-              <div className="f-align gap-3">
-                <VenusIcon className="icon-size-3" />
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus,
-                  deleniti!
-                </p>
-              </div>
-              <div className="f-align gap-3">
-                <VenusIcon className="icon-size-3" />
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus,
-                  deleniti!
-                </p>
-              </div>
-
-              <p className="max-w-xl">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis
-                voluptatem provident voluptas voluptatibus, iure neque ex impedit
-                laudantium repellat veritatis corporis fugit totam, illo quaerat
-                blanditiis! Voluptatem optio, quaerat modi molestiae exercitationem alias
-                nobis enim voluptate tempore amet dolorum! At praesentium nemo, porro
-                culpa corporis reiciendis et nisi labore ea incidunt possimus aut
-                laboriosam velit excepturi est sapiente alias a quisquam nobis veritatis
-                perferendis nam. Saepe ut facilis debitis architecto perspiciatis!
-                Possimus accusamus ea quam dicta rem unde iusto quo quibusdam minima a,
-                optio suscipit ipsa soluta iste sequi adipisci molestiae. Reiciendis
-                reprehenderit in tempora ullam aliquam suscipit inventore voluptas!
-                <br />
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
-                accusamus esse, cum necessitatibus ut illo nostrum atque minus. Quae sit
-                sequi rem? Quas nostrum voluptas eligendi aspernatur fuga ab voluptates
-                consequuntur aut, architecto, nobis blanditiis delectus unde velit
-                corporis libero ratione, vel explicabo! Commodi blanditiis fugiat fuga!
-                Ad, quam! Inventore officia repellendus, nesciunt dolor nobis consectetur
-                cum. Incidunt a atque nobis amet corporis quas placeat, deleniti unde
-                quasi soluta ab sit suscipit facere totam consequuntur ea odio ipsa?
-                Aliquam necessitatibus nesciunt veritatis! Voluptatibus nulla non maiores
-                magni consectetur commodi aliquam nemo sapiente, dicta voluptatum quis,
-                cumque, praesentium nisi ipsa? Eaque, earum ducimus quisquam odit
-                blanditiis repellendus ipsam quam alias dolorem!
-                <br />
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis minima
-                cum ad magnam, omnis quia explicabo tempora reiciendis tenetur adipisci
-                rerum maxime voluptatum similique esse itaque atque quae veritatis
-                accusamus obcaecati, repellat accusantium. Enim a quae temporibus veniam
-                dignissimos omnis in neque doloremque soluta commodi saepe aspernatur
-                magni nemo libero ipsum cumque, explicabo sint impedit atque, nostrum ex
-                perferendis eligendi! Sed necessitatibus iusto et sequi minus praesentium.
-                Numquam accusantium nobis itaque qui neque consequatur! Animi quaerat
-                reiciendis assumenda nostrum eveniet qui saepe, cupiditate sunt? Beatae
-                expedita corporis adipisci sit atque quos eum magnam perferendis
-                temporibus accusantium aut, deserunt iste repellat, optio voluptate
-                voluptatum debitis dolor, labore vitae ex commodi ea nisi. Asperiores
-                culpa hic consequatur, voluptatibus, architecto tempora aperiam recusandae
-                porro, nesciunt veniam voluptas consequuntur quae odit? Quod est neque
-                accusamus asperiores obcaecati quisquam! Maxime ratione deleniti ut,
-                itaque perferendis beatae quod dolores voluptate laboriosam omnis impedit
-                corrupti earum! Repudiandae quis sint sequi, inventore quas iste eveniet,
-                veritatis, quasi facere officiis tenetur provident perferendis eos
-                doloremque? Exercitationem voluptatibus quod ut a quae perspiciatis
-                itaque, iste consequuntur, tempora ea laboriosam laudantium odit eum rem
-                accusamus voluptatem odio illum impedit labore enim, facilis incidunt in
-                animi consectetur! Facere consequuntur repellendus quia in?
-              </p>
-
-              <Modal.Toggle className="btn-fill mx-auto mt-6">
-                <CheckIcon className="compatible-icon" />
-                <span>I got it</span>
-              </Modal.Toggle>
-            </Modal.Content>
-          </Modal.Body>
-        </Modal.Portal>
-      </Modal>
-
-      <AccessNavigation>
-        <Popover
-          className="popover mt-6"
-          mode="both">
-          <Popover.Toggle className="btn-fill">Popover!</Popover.Toggle>
-          <Popover.Body
-            preventClose
-            className="popover-body-b">
-            <div className="menu-y">
-              <button className="btn-ghost">Item is here</button>
-              <Popover
-                accessHorizontalArrows="ArrowRight"
-                className="popover"
-                mode="both">
-                <Popover.Toggle className="btn-ghost">
-                  <span>Item two</span>
-                  <ChevronRightIcon className="compatible-icon" />
-                </Popover.Toggle>
-                <Popover.Body className="popover-body-r">
-                  <div className="menu-y shadow">
-                    <button className="btn-ghost">Child 1</button>
-                    <button className="btn-ghost">Child 2</button>
-                  </div>
-                </Popover.Body>
-              </Popover>
-              <button className="btn-ghost">Item for 3</button>
-            </div>
-          </Popover.Body>
-        </Popover>
-      </AccessNavigation>
-
-      <p className="mt-6">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, error cum nostrum
-        libero iusto, nam laudantium debitis sed perferendis optio nulla totam{" "}
-        <Spoiler className="spoiler">
-          <Spoiler.Blur className="spoiler-blur">explicabo distinctio quis</Spoiler.Blur>
-        </Spoiler>{" "}
-        delectus rem culpa commodi quos!
-      </p>
-
-      <div className="separate-y">
-        <Tabs
-          activeTab={activeTab}
-          setActiveTab={setActiveTab}>
-          <AccessNavigation direction="x">
-            <Tabs.List className="tabs-list">
-              <Tabs.Tab
-                value="1"
-                className={activeTab === "1" ? "btn-fill" : "btn-soft"}>
-                Tab 1
-              </Tabs.Tab>
-              <Tabs.Tab
-                value="2"
-                className={activeTab === "2" ? "btn-fill" : "btn-soft"}>
-                Tab 2
-              </Tabs.Tab>
-              <Tabs.Tab
-                value="3"
-                className={activeTab === "3" ? "btn-fill" : "btn-soft"}>
-                Tab 3
-              </Tabs.Tab>
-            </Tabs.List>
-          </AccessNavigation>
-
-          <Tabs.Panel
-            className="tabs-panel"
-            key={"1"}
-            value="1">
-            Tab 1: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
-            animi nisi, magni quis dolore cum molestias ipsam accusantium sunt repudiandae
-            repellendus perspiciatis cumque unde commodi reprehenderit distinctio nostrum
-            quisquam nihil?
-          </Tabs.Panel>
-
-          <Tabs.Panel
-            className="tabs-panel"
-            key={"2"}
-            value="2">
-            Tab 2: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
-            animi nisi, magni quis dolore cum molestias ipsam accusantium sunt repudiandae
-            quisquam nihil?
-          </Tabs.Panel>
-
-          <Tabs.Panel
-            className="tabs-panel"
-            key={"3"}
-            value="3">
-            Tab 3: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
-            animi nisi, magni quis dolore cum molestias ipsam accusantium sunt repudiandae
-            repellendus perspiciatis cumque unde commodi reprehenderit distinctio nostrum
-            quisquam nihil?
-            <br />
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat ut corporis
-            sequi expedita deserunt aliquid iste facere, nisi ipsa iure ad nostrum animi.
-            Adipisci placeat eos laborum error magnam officiis necessitatibus illo commodi
-            a, aperiam tempora alias voluptatum eveniet, atque quas dolores, facilis
-            architecto quisquam ipsum dolore officia debitis facere! Dicta iste
-            consectetur, illo amet obcaecati aut error, ipsam optio at earum odio
-            laudantium voluptatibus? Nemo, nisi debitis et, nam voluptas tempora ipsa
-            ipsum culpa nobis perferendis ipsam cumque blanditiis quos corrupti, rerum
-            eos? Sapiente fugiat voluptatibus laborum culpa at. Quidem, suscipit
-            perferendis. Illum doloribus in cumque fuga laboriosam dignissimos!
-          </Tabs.Panel>
-        </Tabs>
-      </div>
-
-      <ContextMenu className="h-32 w-96 max-w-full relative border-4 border-dashed border-separate mt-6">
-        <span className="absolute inset-center">Context menu!</span>
-
-        <ContextMenu.Content className="context-menu-content">
-          <AccessNavigation className="menu-y ">
-            <button className="btn-ghost">
-              <TrashIcon className="compatible-icon" />
-              <span>DELETE</span>
-            </button>
-            <button className="btn-ghost">
-              <RefreshCwIcon className="compatible-icon" />
-              <span>RELOAD</span>
-            </button>
-            <button className="btn-ghost">
-              <FlagIcon className="compatible-icon" />
-              <span>IGNORE IT</span>
-            </button>
-          </AccessNavigation>
-        </ContextMenu.Content>
-      </ContextMenu>
-
-      <Carousel className="carousel mt-6">
-        <Carousel.Container className="carousel-container gap-3">
-          <Carousel.LeftFade className="carousel-left-fade" />
-
-          {Array.from({ length: 12 }).map(() => (
-            <div
-              className="w-[90%] min-w-[90%] sm:w-2/5 sm:min-w-2/5"
-              key={Math.random()}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto magni
-              et, maiores eaque dolor libero voluptas totam necessitatibus earum non ipsum
-              blanditiis repellat recusandae aliquid doloremque voluptates dolores modi
-              vero maxime nemo ad aperiam cumque esse. Modi, minima? Aut aliquid voluptate
-              atque blanditiis ex laborum tempora laboriosam libero error, voluptatum nam
-              ipsam, sapiente distinctio tenetur dicta quaerat numquam sint architecto
-              quae officiis ab est temporibus excepturi voluptatibus? Iste ullam quod
-              molestias facilis quisquam aliquid ad! Dolore iure voluptatum dicta aliquid
-              nulla at libero! Temporibus molestiae eligendi eius voluptate quas
-              necessitatibus ducimus rerum vero iure dicta? Esse fugiat quam nostrum? Quo.
-            </div>
-          ))}
-
-          <Carousel.RightFade className="carousel-right-fade" />
-        </Carousel.Container>
-      </Carousel>
-
-      <div className="separate-y">
-        <Rating className="rating">
-          <Rating.Items
-            count={5}
-            value={starRating}
-            className="rating-items"
-            onValueChange={setStarRating}
-            element={<StarIcon className="icon-size-5 color-foreground rounded-full" />}
-            activeElement={
-              <StarIcon className="icon-size-5 fill-foreground color-background rounded-full" />
-            }
-          />
-        </Rating>
-
-        <Rating className="rating mt-3">
-          <Rating.Items
-            count={7}
-            value={starRating2}
-            className="rating-items"
-            onValueChange={setStarRating2}
-            element={<div className="icon-size-5 bg-foreground/50 rounded-full" />}
-            activeElement={<div className="icon-size-5 bg-foreground rounded-full" />}
-          />
-        </Rating>
-      </div>
-
-      <div className="table-container">
-        <table className="table-main">
-          <caption className="table-main-caption">
-            <h6>Our products</h6>
-            <p>
-              Browse a list of Flowbite products designed to help you work and play, stay
-              organized, get answers, keep in touch, grow your business, and more.
-            </p>
-          </caption>
-          <thead className="table-main-head">
-            <tr>
-              <th>Product name</th>
-              <th>Color</th>
-              <th>Category</th>
-              <th>Price</th>
-              <th>
-                <span className="sr-only">Edit</span>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {Array.from({ length: 3 }).map(() => (
-              <tr
-                key={Math.random()}
-                className="table-main-row">
-                <td>Apple MacBook Pro 17</td>
-                <td>Silver</td>
-                <td>Laptop</td>
-                <td>$2999</td>
-                <td>
-                  <Link
-                    href=""
-                    className="text-primary btn-link">
-                    Edit
-                  </Link>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-
-      <ShowMore
-        className="max-w-xl mt-6"
-        maxLines={2}>
-        <ShowMore.Content className="leading-loose">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-          nostrud Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit magni nisi
-          nobis et magnam perspiciatis facere nulla aspernatur possimus dolores. Ipsa,
-          atque quaerat incidunt nobis voluptates, tempora laborum dolor minima sequi
-          error veritatis ducimus ipsum. Excepturi assumenda repellat omnis hic
-          repudiandae ratione vitae iste nulla cumque maxime aspernatur possimus
-          laboriosam obcaecati debitis officia animi, voluptates reprehenderit suscipit
-          nisi et quis. Itaque, recusandae rem expedita aspernatur vel non nemo vitae
-          saepe pariatur quidem ipsum cupiditate veniam inventore similique explicabo
-          molestias minima fugit provident facilis deserunt blanditiis dolore id! Animi
-          expedita asperiores aperiam, totam, ratione quibusdam ducimus iusto illum
-          deserunt sequi facere.
-        </ShowMore.Content>
-
-        <ShowMore.Fade className="show-more-fade" />
-
-        <ShowMore.Trigger className="btn-fill mt-3">Show more</ShowMore.Trigger>
-      </ShowMore>
-
-      <div className="separate-y">
-        <Swap items={["1", "2", "3"]}>
-          <Swap.Trigger
-            className="btn-fill"
-            item="1">
-            <Swap.Item>
-              <SunIcon />
-            </Swap.Item>
-          </Swap.Trigger>
-
-          <Swap.Trigger
-            className="btn-fill"
-            item="2">
-            <Swap.Item>
-              <Moon />
-            </Swap.Item>
-          </Swap.Trigger>
-
-          <Swap.Trigger
-            className="btn-fill"
-            item="3">
-            <Swap.Item>
-              <FlameIcon />
-            </Swap.Item>
-          </Swap.Trigger>
-        </Swap>
-      </div>
-
-      <input
-        type="range"
-        className="h-2 mt-6 slider"
-      />
-
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-        <div className="card card-pure">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores libero quia
-          autem corrupti nostrum neque porro nobis!
-        </div>
-        <div className="card card-sm">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores libero quia
-          autem corrupti nostrum neque porro nobis!
-        </div>
-        <div className="card">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores libero quia
-          autem corrupti nostrum neque porro nobis!
-        </div>
-        <div className="card card-lg">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores libero quia
-          autem corrupti nostrum neque porro nobis!
-        </div>
-      </div>
-
-      <div className="alert alert-lg  mt-3">
-        <InfoIcon className="compatible-icon" />
-        <span>Oops, something went wrong. Try again.</span>
-      </div>
-
+    <div className="container my-20">
+      <p className="heading">AccessNavigation</p>
       <AccessNavigation
         direction="x"
-        className="mt-6">
-        <Breadcrumbs
-          className="breadcrumbs "
-          separator={<ArrowRightIcon className="icon-size-1" />}>
-          <Breadcrumbs.Item className="breadcrumbs-item">
-            <Link
-              href=""
-              className="btn-ghost btn-link">
-              Home
-            </Link>
-          </Breadcrumbs.Item>
-          <Breadcrumbs.Item className="breadcrumbs-item">
-            <Link
-              href=""
-              className="btn-ghost btn-link">
-              Products
-            </Link>
-          </Breadcrumbs.Item>
-          <Breadcrumbs.Item className="breadcrumbs-item">
-            <Link
-              href=""
-              className="btn-ghost btn-link">
-              Electronics
-            </Link>
-          </Breadcrumbs.Item>
-          <Breadcrumbs.Item isLast>
-            <span className="font-bold">Smartphones</span>
-          </Breadcrumbs.Item>
-        </Breadcrumbs>
+        className="join mt-6">
+        <button className="btn btn-soft">One</button>
+        <button className="btn btn-soft">Two</button>
+        <button className="btn btn-soft">Three</button>
+        <button className="btn btn-soft">Four</button>
       </AccessNavigation>
 
-      <Progress
-        className="progress"
-        value={75}>
-        <Progress.Bar className="progress-bar" />
-      </Progress>
+      <p className="heading mt-20">Accordion</p>
+      <Accordion>
+        <Accordion.Toggle className="btn btn-full data-[state=true]:btn-fill data-[state=false]:btn-soft justify-between mt-6 group">
+          <span>Open accordion</span>
+          <ChevronDownIcon className="transition-transform btn-icon-size group-data-[state=true]:-scale-y-100" />
+        </Accordion.Toggle>
+        <Accordion.Body>
+          <p className="p-3">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos fugit accusamus
+            unde, repellendus dolores, fuga nam commodi sapiente omnis voluptatum error
+            earum culpa asperiores eaque ea enim possimus vero esse!
+          </p>
+        </Accordion.Body>
+      </Accordion>
 
-      <div className="alert alert-sm mt-6">
-        <InfoIcon className="compatible-icon" />
-        <span>Oops, something went wrong. Try again.</span>
-      </div>
-
-      <div className="alert  mt-3">
-        <InfoIcon className="compatible-icon" />
-        <span>Oops, something went wrong. Try again.</span>
-      </div>
-
-      <div className="alert  mt-3">
-        <InfoIcon className="compatible-icon" />
-        <span>Oops, something went wrong. Try again.</span>
-      </div>
-
-      <div className="alert  mt-3">
-        <InfoIcon className="compatible-icon" />
-        <span>Oops, something went wrong. Try again.</span>
-      </div>
-
-      <Drawer>
-        <Drawer.Toggle className="btn-fill mt-6">Open Drawer {":)"}</Drawer.Toggle>
-
-        <Drawer.Portal className="drawer-portal">
-          <Drawer.Body
-            className="drawer-body space-y-3"
-            position="bottom">
-            <label className="input-outline">
-              <input
-                type="text"
-                data-drawer="index"
-                className="input-field"
-                placeholder="Search by name"
-              />
-            </label>
-
-            <div className="f-align gap-3">
-              <VenusIcon className="icon-size-3" />
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus,
-                deleniti!
-              </p>
-            </div>
-            <div className="f-align gap-3">
-              <VenusIcon className="icon-size-3" />
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus,
-                deleniti!
-              </p>
-            </div>
-            <div className="f-align gap-3">
-              <VenusIcon className="icon-size-3" />
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus,
-                deleniti!
-              </p>
-            </div>
-
-            <p className="max-w-xl">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis
-              voluptatem provident voluptas voluptatibus, iure neque ex impedit laudantium
-              repellat veritatis corporis fugit totam, illo quaerat blanditiis! Voluptatem
-              optio, quaerat modi molestiae exercitationem alias nobis enim voluptate
-              tempore amet dolorum! At praesentium nemo, porro culpa corporis reiciendis
-              et nisi labore ea incidunt possimus aut laboriosam velit excepturi est
-              sapiente alias a quisquam nobis veritatis perferendis nam. Saepe ut facilis
-              debitis architecto perspiciatis! Possimus accusamus ea quam dicta rem unde
-              iusto quo quibusdam minima a, optio suscipit ipsa soluta iste sequi adipisci
-              molestiae. Reiciendis reprehenderit in tempora ullam aliquam suscipit
-              inventore voluptas!
-              <br />
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
-              accusamus esse, cum necessitatibus ut illo nostrum atque minus. Quae sit
-              sequi rem? Quas nostrum voluptas eligendi aspernatur fuga ab voluptates
-              consequuntur aut, architecto, nobis blanditiis delectus unde velit corporis
-              libero ratione, vel explicabo! Commodi blanditiis fugiat fuga! Ad, quam!
-              Inventore officia repellendus, nesciunt dolor nobis consectetur cum.
-              Incidunt a atque nobis amet corporis quas placeat, deleniti unde quasi
-              soluta ab sit suscipit facere totam consequuntur ea odio ipsa? Aliquam
-              necessitatibus nesciunt veritatis! Voluptatibus nulla non maiores magni
-              consectetur commodi aliquam nemo sapiente, dicta voluptatum quis, cumque,
-              praesentium nisi ipsa? Eaque, earum ducimus quisquam odit blanditiis
-              repellendus ipsam quam alias dolorem!
-              <br />
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis minima cum
-              ad magnam, omnis quia explicabo tempora reiciendis tenetur adipisci rerum
-              maxime voluptatum similique esse itaque atque quae veritatis accusamus
-              obcaecati, repellat accusantium. Enim a quae temporibus veniam dignissimos
-              omnis in neque doloremque soluta commodi saepe aspernatur magni nemo libero
-              ipsum cumque, explicabo sint impedit atque, nostrum ex perferendis eligendi!
-              Sed necessitatibus iusto et sequi minus praesentium. Numquam accusantium
-              nobis itaque qui neque consequatur! Animi quaerat reiciendis assumenda
-              nostrum eveniet qui saepe, cupiditate sunt? Beatae expedita corporis
-              adipisci sit atque quos eum magnam perferendis temporibus accusantium aut,
-              deserunt iste repellat, optio voluptate voluptatum debitis dolor, labore
-              vitae ex commodi ea nisi. Asperiores culpa hic consequatur, voluptatibus,
-              architecto tempora aperiam recusandae porro, nesciunt veniam voluptas
-              consequuntur quae odit? Quod est neque accusamus asperiores obcaecati
-              quisquam! Maxime ratione deleniti ut, itaque perferendis beatae quod dolores
-              voluptate laboriosam omnis impedit corrupti earum! Repudiandae quis sint
-              sequi, inventore quas iste eveniet, veritatis, quasi facere officiis tenetur
-              provident perferendis eos doloremque? Exercitationem voluptatibus quod ut a
-              quae perspiciatis itaque, iste consequuntur, tempora ea laboriosam
-              laudantium odit eum rem accusamus voluptatem odio illum impedit labore enim,
-              facilis incidunt in animi consectetur! Facere consequuntur repellendus quia
-              in?
-            </p>
-
-            <Drawer.Toggle className="btn-fill mx-auto mt-6">
-              <CheckIcon className="compatible-icon" />
-              <span>I got it</span>
-            </Drawer.Toggle>
-          </Drawer.Body>
-        </Drawer.Portal>
-      </Drawer>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis quasi
+        mollitia veniam consequuntur dicta! Harum, eos consectetur iste rem minus omnis
+        aut est officiis quos in quae nisi? Dignissimos deleniti dolorem consequuntur,
+        itaque, possimus molestiae ex, quasi facilis similique commodi vitae perspiciatis
+        beatae iure est ullam quos ab maiores ratione hic iste quis reiciendis accusantium
+        reprehenderit. Aliquid delectus iusto voluptatibus voluptatum architecto velit
+        modi distinctio nihil assumenda veniam? Ipsum possimus amet corporis quos sint
+        corrupti enim temporibus deleniti similique. Id ut fuga doloribus. Consequatur
+        quia fugiat libero obcaecati facilis? Asperiores aperiam facilis omnis eius rem
+        aliquam nam? Nostrum earum dolorem, expedita quam repudiandae consequuntur, ipsam
+        quas laudantium quaerat ex eaque molestiae labore. Autem quam aspernatur
+        recusandae perferendis, explicabo reprehenderit officia molestias excepturi
+        blanditiis placeat ratione architecto esse vitae labore quae possimus voluptates
+        repudiandae. Explicabo cumque sunt aliquid eaque autem reiciendis praesentium
+        reprehenderit ab commodi dolores ipsam nisi, accusantium adipisci animi eius fugit
+        dolor necessitatibus totam nostrum in harum dignissimos inventore. Labore voluptas
+        doloribus quibusdam praesentium? Assumenda obcaecati minus quod iusto dignissimos
+        ipsam consequatur, totam dolorem maiores magnam molestias fugiat doloribus ea
+        mollitia, numquam optio quisquam nobis voluptate quibusdam! Repellendus distinctio
+        id autem rerum magnam neque voluptas sapiente consequatur? Velit sint nisi libero?
+        Fugiat minima perspiciatis rem atque aspernatur quis vitae incidunt, temporibus
+        qui est dolorum explicabo et. Sint atque rem suscipit fuga eum saepe. Officia,
+        tempora minus. Corporis dolorum voluptatum dignissimos eveniet error sit
+        exercitationem aliquid reprehenderit perspiciatis unde, deserunt recusandae nisi
+        consequatur architecto saepe iusto totam dolorem ex odit at. Ipsa obcaecati quod
+        odit explicabo nulla commodi nobis sapiente! Illum esse, nisi nihil voluptatibus
+        amet accusantium explicabo est debitis, placeat beatae adipisci dolorum fugiat rem
+        vel recusandae temporibus nemo! Quidem, labore. Fuga quae unde dolores animi,
+        molestias voluptatum, eligendi aperiam corporis nulla autem dignissimos, itaque
+        quis? Fugiat asperiores iusto quidem expedita eum modi laborum rerum sint
+        obcaecati, provident natus ratione a alias ipsum architecto, sit ducimus nobis.
+        Voluptas, velit nesciunt rem consequatur commodi, error architecto illo
+        necessitatibus dolorum rerum officiis modi, vitae ea laboriosam. Commodi delectus
+        quas ducimus, totam earum deleniti laboriosam pariatur enim provident quasi
+        tempore impedit eveniet aspernatur ad quisquam. Illum, dicta omnis. Animi
+        distinctio quod autem numquam laboriosam. Rerum enim accusamus voluptatibus
+        corporis, nihil molestias in, exercitationem assumenda ea incidunt dolorem
+        dignissimos excepturi iure quis doloremque et nesciunt aspernatur temporibus nobis
+        minus eius cum natus pariatur sequi. Aliquam soluta dolorem ullam voluptatem
+        praesentium sequi commodi distinctio, id porro ipsum possimus ratione fugit est
+        rerum dolores cupiditate rem perspiciatis voluptatum asperiores libero modi
+        eveniet doloribus. Enim repudiandae animi quos ea minima perferendis optio
+        temporibus ad voluptates earum incidunt sit quam odio quisquam, ipsum doloribus
+        quia blanditiis iste modi debitis nisi! Sit repellat recusandae, impedit
+        repellendus itaque modi quae minus, odit optio eligendi ut voluptatum dicta
+        tenetur et adipisci sapiente pariatur. Ab vero eos optio illum nam veritatis,
+        saepe fugiat beatae sit placeat recusandae delectus veniam iusto, odit illo
+        aliquid eveniet numquam excepturi eligendi repellat? Officia nihil ipsam ad ab,
+        possimus doloribus, repudiandae consequuntur ipsum magnam provident beatae,
+        quisquam accusamus? Magnam, ipsa quam mollitia atque similique, iure veniam non
+        fugiat voluptatem porro quidem dolores asperiores. Quo, saepe eius fugiat deserunt
+        accusantium optio reprehenderit voluptate nulla aliquid sequi cupiditate porro
+        temporibus facilis dolor officia, qui deleniti? Similique necessitatibus numquam
+        natus suscipit corrupti, quaerat ducimus tempore consequatur hic asperiores
+        voluptatibus delectus voluptate nihil. Maiores sed aliquid laborum, tempore, qui
+        ducimus quos, assumenda omnis facere dicta illo saepe cupiditate alias provident
+        quaerat nemo! Fuga, porro assumenda enim, harum doloremque ullam autem nihil id,
+        optio excepturi officiis dolorem? Consectetur nobis porro quidem veniam
+        necessitatibus nemo iusto perspiciatis maiores. Perferendis cumque reiciendis
+        incidunt eligendi distinctio voluptatibus soluta, cupiditate repudiandae
+        consectetur asperiores, optio quos esse vel vitae dicta iure nam alias voluptatum
+        repellat, porro consequatur nihil. Repellat ipsam laudantium natus adipisci nihil
+        magni quibusdam odio sit delectus a neque beatae deserunt, sint at eum architecto
+        cumque expedita! Tempore accusantium nostrum repellendus corporis, mollitia,
+        nesciunt deserunt dolores at repellat aliquam illo neque nulla modi dignissimos
+        sit placeat officiis impedit itaque quidem corrupti maxime quod. Accusamus, quae?
+        Reiciendis maxime earum, sunt aliquid quia recusandae fugiat fugit officia odio
+        obcaecati ipsa, provident est quasi cum deleniti, quam quae facilis? Error quam
+        nobis, inventore atque sunt porro. Pariatur incidunt minima nesciunt nulla quos
+        nam veniam debitis est consequatur aliquid ea quaerat quia beatae, cum eligendi
+        consequuntur dignissimos voluptatum commodi molestias amet natus odio impedit eum
+        asperiores. Incidunt, rerum quasi cumque unde nesciunt temporibus facere vitae
+        molestias nulla et alias, ea voluptatem amet odio veniam id expedita nostrum
+        voluptates eligendi, repudiandae architecto saepe laborum! Voluptatibus debitis
+        maiores consequatur repellendus vel quis, necessitatibus velit dolor, ipsam, quae
+        at laborum odio inventore sequi totam earum distinctio quaerat perferendis. Odit
+        error accusantium blanditiis quia harum nulla in consectetur, maxime cumque
+        officiis corporis labore, quas nostrum, voluptas similique et mollitia ad placeat!
+        Voluptate cum nobis libero ab tempore id at, corporis ad? Eum cumque vero magnam?
+        Possimus minus temporibus ducimus reprehenderit perferendis? At, doloribus in,
+        sunt similique praesentium, cupiditate minima id necessitatibus dolor ratione eius
+        et eveniet voluptates iusto sed? Animi accusantium eum cum consequuntur,
+        dignissimos alias fugit repellendus, corrupti, quibusdam beatae similique
+        praesentium vel recusandae reiciendis ut accusamus sunt quo pariatur nihil et
+        dolorem incidunt aspernatur error illum? Iure sapiente dolore eum magnam cumque
+        neque temporibus ipsam ducimus ex doloremque, perspiciatis et incidunt illum fugit
+        quaerat facilis veritatis tempore aut quisquam exercitationem rem libero!
+        Temporibus minus id dolorum, alias perferendis quis sint voluptates corrupti ullam
+        commodi. Laborum saepe architecto cupiditate adipisci velit cumque neque fugit ut,
+        fuga reprehenderit! Dolor dolorum est quisquam alias distinctio amet dolores, sit
+        minima! Reiciendis sit tempora cumque dolore debitis iure dolorem fugit itaque
+        officia ducimus, harum velit ipsum veritatis nam nesciunt quos odit quia, qui
+        repudiandae nulla! Explicabo quis rem, quae perferendis ex odit ratione, minima
+        autem dolorem magnam incidunt ipsum corporis numquam eos officiis alias temporibus
+        quibusdam et dolore sunt. Molestias perferendis quidem delectus rerum eos quas?
+        Eos fuga quam qui at nostrum reiciendis voluptatibus praesentium sit! Fugit vitae
+        error ratione animi nobis repellat, aliquam suscipit.
+      </p>
     </div>
   );
 }

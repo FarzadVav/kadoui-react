@@ -29,8 +29,8 @@ export default function RootLayout({
         <div id="root">
           {children}
 
-          <Affix className="affix-r btn-fill btn-square group/affix not-[.affix-active]:scale-90">
-            <ArrowUpIcon className="compatible-icon transition-transform duration-300 group-not-[.affix-active]/affix:translate-y-full" />
+          <Affix className="affix affix-r btn btn-fill btn-square group data-[state=false]:scale-90">
+            <ArrowUpIcon className="btn-icon-size transition-transform duration-300 group-data-[state=false]:translate-y-full" />
           </Affix>
         </div>
       </body>

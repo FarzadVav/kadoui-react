@@ -2,11 +2,9 @@
 
 import { useState, useEffect, HTMLAttributes } from "react";
 
-import { cn } from "../../utils";
-
 export type AffixPropsT = HTMLAttributes<HTMLButtonElement>;
 
-export const Affix = ({ className, onClick, ...p }: AffixPropsT) => {
+export const Affix = ({ onClick, ...p }: AffixPropsT) => {
   const [isVisible, setIsVisible] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -26,7 +24,7 @@ export const Affix = ({ className, onClick, ...p }: AffixPropsT) => {
     };
 
     window.addEventListener("scroll", handleScroll, {
-      passive: true
+      passive: true,
     });
 
     return () => window.removeEventListener("scroll", handleScroll);
@@ -35,21 +33,18 @@ export const Affix = ({ className, onClick, ...p }: AffixPropsT) => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth"
+      behavior: "smooth",
     });
   };
 
   return (
     <button
-      onClick={ev => {
+      data-state={isVisible}
+      onClick={(ev) => {
         onClick?.(ev);
         scrollToTop();
       }}
-      className={cn(
-        isVisible ? "affix-active" : null,
-        className
-      )}
       {...p}
     />
   );
-}
+};
