@@ -1,6 +1,6 @@
 {
   "name": "@kadoui/react",
-  "version": "1.9.1",
+  "version": "1.9.3",
   "description": "Kadoui primitive components for React",
   "author": "FarzadVav",
   "license": "MIT",
@@ -10,8 +10,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "tsc",
-    "publish": "tsc && npm publish"
+    "build": "tsc"
   },
   "exports": {
     ".": "./dist/index.js",
