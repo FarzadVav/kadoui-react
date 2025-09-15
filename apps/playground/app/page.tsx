@@ -1,5 +1,5 @@
-import { ChevronDownIcon } from "lucide-react";
-import { AccessNavigation, Accordion } from "@kadoui/react";
+import { ChevronDownIcon, ChevronRightIcon } from "lucide-react";
+import { AccessNavigation, Accordion, Breadcrumbs } from "@kadoui/react";
 
 function Page() {
   return (
@@ -29,7 +29,37 @@ function Page() {
         </Accordion.Body>
       </Accordion>
 
-      <p>
+      <p className="heading mt-20">Breadcrumbs</p>
+      <Breadcrumbs className="breadcrumbs mt-6">
+        <Breadcrumbs.Item className="breadcrumbs-item">
+          <button className="btn btn-soft">Home</button>
+        </Breadcrumbs.Item>
+        <Breadcrumbs.Item className="breadcrumbs-item">
+          <button className="btn btn-soft">Articles</button>
+        </Breadcrumbs.Item>
+        <Breadcrumbs.Item
+          className="breadcrumbs-item"
+          isLastItem>
+          <button className="btn btn-fill">How to gain money?</button>
+        </Breadcrumbs.Item>
+      </Breadcrumbs>
+      <Breadcrumbs
+        separator={<ChevronRightIcon className="size-5" />}
+        className="breadcrumbs mt-3">
+        <Breadcrumbs.Item className="breadcrumbs-item">
+          <button className="btn btn-soft">Home</button>
+        </Breadcrumbs.Item>
+        <Breadcrumbs.Item className="breadcrumbs-item">
+          <button className="btn btn-soft">Articles</button>
+        </Breadcrumbs.Item>
+        <Breadcrumbs.Item
+          className="breadcrumbs-item"
+          isLastItem>
+          <button className="btn btn-fill">How to gain money?</button>
+        </Breadcrumbs.Item>
+      </Breadcrumbs>
+
+      <p className="mt-20">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis quasi
         mollitia veniam consequuntur dicta! Harum, eos consectetur iste rem minus omnis
         aut est officiis quos in quae nisi? Dignissimos deleniti dolorem consequuntur,

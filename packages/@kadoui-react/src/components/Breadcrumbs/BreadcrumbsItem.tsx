@@ -1,20 +1,25 @@
-"use client"
+"use client";
 
 import { type HTMLAttributes, use } from "react";
 
 import { BreadcrumbsContext } from "./BreadcrumbsContext";
 
 export type BreadcrumbsItemPropsT = HTMLAttributes<HTMLDivElement> & {
-  isLast?: boolean;
-}
+  isLastItem?: boolean;
+};
 
-export function BreadcrumbsItem({ isLast = false, children, ...p }: BreadcrumbsItemPropsT) {
+export function BreadcrumbsItem({
+  isLastItem = false,
+  children,
+  ...p
+}: BreadcrumbsItemPropsT) {
   const { separator } = use(BreadcrumbsContext);
 
   return (
-    <div {...p}>
-      {children}
-      {!isLast && separator}
-    </div>
-  )
+    <>
+      <div {...p}>{children}</div>
+
+      {!isLastItem && separator}
+    </>
+  );
 }
