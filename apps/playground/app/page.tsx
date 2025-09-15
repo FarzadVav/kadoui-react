@@ -5,6 +5,9 @@ import {
   ChevronRightIcon,
   CopyCheckIcon,
   CopyIcon,
+  FlagIcon,
+  RefreshCwIcon,
+  TrashIcon,
 } from "lucide-react";
 import {
   AccessNavigation,
@@ -13,6 +16,7 @@ import {
   Carousel,
   ClientOnly,
   Clipboard,
+  ContextMenu,
 } from "@kadoui/react";
 
 function Page() {
@@ -114,6 +118,28 @@ function Page() {
         copiedChildren={<CopyCheckIcon className="btn-icon-size" />}>
         <CopyIcon className="btn-icon-size" />
       </Clipboard>
+
+      <p className="heading mt-20">ContextMenu</p>
+      <ContextMenu className="context-menu border-4 border-dashed border-foreground mt-6 h-[33vh]">
+        <span className="absolute inset-center">Context menu!</span>
+
+        <ContextMenu.Body className="context-menu-body">
+          <AccessNavigation className="card card-menu card-y">
+            <button className="btn btn-ghost">
+              <TrashIcon className="compatible-icon" />
+              <span>DELETE</span>
+            </button>
+            <button className="btn btn-ghost">
+              <RefreshCwIcon className="compatible-icon" />
+              <span>RELOAD</span>
+            </button>
+            <button className="btn btn-ghost">
+              <FlagIcon className="compatible-icon" />
+              <span>IGNORE IT</span>
+            </button>
+          </AccessNavigation>
+        </ContextMenu.Body>
+      </ContextMenu>
 
       <p className="mt-20">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis quasi

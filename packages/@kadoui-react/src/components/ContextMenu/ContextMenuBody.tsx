@@ -2,13 +2,12 @@
 
 import { HTMLAttributes, use, useEffect } from "react";
 
-import { cn } from "../../utils";
 import { selectAccessibleChildren } from "../../utils";
 import { ContextMenuContext } from "./ContextMenuContext";
 
-export type ContextMenuContentPropsT = HTMLAttributes<HTMLDivElement>;
+export type ContextMenuBodyPropsT = HTMLAttributes<HTMLDivElement>;
 
-export function ContextMenuContent({ onContextMenu, className, ...p }: ContextMenuContentPropsT) {
+export function ContextMenuBody({ onContextMenu, ...p }: ContextMenuBodyPropsT) {
   const { contentRef, position, isOpen } = use(ContextMenuContext);
 
   useEffect(() => {
@@ -26,25 +25,22 @@ export function ContextMenuContent({ onContextMenu, className, ...p }: ContextMe
 
       firstChild.focus();
     }
-  }, [isOpen, position, contentRef])
+  }, [isOpen, position, contentRef]);
 
   return (
     <div
       ref={contentRef}
-      onContextMenu={ev => {
+      data-state={isOpen}
+      onContextMenu={(ev) => {
         ev.stopPropagation();
         ev.preventDefault();
         onContextMenu?.(ev);
       }}
-      className={cn(
-        isOpen ? "context-menu-active" : null,
-        className
-      )}
       style={{
         top: position?.y,
         left: position?.x,
       }}
       {...p}
     />
-  )
+  );
 }

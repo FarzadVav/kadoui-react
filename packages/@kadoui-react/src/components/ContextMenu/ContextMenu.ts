@@ -1,6 +1,6 @@
 import { ContextMenuRoot } from "./ContextMenuRoot";
-import { ContextMenuContent } from "./ContextMenuContent";
+import { ContextMenuBody } from "./ContextMenuBody";
 
 export const ContextMenu = Object.assign(ContextMenuRoot, {
-  Content: ContextMenuContent
+  Body: ContextMenuBody,
 });
