@@ -4,6 +4,7 @@ import {
   ArrowLeftIcon,
   ArrowRightIcon,
   ChevronDownIcon,
+  ChevronLeftIcon,
   ChevronRightIcon,
   CopyCheckIcon,
   CopyIcon,
@@ -22,6 +23,8 @@ import {
   Drawer,
   Modal,
   Otp,
+  PaginationWithSearchParams,
+  PaginationWithState,
 } from "@kadoui/react";
 
 function Page() {
@@ -226,6 +229,37 @@ function Page() {
 
         <Otp.HiddenInput />
       </Otp>
+
+      <p className="heading mt-20">Pagination</p>
+      <p className="mt-6">With state:</p>
+      <PaginationWithState pageLength={6}>
+        <div className="pagination mt-3">
+          <PaginationWithState.PrevBtn className="btn btn-soft btn-square">
+            <ChevronLeftIcon className="btn-icon-size" />
+          </PaginationWithState.PrevBtn>
+
+          <PaginationWithState.Counts className="btn data-[state=false]:btn-ghost data-[state=true]:btn-fill" />
+
+          <PaginationWithState.NextBtn className="btn btn-soft btn-square">
+            <ChevronRightIcon className="btn-icon-size" />
+          </PaginationWithState.NextBtn>
+        </div>
+      </PaginationWithState>
+
+      <p className="mt-6">With search params:</p>
+      <PaginationWithSearchParams pageLength={6}>
+        <div className="pagination mt-3">
+          <PaginationWithSearchParams.PrevBtn className="btn btn-soft btn-square">
+            <ChevronLeftIcon className="btn-icon-size" />
+          </PaginationWithSearchParams.PrevBtn>
+
+          <PaginationWithSearchParams.Counts className="btn data-[state=false]:btn-ghost data-[state=true]:btn-fill" />
+
+          <PaginationWithSearchParams.NextBtn className="btn btn-soft btn-square">
+            <ChevronRightIcon className="btn-icon-size" />
+          </PaginationWithSearchParams.NextBtn>
+        </div>
+      </PaginationWithSearchParams>
 
       <p className="mt-20">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis quasi

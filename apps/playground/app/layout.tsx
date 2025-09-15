@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 
 import "./globals.css";
 import { Affix } from "@kadoui/react";
+import { ThemeAdapter } from "@kadoui/react/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,7 +25,12 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      suppressHydrationWarning>
+      <head>
+        <ThemeAdapter />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <div id="root">
           {children}

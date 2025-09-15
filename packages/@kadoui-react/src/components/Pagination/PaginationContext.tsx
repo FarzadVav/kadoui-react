@@ -1,10 +1,13 @@
-import { createContext } from 'react';
+import { createContext, Dispatch, SetStateAction } from "react";
 
 export type PaginationContextT = {
-  page: number;
   pageLength: number;
+  page: number;
+  setPage: Dispatch<SetStateAction<number>>;
   nextPage: () => void;
   prevPage: () => void;
-}
+};
 
-export const PaginationContext = createContext<PaginationContextT>({} as PaginationContextT);
+export const PaginationContext = createContext<PaginationContextT>(
+  {} as PaginationContextT,
+);

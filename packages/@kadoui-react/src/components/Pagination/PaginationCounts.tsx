@@ -1,17 +1,27 @@
 "use client";
 
-import { HTMLAttributes, use } from "react";
+import { ButtonHTMLAttributes, use } from "react";
 
 import { PaginationContext } from "./PaginationContext";
 
-export type PaginationCountsPropsT = HTMLAttributes<HTMLParagraphElement>;
+export type PaginationCountsPropsT = Omit<
+  ButtonHTMLAttributes<HTMLButtonElement>,
+  "children"
+>;
 
-export function PaginationCounts(props: PaginationCountsPropsT) {
-  const { page, pageLength } = use(PaginationContext);
+export function PaginationCounts({ onClick, ...p }: PaginationCountsPropsT) {
+  const { pageLength, page, setPage } = use(PaginationContext);
 
-  return (
-    <p {...props}>
-      Page {page} / {pageLength}
-    </p>
-  );
+  return Array.from({ length: pageLength }).map((_, index) => (
+    <button
+      key={index}
+      data-state={index + 1 === page}
+      onClick={(ev) => {
+        onClick?.(ev);
+        setPage(index + 1);
+      }}
+      {...p}>
+      {index + 1}
+    </button>
+  ));
 }
