@@ -18,6 +18,7 @@ import {
   Clipboard,
   ContextMenu,
   Drawer,
+  Modal,
 } from "@kadoui/react";
 
 function Page() {
@@ -193,6 +194,22 @@ function Page() {
           </Drawer.Body>
         </Drawer.Portal>
       </Drawer>
+
+      <p className="heading mt-20">Modal</p>
+      <Modal>
+        <Modal.Toggle className="btn btn-soft mt-6">Open modal</Modal.Toggle>
+
+        <Modal.Portal className="modal-portal">
+          <Modal.Body className="modal-body">
+            <Modal.Header className="modal-header font-bold justify-center">Say hello to modal</Modal.Header>
+            <Modal.Content className="modal-content max-w-xl">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos,
+              ratione repudiandae eveniet quisquam, vitae, nobis iure voluptas harum est
+              incidunt odio? Dolorem quod numquam placeat sed beatae, natus cum porro!
+            </Modal.Content>
+          </Modal.Body>
+        </Modal.Portal>
+      </Modal>
 
       <p className="mt-20">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis quasi
