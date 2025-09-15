@@ -7,9 +7,18 @@ export type ClipboardPropsT = ButtonHTMLAttributes<HTMLButtonElement> & {
   text: string;
   timeout?: number;
   copiedChildren?: ReactNode;
-}
+};
 
-export function Clipboard({ copiedChildren, onClick, children, text, timeout = 3_000, ...props }: ClipboardPropsT) {
+export function Clipboard({
+  copiedChildren,
+  onClick,
+  children,
+  text,
+  title,
+  "aria-label": ariaLabel,
+  timeout = 3_000,
+  ...props
+}: ClipboardPropsT) {
   const { copy, copied } = useClipboard({ timeout });
 
   const handleClick = (ev: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => {
@@ -19,10 +28,10 @@ export function Clipboard({ copiedChildren, onClick, children, text, timeout = 3
 
   return (
     <button
-      aria-label={text}
+      aria-label={ariaLabel || text}
+      title={title || text}
       onClick={handleClick}
-      {...props}
-    >
+      {...props}>
       {copiedChildren && copied ? copiedChildren : children}
     </button>
   );

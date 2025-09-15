@@ -3,6 +3,8 @@ import {
   ArrowRightIcon,
   ChevronDownIcon,
   ChevronRightIcon,
+  CopyCheckIcon,
+  CopyIcon,
 } from "lucide-react";
 import {
   AccessNavigation,
@@ -10,6 +12,7 @@ import {
   Breadcrumbs,
   Carousel,
   ClientOnly,
+  Clipboard,
 } from "@kadoui/react";
 
 function Page() {
@@ -99,10 +102,18 @@ function Page() {
       </Carousel>
 
       <p className="heading mt-20">Client only</p>
-      <p>There is server</p>
+      <p className="mt-6">There is server</p>
       <ClientOnly>
-        <p>There is client</p>
+        <p className="mt-3">There is client</p>
       </ClientOnly>
+
+      <p className="heading mt-20">Clipboard</p>
+      <Clipboard
+        text="Kadoui-react"
+        className="btn btn-soft btn-square mt-6"
+        copiedChildren={<CopyCheckIcon className="btn-icon-size" />}>
+        <CopyIcon className="btn-icon-size" />
+      </Clipboard>
 
       <p className="mt-20">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis quasi
