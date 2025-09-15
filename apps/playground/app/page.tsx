@@ -17,6 +17,7 @@ import {
   ClientOnly,
   Clipboard,
   ContextMenu,
+  Drawer,
 } from "@kadoui/react";
 
 function Page() {
@@ -140,6 +141,58 @@ function Page() {
           </AccessNavigation>
         </ContextMenu.Body>
       </ContextMenu>
+
+      <p className="heading mt-20">Drawer</p>
+      <Drawer>
+        <Drawer.Toggle className="btn btn-soft mt-6">Open left drawer</Drawer.Toggle>
+
+        <Drawer.Portal className="drawer-portal">
+          <Drawer.Body className="drawer-body">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum porro vero
+            delectus eum qui laboriosam, dolore veritatis eligendi amet voluptatibus
+            incidunt temporibus dolores fuga adipisci eius saepe quod aspernatur iure.
+          </Drawer.Body>
+        </Drawer.Portal>
+      </Drawer>
+      <Drawer>
+        <Drawer.Toggle className="btn btn-soft mt-3">Open top drawer</Drawer.Toggle>
+
+        <Drawer.Portal className="drawer-portal">
+          <Drawer.Body
+            className="drawer-body"
+            position="top">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum porro vero
+            delectus eum qui laboriosam, dolore veritatis eligendi amet voluptatibus
+            incidunt temporibus dolores fuga adipisci eius saepe quod aspernatur iure.
+          </Drawer.Body>
+        </Drawer.Portal>
+      </Drawer>
+      <Drawer>
+        <Drawer.Toggle className="btn btn-soft mt-3">Open right drawer</Drawer.Toggle>
+
+        <Drawer.Portal className="drawer-portal">
+          <Drawer.Body
+            className="drawer-body"
+            position="right">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum porro vero
+            delectus eum qui laboriosam, dolore veritatis eligendi amet voluptatibus
+            incidunt temporibus dolores fuga adipisci eius saepe quod aspernatur iure.
+          </Drawer.Body>
+        </Drawer.Portal>
+      </Drawer>
+      <Drawer>
+        <Drawer.Toggle className="btn btn-soft mt-3">Open bottom drawer</Drawer.Toggle>
+
+        <Drawer.Portal className="drawer-portal">
+          <Drawer.Body
+            className="drawer-body"
+            position="bottom">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum porro vero
+            delectus eum qui laboriosam, dolore veritatis eligendi amet voluptatibus
+            incidunt temporibus dolores fuga adipisci eius saepe quod aspernatur iure.
+          </Drawer.Body>
+        </Drawer.Portal>
+      </Drawer>
 
       <p className="mt-20">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis quasi
