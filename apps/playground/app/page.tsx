@@ -1,3 +1,5 @@
+"use client";
+
 import {
   ArrowLeftIcon,
   ArrowRightIcon,
@@ -19,6 +21,7 @@ import {
   ContextMenu,
   Drawer,
   Modal,
+  Otp,
 } from "@kadoui/react";
 
 function Page() {
@@ -201,7 +204,9 @@ function Page() {
 
         <Modal.Portal className="modal-portal">
           <Modal.Body className="modal-body">
-            <Modal.Header className="modal-header font-bold justify-center">Say hello to modal</Modal.Header>
+            <Modal.Header className="modal-header font-bold justify-center">
+              Say hello to modal
+            </Modal.Header>
             <Modal.Content className="modal-content max-w-xl">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos,
               ratione repudiandae eveniet quisquam, vitae, nobis iure voluptas harum est
@@ -210,6 +215,17 @@ function Page() {
           </Modal.Body>
         </Modal.Portal>
       </Modal>
+
+      <p className="heading mt-20">OTP</p>
+      <Otp className="otp mt-6">
+        <Otp.Inputs
+          length={6}
+          className="input input-outline input-square"
+          onLastChange={(otp) => alert(otp)}
+        />
+
+        <Otp.HiddenInput />
+      </Otp>
 
       <p className="mt-20">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis quasi

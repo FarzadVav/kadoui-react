@@ -1,10 +1,14 @@
 "use client";
 
-import { HTMLAttributes, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 import { OtpContext } from "./OtpContext";
+import {
+  AccessNavigation,
+  AccessNavigationPropsT,
+} from "../AccessNavigation/AccessNavigation";
 
-export type OtpRootPropsT = HTMLAttributes<HTMLDivElement>;
+export type OtpRootPropsT = Omit<AccessNavigationPropsT, "direction">;
 
 export function OtpRoot(p: OtpRootPropsT) {
   const inputs = useRef<(HTMLInputElement | null)[]>([]);
@@ -14,12 +18,15 @@ export function OtpRoot(p: OtpRootPropsT) {
   }, []);
 
   const getInputsValue = () => {
-    return inputs?.current.map(input => input?.value || "").join("") || "";
+    return inputs?.current.map((input) => input?.value || "").join("") || "";
   };
 
   return (
     <OtpContext value={{ inputs, getInputsValue }}>
-      <div {...p} />
+      <AccessNavigation
+        direction="x"
+        {...p}
+      />
     </OtpContext>
   );
 }
