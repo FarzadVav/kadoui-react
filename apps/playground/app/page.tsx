@@ -28,7 +28,9 @@ import {
   PaginationWithSearchParams,
   PaginationWithState,
   PasswordInput,
+  Popover,
 } from "@kadoui/react";
+import { PopoverToggle } from "../../../packages/@kadoui-react/dist/components/Popover/PopoverToggle";
 
 function Page() {
   return (
@@ -272,6 +274,35 @@ function Page() {
           <EyeClosedIcon className="btn-icon-size" />
         </PasswordInput.Toggle>
       </PasswordInput>
+
+      <p className="heading mt-20">Popover</p>
+      <Popover
+        className="popover mt-6"
+        mode="hover">
+        <PopoverToggle className="btn btn-soft">Hover me</PopoverToggle>
+
+        <Popover.Body className="popover-body popover-body-b card card-menu max-w-[200%]">
+          Lorem ipsum dolor sit amet, consectetur adipisicing.
+        </Popover.Body>
+      </Popover>
+      <Popover
+        className="popover mt-3"
+        mode="both">
+        <PopoverToggle className="btn btn-soft">Hover and click me</PopoverToggle>
+
+        <Popover.Body className="popover-body popover-body-b card card-menu max-w-[200%]">
+          Lorem ipsum dolor sit amet, consectetur adipisicing.
+        </Popover.Body>
+      </Popover>
+      <Popover
+        className="popover mt-3"
+        mode="click">
+        <PopoverToggle className="btn btn-soft">Click me</PopoverToggle>
+
+        <Popover.Body className="popover-body popover-body-b card card-menu max-w-[200%]">
+          Lorem ipsum dolor sit amet, consectetur adipisicing.
+        </Popover.Body>
+      </Popover>
 
       <p className="mt-20">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis quasi
