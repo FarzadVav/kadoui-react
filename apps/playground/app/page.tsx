@@ -1,5 +1,10 @@
-import { ChevronDownIcon, ChevronRightIcon } from "lucide-react";
-import { AccessNavigation, Accordion, Breadcrumbs } from "@kadoui/react";
+import {
+  ArrowLeftIcon,
+  ArrowRightIcon,
+  ChevronDownIcon,
+  ChevronRightIcon,
+} from "lucide-react";
+import { AccessNavigation, Accordion, Breadcrumbs, Carousel } from "@kadoui/react";
 
 function Page() {
   return (
@@ -58,6 +63,34 @@ function Page() {
           <button className="btn btn-fill">How to gain money?</button>
         </Breadcrumbs.Item>
       </Breadcrumbs>
+
+      <p className="heading mt-20">Carousel</p>
+      <Carousel className="carousel mt-6">
+        <Carousel.LeftFade className="carousel-left-fade" />
+        <Carousel.RightFade className="carousel-right-fade" />
+
+        <Carousel.Container className="carousel-container gap-3 scroll-smooth">
+          {Array.from({ length: 12 }).map((_, index) => (
+            <article
+              key={index}
+              className="carousel-children card slidable">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
+              doloremque error rem ex, necessitatibus dolore deleniti alias aperiam cum
+              ipsum, suscipit possimus porro provident totam mollitia? Voluptate, eaque
+              quas. Culpa.
+            </article>
+          ))}
+        </Carousel.Container>
+
+        <div className="f-center gap-3 mt-3">
+          <Carousel.PrevBtn className="btn btn-outline btn-square">
+            <ArrowLeftIcon className="btn-icon-size" />
+          </Carousel.PrevBtn>
+          <Carousel.NextBtn className="btn btn-outline btn-square">
+            <ArrowRightIcon className="btn-icon-size" />
+          </Carousel.NextBtn>
+        </div>
+      </Carousel>
 
       <p className="mt-20">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis quasi
