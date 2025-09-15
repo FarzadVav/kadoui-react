@@ -8,6 +8,8 @@ import {
   ChevronRightIcon,
   CopyCheckIcon,
   CopyIcon,
+  EyeClosedIcon,
+  EyeIcon,
   FlagIcon,
   RefreshCwIcon,
   TrashIcon,
@@ -25,6 +27,7 @@ import {
   Otp,
   PaginationWithSearchParams,
   PaginationWithState,
+  PasswordInput,
 } from "@kadoui/react";
 
 function Page() {
@@ -245,7 +248,6 @@ function Page() {
           </PaginationWithState.NextBtn>
         </div>
       </PaginationWithState>
-
       <p className="mt-6">With search params:</p>
       <PaginationWithSearchParams pageLength={6}>
         <div className="pagination mt-3">
@@ -260,6 +262,16 @@ function Page() {
           </PaginationWithSearchParams.NextBtn>
         </div>
       </PaginationWithSearchParams>
+
+      <p className="heading mt-20">PasswordInput</p>
+      <PasswordInput className="input input-outline mt-3">
+        <PasswordInput.Field className="input-field" />
+        <PasswordInput.Toggle
+          className="btn btn-ghost btn-sm"
+          visibleChildren={<EyeIcon className="btn-icon-size" />}>
+          <EyeClosedIcon className="btn-icon-size" />
+        </PasswordInput.Toggle>
+      </PasswordInput>
 
       <p className="mt-20">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis quasi
