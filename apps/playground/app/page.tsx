@@ -4,7 +4,13 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from "lucide-react";
-import { AccessNavigation, Accordion, Breadcrumbs, Carousel } from "@kadoui/react";
+import {
+  AccessNavigation,
+  Accordion,
+  Breadcrumbs,
+  Carousel,
+  ClientOnly,
+} from "@kadoui/react";
 
 function Page() {
   return (
@@ -91,6 +97,12 @@ function Page() {
           </Carousel.NextBtn>
         </div>
       </Carousel>
+
+      <p className="heading mt-20">Client only</p>
+      <p>There is server</p>
+      <ClientOnly>
+        <p>There is client</p>
+      </ClientOnly>
 
       <p className="mt-20">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis quasi
