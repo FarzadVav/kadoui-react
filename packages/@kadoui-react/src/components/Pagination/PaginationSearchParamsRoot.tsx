@@ -1,23 +1,26 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
-import { Dispatch, HTMLAttributes, SetStateAction, useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
+import { PaginationPropsT } from "./PaginationTypes";
 import { PaginationContext } from "./PaginationContext";
 
-export type PaginationSearchParamsRootPropsT = HTMLAttributes<HTMLDivElement> & {
+export type PaginationSearchParamsRootPropsT = PaginationPropsT & {
   pageKey?: string;
-  pageLength: number;
 };
 
 export function PaginationSearchParamsRoot({
+  pages,
+  pagesLength,
   pageKey,
-  pageLength,
   ...p
 }: PaginationSearchParamsRootPropsT) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [currentPage, setCurrentPage] = useState(1);
+
+  const correctPagesLength = (pages?.length || pagesLength) as number;
 
   useEffect(() => {
     setCurrentPage(+(searchParams.get(pageKey || "page") || "1"));
@@ -36,7 +39,7 @@ export function PaginationSearchParamsRoot({
   };
 
   const nextPage = () => {
-    if (currentPage < pageLength) {
+    if (currentPage < correctPagesLength) {
       pushRouter(currentPage + 1);
     }
   };
@@ -50,9 +53,10 @@ export function PaginationSearchParamsRoot({
   return (
     <PaginationContext.Provider
       value={{
+        pages,
         page: currentPage,
         setPage,
-        pageLength,
+        pagesLength: correctPagesLength,
         nextPage,
         prevPage,
       }}>

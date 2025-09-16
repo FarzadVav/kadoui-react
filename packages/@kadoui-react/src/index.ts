@@ -19,7 +19,6 @@ export * from "./components/Rating/Rating";
 export * from "./components/Sheet/Sheet";
 export * from "./components/ShowMore/ShowMore";
 export * from "./components/Spoiler/Spoiler";
-export * from "./components/Steps/Steps";
 export * from "./components/Swap/Swap";
 export * from "./components/Tabs/Tabs";
 export * from "./components/Submit/Submit";

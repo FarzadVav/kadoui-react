@@ -10,9 +10,9 @@ export type PaginationCountsPropsT = Omit<
 >;
 
 export function PaginationCounts({ onClick, ...p }: PaginationCountsPropsT) {
-  const { pageLength, page, setPage } = use(PaginationContext);
+  const { pagesLength, page, setPage } = use(PaginationContext);
 
-  return Array.from({ length: pageLength }).map((_, index) => (
+  return Array.from({ length: pagesLength }).map((_, index) => (
     <button
       key={index}
       data-state={index + 1 === page}

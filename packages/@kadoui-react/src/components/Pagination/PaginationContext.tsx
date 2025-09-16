@@ -1,7 +1,10 @@
 import { createContext, Dispatch, SetStateAction } from "react";
 
+import { PaginationPagesT } from "./PaginationTypes";
+
 export type PaginationContextT = {
-  pageLength: number;
+  pages?: PaginationPagesT[];
+  pagesLength: number;
   page: number;
   setPage: Dispatch<SetStateAction<number>>;
   nextPage: () => void;

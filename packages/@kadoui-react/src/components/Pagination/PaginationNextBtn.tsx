@@ -9,11 +9,11 @@ export type PaginationNextBtnPropsT = HTMLAttributes<HTMLButtonElement> & {
 };
 
 export function PaginationNextBtn({ onClick, disabled, ...p }: PaginationNextBtnPropsT) {
-  const { page, pageLength, nextPage } = use(PaginationContext);
+  const { page, pagesLength, nextPage } = use(PaginationContext);
 
   return (
     <button
-      disabled={disabled || page === pageLength}
+      disabled={disabled || page === pagesLength}
       onClick={ev => {
         onClick?.(ev);
         nextPage();

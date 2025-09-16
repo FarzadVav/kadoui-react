@@ -40,6 +40,51 @@ import {
   Spoiler,
 } from "@kadoui/react";
 
+const PAGES_WITH_STATE = [
+  {
+    name: "Hello world",
+    component: (
+      <p>
+        One: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis officiis quia,
+        dolores similique, cumque ut vel aspernatur non vitae voluptas reiciendis? Veniam,
+        voluptates impedit soluta blanditiis ad nam eligendi dignissimos.
+      </p>
+    ),
+  },
+  {
+    name: "Finish",
+    component: (
+      <p>
+        Two: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis officiis quia,
+        dolores similique, cumque ut vel aspernatur non vitae voluptas reiciendis? Veniam,
+        voluptates impedit soluta blanditiis ad nam eligendi dignissimos.
+      </p>
+    ),
+  },
+];
+const PAGES_WITH_SEARCHPARAMS = [
+  {
+    name: "Hello world",
+    component: (
+      <p>
+        One: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis officiis quia,
+        dolores similique, cumque ut vel aspernatur non vitae voluptas reiciendis? Veniam,
+        voluptates impedit soluta blanditiis ad nam eligendi dignissimos.
+      </p>
+    ),
+  },
+  {
+    name: "Finish",
+    component: (
+      <p>
+        Two: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis officiis quia,
+        dolores similique, cumque ut vel aspernatur non vitae voluptas reiciendis? Veniam,
+        voluptates impedit soluta blanditiis ad nam eligendi dignissimos.
+      </p>
+    ),
+  },
+];
+
 function Page() {
   const [rating, setRating] = useState(3);
 
@@ -247,7 +292,7 @@ function Page() {
 
       <p className="heading mt-20">Pagination</p>
       <p className="mt-6">With state:</p>
-      <PaginationWithState pageLength={6}>
+      <PaginationWithState pagesLength={6}>
         <div className="pagination mt-3">
           <PaginationWithState.PrevBtn className="btn btn-soft btn-square">
             <ChevronLeftIcon className="btn-icon-size" />
@@ -261,7 +306,7 @@ function Page() {
         </div>
       </PaginationWithState>
       <p className="mt-6">With search params:</p>
-      <PaginationWithSearchParams pageLength={6}>
+      <PaginationWithSearchParams pagesLength={6}>
         <div className="pagination mt-3">
           <PaginationWithSearchParams.PrevBtn className="btn btn-soft btn-square">
             <ChevronLeftIcon className="btn-icon-size" />
@@ -272,6 +317,44 @@ function Page() {
           <PaginationWithSearchParams.NextBtn className="btn btn-soft btn-square">
             <ChevronRightIcon className="btn-icon-size" />
           </PaginationWithSearchParams.NextBtn>
+        </div>
+      </PaginationWithSearchParams>
+
+      <p className="heading mt-20">Pagination with pages</p>
+      <p className="mt-6">With state:</p>
+      <PaginationWithState pages={PAGES_WITH_STATE}>
+        <div className="max-w-96">
+          <PaginationWithState.Pages />
+
+          <div className="pagination mt-3">
+            <PaginationWithState.PrevBtn className="btn btn-soft btn-square">
+              <ChevronLeftIcon className="btn-icon-size" />
+            </PaginationWithState.PrevBtn>
+
+            <PaginationWithState.Counts className="btn data-[state=false]:btn-ghost data-[state=true]:btn-fill" />
+
+            <PaginationWithState.NextBtn className="btn btn-soft btn-square">
+              <ChevronRightIcon className="btn-icon-size" />
+            </PaginationWithState.NextBtn>
+          </div>
+        </div>
+      </PaginationWithState>
+      <p className="mt-6">With search params:</p>
+      <PaginationWithSearchParams pages={PAGES_WITH_SEARCHPARAMS}>
+        <div className="max-w-96">
+          <PaginationWithSearchParams.Pages />
+
+          <div className="pagination mt-3">
+            <PaginationWithSearchParams.PrevBtn className="btn btn-soft btn-square">
+              <ChevronLeftIcon className="btn-icon-size" />
+            </PaginationWithSearchParams.PrevBtn>
+
+            <PaginationWithSearchParams.Counts className="btn data-[state=false]:btn-ghost data-[state=true]:btn-fill" />
+
+            <PaginationWithSearchParams.NextBtn className="btn btn-soft btn-square">
+              <ChevronRightIcon className="btn-icon-size" />
+            </PaginationWithSearchParams.NextBtn>
+          </div>
         </div>
       </PaginationWithSearchParams>
 
