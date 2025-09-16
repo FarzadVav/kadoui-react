@@ -42,6 +42,7 @@ import {
   Spoiler,
   Submit,
   Swap,
+  Tabs,
 } from "@kadoui/react";
 
 const PAGES_WITH_STATE = [
@@ -93,7 +94,8 @@ const SWAP_KEYS = ["one", "two", "three"];
 
 function Page() {
   const [rating, setRating] = useState(3);
-  const [activeKey, setActiveKey] = useState(SWAP_KEYS[0] as string);
+  const [swapKey, setSwapKey] = useState(SWAP_KEYS[0] as string);
+  const [activeTab, setActiveTab] = useState("1");
 
   return (
     <div className="container my-20">
@@ -602,8 +604,8 @@ function Page() {
       <div className="mt-6">
         <Swap
           keys={SWAP_KEYS}
-          activeKey={activeKey}
-          setActiveKey={setActiveKey}>
+          activeKey={swapKey}
+          setActiveKey={setSwapKey}>
           <Swap.Btn
             className="btn btn-soft"
             btnKey={SWAP_KEYS[0] as string}
@@ -620,6 +622,73 @@ function Page() {
           />
         </Swap>
       </div>
+
+      <p className="heading mt-20">Swap</p>
+      <Tabs
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}>
+        <AccessNavigation
+          className="mt-6"
+          direction="x">
+          <Tabs.List className="tabs-list join-border">
+            <Tabs.Tab
+              value="1"
+              className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill">
+              Tab 1
+            </Tabs.Tab>
+            <Tabs.Tab
+              value="2"
+              className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill">
+              Tab 2
+            </Tabs.Tab>
+            <Tabs.Tab
+              value="3"
+              className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill">
+              Tab 3
+            </Tabs.Tab>
+          </Tabs.List>
+        </AccessNavigation>
+
+        <Tabs.Panel
+          className="tabs-panel card-lg"
+          key={"1"}
+          value="1">
+          Tab 1: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
+          animi nisi, magni quis dolore cum molestias ipsam accusantium sunt repudiandae
+          repellendus perspiciatis cumque unde commodi reprehenderit distinctio nostrum
+          quisquam nihil?
+        </Tabs.Panel>
+
+        <Tabs.Panel
+          className="tabs-panel card-lg"
+          key={"2"}
+          value="2">
+          Tab 2: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
+          animi nisi, magni quis dolore cum molestias ipsam accusantium sunt repudiandae
+          quisquam nihil?
+        </Tabs.Panel>
+
+        <Tabs.Panel
+          className="tabs-panel card-lg"
+          key={"3"}
+          value="3">
+          Tab 3: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
+          animi nisi, magni quis dolore cum molestias ipsam accusantium sunt repudiandae
+          repellendus perspiciatis cumque unde commodi reprehenderit distinctio nostrum
+          quisquam nihil?
+          <br />
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat ut corporis
+          sequi expedita deserunt aliquid iste facere, nisi ipsa iure ad nostrum animi.
+          Adipisci placeat eos laborum error magnam officiis necessitatibus illo commodi
+          a, aperiam tempora alias voluptatum eveniet, atque quas dolores, facilis
+          architecto quisquam ipsum dolore officia debitis facere! Dicta iste consectetur,
+          illo amet obcaecati aut error, ipsam optio at earum odio laudantium
+          voluptatibus? Nemo, nisi debitis et, nam voluptas tempora ipsa ipsum culpa nobis
+          perferendis ipsam cumque blanditiis quos corrupti, rerum eos? Sapiente fugiat
+          voluptatibus laborum culpa at. Quidem, suscipit perferendis. Illum doloribus in
+          cumque fuga laboriosam dignissimos!
+        </Tabs.Panel>
+      </Tabs>
     </div>
   );
 }
