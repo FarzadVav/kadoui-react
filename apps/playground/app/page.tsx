@@ -35,6 +35,7 @@ import {
   Progress,
   QrCode,
   Rating,
+  Sheet,
 } from "@kadoui/react";
 
 function Page() {
@@ -443,6 +444,25 @@ function Page() {
           activeElement={<StarIcon className="fill-foreground size-9" />}
         />
       </Rating>
+
+      <p className="heading mt-20">Sheet</p>
+      <Sheet>
+        <Sheet.Toggle className="btn btn-soft mt-6">Open sheet</Sheet.Toggle>
+
+        <Sheet.Portal className="sheet-portal">
+          <Sheet.Body className="sheet-body">
+            <Sheet.Header className="sheet-header">
+              <Sheet.Handlebar className="sheet-handlebar" />
+            </Sheet.Header>
+
+            <Sheet.Content className="sheet-content">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae explicabo
+              numquam sed dolorem nesciunt repellat deleniti quisquam laudantium? Quas
+              ullam magni voluptate esse animi vero dicta maxime mollitia amet dolor.
+            </Sheet.Content>
+          </Sheet.Body>
+        </Sheet.Portal>
+      </Sheet>
     </div>
   );
 }
