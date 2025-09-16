@@ -12,7 +12,9 @@ import {
   EyeClosedIcon,
   EyeIcon,
   FlagIcon,
+  LoaderIcon,
   RefreshCwIcon,
+  SendHorizonalIcon,
   StarIcon,
   TrashIcon,
 } from "lucide-react";
@@ -38,6 +40,7 @@ import {
   Sheet,
   ShowMore,
   Spoiler,
+  Submit,
 } from "@kadoui/react";
 
 const PAGES_WITH_STATE = [
@@ -562,11 +565,11 @@ function Page() {
 
         <ShowMore.Fade className="show-more-fade" />
 
-        <ShowMore.Toggle className="btn btn-soft mt-3">Show more</ShowMore.Toggle>
+        <ShowMore.Toggle className="btn btn-soft mt-1.5">Show more</ShowMore.Toggle>
       </ShowMore>
 
       <p className="heading mt-20">Spoiler</p>
-      <p>
+      <p className="mt-6">
         Lorem ipsum dolor sit{" "}
         <Spoiler className="spoiler">
           <Spoiler.Blur className="spoiler-blur">
@@ -576,6 +579,20 @@ function Page() {
         elit. Officiis nemo incidunt tenetur assumenda consequuntur beatae harum iusto,
         libero labore! Ea quo dolore accusantium veniam illo vel quae nihil iure aliquid.
       </p>
+
+      <p className="heading mt-20">Submit</p>
+      <form
+        className="mt-6"
+        action={async () => {
+          await new Promise((resolve) => setTimeout(resolve, 1000));
+        }}>
+        <Submit className="btn btn-soft">
+          <span>Press the from</span>
+          <Submit.Loader loader={<LoaderIcon className="btn-icon-size animate-spin" />}>
+            <SendHorizonalIcon className="btn-icon-size" />
+          </Submit.Loader>
+        </Submit>
+      </form>
     </div>
   );
 }
