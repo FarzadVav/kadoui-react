@@ -30,6 +30,7 @@ import {
   PasswordInput,
   Popover,
   Portal,
+  Progress,
 } from "@kadoui/react";
 
 function Page() {
@@ -411,7 +412,12 @@ function Page() {
         </p>
       </Portal>
 
-      
+      <p className="heading mt-20">Progress</p>
+      <Progress
+        className="progress mt-6"
+        value={45}>
+        <Progress.Bar className="progress-bar" />
+      </Progress>
     </div>
   );
 }
