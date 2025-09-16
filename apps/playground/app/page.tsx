@@ -36,6 +36,7 @@ import {
   QrCode,
   Rating,
   Sheet,
+  ShowMore,
 } from "@kadoui/react";
 
 function Page() {
@@ -463,6 +464,22 @@ function Page() {
           </Sheet.Body>
         </Sheet.Portal>
       </Sheet>
+
+      <p className="heading mt-20">ShowMore</p>
+      <ShowMore
+        className="max-w-96 mt-6"
+        maxLines={3}>
+        <ShowMore.Content>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium
+          exercitationem repellendus debitis, dignissimos non quis! Fugit ducimus adipisci
+          minus quas est expedita, voluptatibus minima ad facere quis, dolor ipsum
+          debitis!
+        </ShowMore.Content>
+
+        <ShowMore.Fade className="show-more-fade" />
+
+        <ShowMore.Toggle className="btn btn-soft mt-3">Show more</ShowMore.Toggle>
+      </ShowMore>
     </div>
   );
 }

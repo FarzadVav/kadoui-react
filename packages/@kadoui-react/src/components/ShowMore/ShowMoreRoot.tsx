@@ -20,7 +20,7 @@ export function ShowMoreRoot({ maxLines, defaultExpanded = false, style, ...p }:
     if (contentRef.current) {
       const element = contentRef.current;
       const lineHeight = Number.parseInt(window.getComputedStyle(element).lineHeight);
-      const maxHeight = lineHeight * (maxLines || 3);
+      const maxHeight = lineHeight * maxLines;
       const actualHeight = element.scrollHeight;
 
       setMaxHeight(maxHeight);

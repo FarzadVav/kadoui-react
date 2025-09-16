@@ -4,9 +4,9 @@ import { ButtonHTMLAttributes, use } from "react";
 
 import { ShowMoreContext } from "./ShowMoreContext";
 
-export type ShowMoreTriggerPropsT = ButtonHTMLAttributes<HTMLButtonElement>;
+export type ShowMoreTogglePropsT = ButtonHTMLAttributes<HTMLButtonElement>;
 
-export function ShowMoreTrigger({ onClick, style, ...p }: ShowMoreTriggerPropsT) {
+export function ShowMoreToggle({ onClick, style, ...p }: ShowMoreTogglePropsT) {
   const { setIsShowMore } = use(ShowMoreContext);
 
   return (

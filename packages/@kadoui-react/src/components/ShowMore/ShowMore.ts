@@ -1,10 +1,10 @@
 import { ShowMoreRoot } from "./ShowMoreRoot";
 import { ShowMoreFade } from "./ShowMoreFade";
 import { ShowMoreContent } from "./ShowMoreContent";
-import { ShowMoreTrigger } from "./ShowMoreTrigger";
+import { ShowMoreToggle } from "./ShowMoreToggle";
 
 export const ShowMore = Object.assign(ShowMoreRoot, {
   Content: ShowMoreContent,
-  Trigger: ShowMoreTrigger,
+  Toggle: ShowMoreToggle,
   Fade: ShowMoreFade
 });
