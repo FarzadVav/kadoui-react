@@ -31,6 +31,7 @@ import {
   Popover,
   Portal,
   Progress,
+  QrCode,
 } from "@kadoui/react";
 
 function Page() {
@@ -418,6 +419,13 @@ function Page() {
         value={45}>
         <Progress.Bar className="progress-bar" />
       </Progress>
+
+      <p className="heading mt-20">QeCode</p>
+      <QrCode
+        className="mt-6 w-96 rounded-lg"
+        value="https://github.com/FarzadVav"
+        options={{ width: 384 }}
+      />
     </div>
   );
 }
