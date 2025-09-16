@@ -37,6 +37,7 @@ import {
   Rating,
   Sheet,
   ShowMore,
+  Spoiler,
 } from "@kadoui/react";
 
 function Page() {
@@ -480,6 +481,18 @@ function Page() {
 
         <ShowMore.Toggle className="btn btn-soft mt-3">Show more</ShowMore.Toggle>
       </ShowMore>
+
+      <p className="heading mt-20">Spoiler</p>
+      <p>
+        Lorem ipsum dolor sit{" "}
+        <Spoiler className="spoiler">
+          <Spoiler.Blur className="spoiler-blur">
+            amet consectetur adipisicing
+          </Spoiler.Blur>
+        </Spoiler>{" "}
+        elit. Officiis nemo incidunt tenetur assumenda consequuntur beatae harum iusto,
+        libero labore! Ea quo dolore accusantium veniam illo vel quae nihil iure aliquid.
+      </p>
     </div>
   );
 }
