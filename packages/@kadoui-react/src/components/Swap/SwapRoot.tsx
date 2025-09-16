@@ -1,29 +1,15 @@
-"use client"
+"use client";
 
-import { AnimatePresence } from "framer-motion";
-import { HTMLAttributes, useState } from "react";
+import { Dispatch, PropsWithChildren, SetStateAction } from "react";
 
 import { SwapContext } from "./SwapContext";
 
-export type SwapRootPropsT = HTMLAttributes<HTMLDivElement> & {
-  items: string[];
-  defaultItem?: string;
-  onSwap?: (item: string) => void;
-}
+export type SwapRootPropsT = PropsWithChildren & {
+  keys: string[];
+  activeKey: string;
+  setActiveKey: Dispatch<SetStateAction<string>>;
+};
 
-export function SwapRoot({ items, defaultItem, onSwap, ...p }: SwapRootPropsT) {
-  const [activeItem, setActiveItem] = useState(defaultItem || items[1]);
-
-  const handleSwap = (newItem: string) => {
-    setActiveItem(newItem);
-    onSwap?.(newItem);
-  }
-
-  return (
-    <SwapContext value={{ items, activeItem, handleSwap }} >
-      <AnimatePresence mode="wait">
-        <div {...p} />
-      </AnimatePresence>
-    </SwapContext>
-  )
+export function SwapRoot({ keys, activeKey, setActiveKey, children }: SwapRootPropsT) {
+  return <SwapContext value={{ keys, activeKey, setActiveKey }}>{children}</SwapContext>;
 }

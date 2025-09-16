@@ -41,6 +41,7 @@ import {
   ShowMore,
   Spoiler,
   Submit,
+  Swap,
 } from "@kadoui/react";
 
 const PAGES_WITH_STATE = [
@@ -88,8 +89,11 @@ const PAGES_WITH_SEARCHPARAMS = [
   },
 ];
 
+const SWAP_KEYS = ["one", "two", "three"];
+
 function Page() {
   const [rating, setRating] = useState(3);
+  const [activeKey, setActiveKey] = useState(SWAP_KEYS[0] as string);
 
   return (
     <div className="container my-20">
@@ -593,6 +597,29 @@ function Page() {
           </Submit.Loader>
         </Submit>
       </form>
+
+      <p className="heading mt-20">Swap</p>
+      <div className="mt-6">
+        <Swap
+          keys={SWAP_KEYS}
+          activeKey={activeKey}
+          setActiveKey={setActiveKey}>
+          <Swap.Btn
+            className="btn btn-soft"
+            btnKey={SWAP_KEYS[0] as string}
+          />
+
+          <Swap.Btn
+            className="btn btn-soft"
+            btnKey={SWAP_KEYS[1] as string}
+          />
+
+          <Swap.Btn
+            className="btn btn-soft"
+            btnKey={SWAP_KEYS[2] as string}
+          />
+        </Swap>
+      </div>
     </div>
   );
 }
