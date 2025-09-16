@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import {
   ArrowLeftIcon,
   ArrowRightIcon,
@@ -12,6 +13,7 @@ import {
   EyeIcon,
   FlagIcon,
   RefreshCwIcon,
+  StarIcon,
   TrashIcon,
 } from "lucide-react";
 import {
@@ -32,9 +34,12 @@ import {
   Portal,
   Progress,
   QrCode,
+  Rating,
 } from "@kadoui/react";
 
 function Page() {
+  const [rating, setRating] = useState(3);
+
   return (
     <div className="container my-20">
       <p className="heading">AccessNavigation</p>
@@ -426,6 +431,18 @@ function Page() {
         value="https://github.com/FarzadVav"
         options={{ width: 384 }}
       />
+
+      <p className="heading mt-20">Rating</p>
+      <Rating className="rating mt-3">
+        <Rating.Items
+          className="rating-items"
+          count={5}
+          value={rating}
+          onValueChange={setRating}
+          element={<StarIcon className="size-9" />}
+          activeElement={<StarIcon className="fill-foreground size-9" />}
+        />
+      </Rating>
     </div>
   );
 }
