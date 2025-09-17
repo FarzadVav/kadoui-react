@@ -2,19 +2,13 @@
 
 Primitive components for `React` powered by `Kadoui-css` styles.
 
----
-
-### Components
-
-You can just import them and use easily.
-
 We recommend use `Kadoui-css` for styling the components:
-
 [Read about `Kadoui-css`](https://www.npmjs.com/package/@kadoui/css)
 
-Also we recommend use `lucide-react` for icons:
-
+Also use `lucide-react` for icons:
 [Read about `lucide-react`](https://www.npmjs.com/package/lucide-react)
+
+---
 
 ### AccessNavigation
 
