@@ -526,7 +526,7 @@ function Page() {
         <Progress.Bar className="progress-bar" />
       </Progress>
 
-      <p className="heading mt-20">QeCode</p>
+      <p className="heading mt-20">QrCode</p>
       <QrCode
         className="mt-6 w-96 rounded-lg"
         value="https://github.com/FarzadVav"
