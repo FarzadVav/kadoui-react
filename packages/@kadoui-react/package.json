@@ -14,8 +14,7 @@
   },
   "exports": {
     ".": "./dist/index.js",
-    "./utils": "./dist/utils.js",
-    "./next": "./dist/next.js"
+    "./utils": "./dist/utils.js"
   },
   "keywords": [
     "@kadoui/react",

@@ -1,7 +1,5 @@
 function TestPage() {
-  return (
-    <div>TestPage</div>
-  )
+  return <div className="container my-20">TestPage</div>;
 }
 
 export default TestPage;

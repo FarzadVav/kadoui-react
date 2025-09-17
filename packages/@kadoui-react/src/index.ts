@@ -22,3 +22,5 @@ export * from "./components/Spoiler/Spoiler";
 export * from "./components/Swap/Swap";
 export * from "./components/Tabs/Tabs";
 export * from "./components/Submit/Submit";
+export * from "./components/LinkLoader/LinkLoader";
+export * from "./components/ThemeAdapter/ThemeAdapter";

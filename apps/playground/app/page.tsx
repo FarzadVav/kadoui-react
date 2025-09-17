@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import {
   ArrowLeftIcon,
   ArrowRightIcon,
@@ -27,6 +27,7 @@ import {
   Clipboard,
   ContextMenu,
   Drawer,
+  LinkLoader,
   Modal,
   Otp,
   PaginationWithSearchParams,
@@ -44,6 +45,7 @@ import {
   Swap,
   Tabs,
 } from "@kadoui/react";
+import Link from "next/link";
 
 const PAGES_WITH_STATE = [
   {
@@ -315,19 +317,21 @@ function Page() {
         </div>
       </PaginationWithState>
       <p className="mt-6">With search params:</p>
-      <PaginationWithSearchParams pagesLength={6}>
-        <div className="pagination mt-3">
-          <PaginationWithSearchParams.PrevBtn className="btn btn-soft btn-square">
-            <ChevronLeftIcon className="btn-icon-size" />
-          </PaginationWithSearchParams.PrevBtn>
+      <Suspense>
+        <PaginationWithSearchParams pagesLength={6}>
+          <div className="pagination mt-3">
+            <PaginationWithSearchParams.PrevBtn className="btn btn-soft btn-square">
+              <ChevronLeftIcon className="btn-icon-size" />
+            </PaginationWithSearchParams.PrevBtn>
 
-          <PaginationWithSearchParams.Counts className="btn data-[state=false]:btn-ghost data-[state=true]:btn-fill" />
+            <PaginationWithSearchParams.Counts className="btn data-[state=false]:btn-ghost data-[state=true]:btn-fill" />
 
-          <PaginationWithSearchParams.NextBtn className="btn btn-soft btn-square">
-            <ChevronRightIcon className="btn-icon-size" />
-          </PaginationWithSearchParams.NextBtn>
-        </div>
-      </PaginationWithSearchParams>
+            <PaginationWithSearchParams.NextBtn className="btn btn-soft btn-square">
+              <ChevronRightIcon className="btn-icon-size" />
+            </PaginationWithSearchParams.NextBtn>
+          </div>
+        </PaginationWithSearchParams>
+      </Suspense>
 
       <p className="heading mt-20">Pagination with pages</p>
       <p className="mt-6">With state:</p>
@@ -349,23 +353,25 @@ function Page() {
         </div>
       </PaginationWithState>
       <p className="mt-6">With search params:</p>
-      <PaginationWithSearchParams pages={PAGES_WITH_SEARCHPARAMS}>
-        <div className="max-w-96">
-          <PaginationWithSearchParams.Pages />
+      <Suspense>
+        <PaginationWithSearchParams pages={PAGES_WITH_SEARCHPARAMS}>
+          <div className="max-w-96">
+            <PaginationWithSearchParams.Pages />
 
-          <div className="pagination mt-3">
-            <PaginationWithSearchParams.PrevBtn className="btn btn-soft btn-square">
-              <ChevronLeftIcon className="btn-icon-size" />
-            </PaginationWithSearchParams.PrevBtn>
+            <div className="pagination mt-3">
+              <PaginationWithSearchParams.PrevBtn className="btn btn-soft btn-square">
+                <ChevronLeftIcon className="btn-icon-size" />
+              </PaginationWithSearchParams.PrevBtn>
 
-            <PaginationWithSearchParams.Counts className="btn data-[state=false]:btn-ghost data-[state=true]:btn-fill" />
+              <PaginationWithSearchParams.Counts className="btn data-[state=false]:btn-ghost data-[state=true]:btn-fill" />
 
-            <PaginationWithSearchParams.NextBtn className="btn btn-soft btn-square">
-              <ChevronRightIcon className="btn-icon-size" />
-            </PaginationWithSearchParams.NextBtn>
+              <PaginationWithSearchParams.NextBtn className="btn btn-soft btn-square">
+                <ChevronRightIcon className="btn-icon-size" />
+              </PaginationWithSearchParams.NextBtn>
+            </div>
           </div>
-        </div>
-      </PaginationWithSearchParams>
+        </PaginationWithSearchParams>
+      </Suspense>
 
       <p className="heading mt-20">PasswordInput</p>
       <PasswordInput className="input input-outline mt-3">
@@ -623,7 +629,7 @@ function Page() {
         </Swap>
       </div>
 
-      <p className="heading mt-20">Swap</p>
+      <p className="heading mt-20">Tabs</p>
       <Tabs
         activeTab={activeTab}
         setActiveTab={setActiveTab}>
@@ -689,6 +695,16 @@ function Page() {
           cumque fuga laboriosam dignissimos!
         </Tabs.Panel>
       </Tabs>
+
+      <p className="heading mt-20">LinkLoader</p>
+      <Link
+        className="btn btn-soft mt-6"
+        href={"/test"}>
+        <span>Test page</span>
+        <LinkLoader loader={<LoaderIcon className="btn-icon-size animate-spin" />}>
+          <ArrowRightIcon className="btn-icon-size" />
+        </LinkLoader>
+      </Link>
     </div>
   );
 }

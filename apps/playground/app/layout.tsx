@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { ArrowUpIcon } from "lucide-react";
+import { Affix, ThemeAdapter } from "@kadoui/react";
 import { Geist, Geist_Mono } from "next/font/google";
 
 import "./globals.css";
-import { Affix } from "@kadoui/react";
-import { ThemeAdapter } from "@kadoui/react/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
