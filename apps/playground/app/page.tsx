@@ -184,7 +184,7 @@ function Page() {
         </div>
       </Carousel>
 
-      <p className="heading mt-20">Client only</p>
+      <p className="heading mt-20">ClientOnly</p>
       <p className="mt-6">There is server</p>
       <ClientOnly>
         <p className="mt-3">There is client</p>
