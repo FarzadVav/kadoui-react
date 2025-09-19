@@ -34,7 +34,7 @@ export default function RootLayout({
         <div id="root">
           {children}
 
-          <Affix className="affix affix-r btn btn-fill btn-square group data-[state=false]:scale-90">
+          <Affix className="affix top-center right-3 btn btn-fill btn-square group data-[state=false]:scale-90">
             <ArrowUpIcon className="btn-icon-size transition-transform duration-300 group-data-[state=false]:translate-y-full" />
           </Affix>
         </div>
