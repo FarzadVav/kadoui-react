@@ -580,20 +580,20 @@ function Page() {
 
         <p className="mt-6">Multi select mode:</p>
         <SelectBox className="mt-3">
-          <SelectBox.Input className="relative input input-soft group">
+          <SelectBox.Input className="select-box-input input input-soft group">
             <ChevronDownIcon className="input-icon-size transition-transform group-focus-within:-scale-y-100" />
             <SelectBox.Field
               search
               className="input-field"
               placeholder="Select an option..."
             />
-            <SelectBox.List className="card card-y absolute bottom-out left-0 right-0 cursor-default z-10">
+            <SelectBox.List className="select-box-list">
               <SelectBox.Options
                 multiSelect
                 options={SELECT_BOX_OPTIONS}
                 optionValue={multiSelectBoxValue}
                 setOptionValue={setMultiSelectBoxValue}
-                className="btn data-[state=false]:not-hover:btn-ghost data-[state=false]:hover:btn-soft data-[state=true]:btn-fill btn-full justify-start"
+                className="select-box-option data-[state=false]:not-hover:btn-ghost data-[state=false]:hover:btn-soft data-[state=true]:btn-fill"
               />
             </SelectBox.List>
           </SelectBox.Input>
