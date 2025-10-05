@@ -2,7 +2,7 @@
   "name": "playground",
   "private": true,
   "scripts": {
-    "dev": "rm -rf ./next && next dev --turbopack",
+    "dev": "rm -rf ./next && next dev",
     "build": "rm -rf ./next && next build",
     "start": "next start",
     "lint": "next lint"

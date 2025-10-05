@@ -38,6 +38,8 @@ import {
   Progress,
   QrCode,
   Rating,
+  SelectBox,
+  SelectBoxOptionT,
   Sheet,
   ShowMore,
   Spoiler,
@@ -92,10 +94,19 @@ const PAGES_WITH_SEARCHPARAMS = [
   },
 ];
 
+const SELECT_BOX_OPTIONS: SelectBoxOptionT[] = [
+  { name: "one", value: "One" },
+  { name: "two", value: "Two" },
+  { name: "three", value: "Three" },
+];
+
 const SWAP_KEYS = ["one", "two", "three"];
 
 function Page() {
   const [rating, setRating] = useState(3);
+  const [singleSelectBoxValue, singleSetSelectBoxValue] =
+    useState<SelectBoxOptionT | null>(null);
+  const [multiSelectBoxValue, setMultiSelectBoxValue] = useState<SelectBoxOptionT[]>([]);
   const [swapKey, setSwapKey] = useState(SWAP_KEYS[0] as string);
   const [activeTab, setActiveTab] = useState("1");
 
@@ -545,6 +556,50 @@ function Page() {
         />
       </Rating>
 
+      <p className="heading mt-20">SelectBox</p>
+      <div className="mt-6">
+        <p>Single select mode:</p>
+        <SelectBox className="mt-3">
+          <SelectBox.Input className="relative input input-soft group">
+            <ChevronDownIcon className="input-icon-size transition-transform group-focus-within:-scale-y-100" />
+            <SelectBox.Field
+              search
+              className="input-field"
+              placeholder="Select an option..."
+            />
+            <SelectBox.List className="card card-y absolute bottom-out left-0 right-0 cursor-default z-10">
+              <SelectBox.Options
+                options={SELECT_BOX_OPTIONS}
+                optionValue={singleSelectBoxValue}
+                setOptionValue={singleSetSelectBoxValue}
+                className="btn data-[state=false]:not-hover:btn-ghost data-[state=false]:hover:btn-soft data-[state=true]:btn-fill btn-full justify-start"
+              />
+            </SelectBox.List>
+          </SelectBox.Input>
+        </SelectBox>
+
+        <p className="mt-6">Multi select mode:</p>
+        <SelectBox className="mt-3">
+          <SelectBox.Input className="relative input input-soft group">
+            <ChevronDownIcon className="input-icon-size transition-transform group-focus-within:-scale-y-100" />
+            <SelectBox.Field
+              search
+              className="input-field"
+              placeholder="Select an option..."
+            />
+            <SelectBox.List className="card card-y absolute bottom-out left-0 right-0 cursor-default z-10">
+              <SelectBox.Options
+                multiSelect
+                options={SELECT_BOX_OPTIONS}
+                optionValue={multiSelectBoxValue}
+                setOptionValue={setMultiSelectBoxValue}
+                className="btn data-[state=false]:not-hover:btn-ghost data-[state=false]:hover:btn-soft data-[state=true]:btn-fill btn-full justify-start"
+              />
+            </SelectBox.List>
+          </SelectBox.Input>
+        </SelectBox>
+      </div>
+
       <p className="heading mt-20">Sheet</p>
       <Sheet>
         <Sheet.Toggle className="btn btn-soft mt-6">Open sheet</Sheet.Toggle>
@@ -563,7 +618,6 @@ function Page() {
           </Sheet.Body>
         </Sheet.Portal>
       </Sheet>
-
       <p className="heading mt-20">ShowMore</p>
       <ShowMore
         className="max-w-96 mt-6"

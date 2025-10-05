@@ -16,6 +16,7 @@ export * from "./components/Portal/Portal";
 export * from "./components/Progress/Progress";
 export * from "./components/QrCode/QrCode";
 export * from "./components/Rating/Rating";
+export * from "./components/SelectBox/SelectBox";
 export * from "./components/Sheet/Sheet";
 export * from "./components/ShowMore/ShowMore";
 export * from "./components/Spoiler/Spoiler";
