@@ -43,38 +43,46 @@ export default function SelectBoxOptions({
     }
   });
 
-  const currentOptions = [...filteredOptions, ...otherOptions];
+  const renderOptions = (options: SelectBoxOptionT[], isOther?: boolean) => {
+    return options.map((item) => {
+      const isSelected = multiSelect
+        ? optionValue.some((v) => v.value === item.value)
+        : optionValue?.value === item.value;
 
-  return currentOptions.map((item) => {
-    const isSelected = multiSelect
-      ? optionValue.some((v) => v.value === item.value)
-      : optionValue?.value === item.value;
+      return (
+        <button
+          type="button"
+          key={item.value}
+          disabled={isOther}
+          data-state={isSelected}
+          onClick={() => {
+            if (multiSelect) {
+              if (isSelected) {
+                setOptionValue(optionValue.filter((v) => v.value !== item.value));
+              } else {
+                setOptionValue([...optionValue, item]);
+              }
+            } else {
+              if (isSelected) {
+                setOptionValue(null);
+              } else {
+                setOptionValue(item);
+                setInputSearch(item.name);
+                setInputFocused(false);
+              }
+            }
+          }}
+          {...p}>
+          {item.name}
+        </button>
+      );
+    });
+  };
 
-    return (
-      <button
-        type="button"
-        key={item.value}
-        data-state={isSelected}
-        onClick={() => {
-          if (multiSelect) {
-            if (isSelected) {
-              setOptionValue(optionValue.filter((v) => v.value !== item.value));
-            } else {
-              setOptionValue([...optionValue, item]);
-            }
-          } else {
-            if (isSelected) {
-              setOptionValue(null);
-            } else {
-              setOptionValue(item);
-              setInputSearch(item.name);
-              setInputFocused(false);
-            }
-          }
-        }}
-        {...p}>
-        {item.name}
-      </button>
-    );
-  });
+  return (
+    <>
+      {renderOptions(filteredOptions)}
+      {renderOptions(otherOptions, true)}
+    </>
+  );
 }
