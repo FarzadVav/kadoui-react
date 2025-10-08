@@ -54,6 +54,8 @@ export function AccessNavigation({
         : "ArrowLeft")
     ) {
       ev.preventDefault();
+      ev.stopPropagation();
+
       const nextIndex =
         currentIndex === -1 || currentIndex === focusableChildren.length - 1
           ? 0
@@ -66,6 +68,8 @@ export function AccessNavigation({
       (direction === "y" ? "ArrowUp" : currentDir === "ltr" ? "ArrowLeft" : "ArrowRight")
     ) {
       ev.preventDefault();
+      ev.stopPropagation();
+
       const prevIndex =
         currentIndex <= 0 ? focusableChildren.length - 1 : currentIndex - 1;
       focusableChildren[prevIndex]?.focus();

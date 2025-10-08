@@ -416,11 +416,27 @@ function Page() {
       <Popover
         className="popover mt-3"
         mode="click">
-        <Popover.Toggle className="btn btn-soft">Click me</Popover.Toggle>
+        <Popover.AccessNavigation>
+          <Popover.Toggle className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill">Click me</Popover.Toggle>
 
-        <Popover.Body className="popover-body popover-body-b card card-menu max-w-[200%]">
-          Lorem ipsum dolor sit amet, consectetur adipisicing.
-        </Popover.Body>
+          <Popover.Body className="popover-body popover-body-b card card-menu">
+            <button className="btn btn-ghost">Like</button>
+            <button className="btn btn-ghost">Ignore</button>
+            <button className="btn btn-ghost">Download</button>
+            <Popover className="popover">
+              <Popover.Toggle className="btn data-[state=false]:btn-ghost data-[state=true]:btn-soft">
+                <span>Share via</span>
+                <ChevronRightIcon className="btn-icon-size" />
+              </Popover.Toggle>
+              <Popover.Body className="popover-body popover-body-r card card-menu">
+                <button className="btn btn-ghost">Link</button>
+                <button className="btn btn-ghost">Instagram</button>
+                <button className="btn btn-ghost">Telegram</button>
+                <button className="btn btn-ghost">X</button>
+              </Popover.Body>
+            </Popover>
+          </Popover.Body>
+        </Popover.AccessNavigation>
       </Popover>
 
       <p className="heading mt-20">Portal</p>

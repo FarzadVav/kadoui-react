@@ -6,6 +6,6 @@ export type PopoverContextT = {
   toggleRef: RefObject<HTMLButtonElement | null>;
   bodyRef: RefObject<HTMLDivElement | null>;
   mode: "click" | "hover" | "both";
-}
+};
 
 export const PopoverContext = createContext<PopoverContextT>({} as PopoverContextT);

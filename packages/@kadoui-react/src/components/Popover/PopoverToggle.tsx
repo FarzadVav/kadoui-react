@@ -12,15 +12,15 @@ export function PopoverToggle({ onClick, ...props }: PopoverTogglePropsT) {
   return (
     <button
       ref={toggleRef}
-      data-state={isOpen ? "active" : "inactive"}
-      onClick={ev => {
+      data-state={isOpen}
+      onClick={(ev) => {
         onClick?.(ev);
         ev.stopPropagation();
         if (["click", "both"].includes(mode)) {
-          setOpen(prev => !prev);
+          setOpen((prev) => !prev);
         }
       }}
       {...props}
     />
-  )
+  );
 }

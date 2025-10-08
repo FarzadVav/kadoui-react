@@ -1,20 +1,17 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { HTMLAttributes, KeyboardEvent, useEffect, useRef, useState } from "react";
+import { HTMLAttributes, useEffect, useRef, useState } from "react";
 
 import { selectAccessibleChildren } from "../../utils";
 import { PopoverContext, PopoverContextT } from "./PopoverContext";
 
 export type PopoverRootPropsT = HTMLAttributes<HTMLDivElement> & {
   mode?: PopoverContextT["mode"];
-  accessHorizontalArrows?: "ArrowRight" | "ArrowLeft";
 };
 
 export function PopoverRoot({
   mode = "click",
-  accessHorizontalArrows,
-  onKeyDown,
   onMouseEnter,
   onMouseLeave,
   ...p
@@ -61,40 +58,10 @@ export function PopoverRoot({
     firstChild.focus();
   };
 
-  const handleKeyDown = (ev: KeyboardEvent<HTMLDivElement>) => {
-    if (!accessHorizontalArrows) {
-      return null;
-    }
-
-    if (ev.key === "ArrowRight") {
-      if (accessHorizontalArrows === "ArrowRight") {
-        setOpen(true);
-        selectFirstMenuChild();
-      } else {
-        setOpen(false);
-        toggleRef.current?.focus();
-      }
-    }
-
-    if (ev.key === "ArrowLeft") {
-      if (accessHorizontalArrows === "ArrowLeft") {
-        setOpen(true);
-        selectFirstMenuChild();
-      } else {
-        setOpen(false);
-        toggleRef.current?.focus();
-      }
-    }
-  };
-
   return (
     <PopoverContext value={{ isOpen, setOpen, toggleRef, bodyRef, mode }}>
       <div
-        data-state={isOpen ? "active" : "inactive"}
-        onKeyDown={(ev) => {
-          onKeyDown?.(ev);
-          handleKeyDown(ev);
-        }}
+        data-state={isOpen}
         onMouseEnter={(ev) => {
           onMouseEnter?.(ev);
           if (["hover", "both"].includes(mode)) {
