@@ -785,7 +785,7 @@ function Page() {
         </LinkLoader>
       </Link>
 
-      <p className="heading mt-20">Toggle</p>
+      <p className="heading mt-20">Choice</p>
       <p className="mt-6">Filter mode:</p>
       <Choice
         multiple
