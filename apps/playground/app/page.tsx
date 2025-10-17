@@ -4,6 +4,7 @@ import { Suspense, useState } from "react";
 import {
   ArrowLeftIcon,
   ArrowRightIcon,
+  CheckIcon,
   ChevronDownIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
@@ -46,6 +47,7 @@ import {
   Submit,
   Swap,
   Tabs,
+  Choice,
 } from "@kadoui/react";
 import Link from "next/link";
 
@@ -109,6 +111,11 @@ function Page() {
   const [multiSelectBoxValue, setMultiSelectBoxValue] = useState<SelectBoxOptionT[]>([]);
   const [swapKey, setSwapKey] = useState(SWAP_KEYS[0] as string);
   const [activeTab, setActiveTab] = useState("1");
+
+  const [filterChoice, setFilterChoice] = useState<string[]>([]);
+  const [singleChoice, setSingleChoice] = useState<string | null>("1");
+  const [multipleChoice, setMultipleChoice] = useState<string[]>(["1"]);
+  const [switchChoice, setSwitchChoice] = useState<string[]>(["1"]);
 
   return (
     <div className="container my-20">
@@ -417,7 +424,9 @@ function Page() {
         className="popover mt-3"
         mode="click">
         <Popover.AccessNavigation>
-          <Popover.Toggle className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill">Click me</Popover.Toggle>
+          <Popover.Toggle className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill">
+            Click me
+          </Popover.Toggle>
 
           <Popover.Body className="popover-body popover-body-b card card-menu">
             <button className="btn btn-ghost">Like</button>
@@ -775,6 +784,107 @@ function Page() {
           <ArrowRightIcon className="btn-icon-size" />
         </LinkLoader>
       </Link>
+
+      <p className="heading mt-20">Toggle</p>
+      <p className="mt-6">Filter mode:</p>
+      <Choice
+        multiple
+        className="f-align gap-3 mt-3"
+        activeChoice={filterChoice}
+        setActiveChoice={setFilterChoice}>
+        <Choice.Trigger
+          className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill"
+          choiceName="1">
+          Filter 1
+        </Choice.Trigger>
+        <Choice.Trigger
+          className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill"
+          choiceName="2">
+          Filter 2
+        </Choice.Trigger>
+        <Choice.Trigger
+          className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill"
+          choiceName="3">
+          Filter 3
+        </Choice.Trigger>
+      </Choice>
+
+      <p className="mt-6">Radio Mode:</p>
+      <Choice
+        requiredOne
+        className="f-align gap-3 mt-3"
+        activeChoice={singleChoice}
+        setActiveChoice={setSingleChoice}>
+        <Choice.Trigger
+          className="choice choice-sm choice-radio"
+          choiceName="1">
+          <span className="choice-radio-trigger" />
+        </Choice.Trigger>
+        <Choice.Trigger
+          className="choice choice-radio"
+          choiceName="2">
+          <span className="choice-radio-trigger" />
+        </Choice.Trigger>
+        <Choice.Trigger
+          className="choice choice-lg choice-radio"
+          choiceName="3">
+          <span className="choice-radio-trigger" />
+        </Choice.Trigger>
+      </Choice>
+
+      <p className="mt-6">CheckBox Mode:</p>
+      <Choice
+        multiple
+        className="f-align gap-3 mt-3"
+        activeChoice={multipleChoice}
+        setActiveChoice={setMultipleChoice}
+        requiredOne>
+        <Choice.Trigger
+          className="choice choice-sm choice-checkbox"
+          choiceName="1">
+          <span className="choice-checkbox-trigger">
+            <CheckIcon className="size-2/3" />
+          </span>
+        </Choice.Trigger>
+        <Choice.Trigger
+          className="choice choice-checkbox"
+          choiceName="2">
+          <span className="choice-checkbox-trigger">
+            <CheckIcon className="size-2/3" />
+          </span>
+        </Choice.Trigger>
+        <Choice.Trigger
+          className="choice choice-lg choice-checkbox"
+          choiceName="3">
+          <span className="choice-checkbox-trigger">
+            <CheckIcon className="size-2/3" />
+          </span>
+        </Choice.Trigger>
+      </Choice>
+
+      <p className="mt-6">Switch mode:</p>
+      <Choice
+        multiple
+        className="f-align gap-3 mt-3"
+        activeChoice={switchChoice}
+        setActiveChoice={setSwitchChoice}
+        requiredOne>
+        <Choice.Trigger
+          className="choice choice-sm choice-switch"
+          choiceName="1">
+          <span className="choice-switch-trigger" />
+        </Choice.Trigger>
+        <Choice.Trigger
+          className="choice choice-switch"
+          choiceName="2">
+          <span className="choice-switch-trigger" />
+        </Choice.Trigger>
+        <Choice.Trigger
+          className="choice choice-lg choice-switch"
+          choiceName="3">
+          <span className="choice-switch-trigger" />
+        </Choice.Trigger>
+      </Choice>
     </div>
   );
 }
