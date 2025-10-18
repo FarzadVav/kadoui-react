@@ -30,8 +30,8 @@ importers:
         specifier: ^3
         version: 3.3.1
       '@kadoui/css':
-        specifier: ^1.4.83
-        version: 1.4.83
+        specifier: ^1.4.85
+        version: 1.4.85
       '@tailwindcss/postcss':
         specifier: ^4
         version: 4.1.11
@@ -330,8 +330,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.29':
     resolution: {integrity: sha512-uw6guiW/gcAGPDhLmd77/6lW8QLeiV5RUTsAX46Db6oLhGaVj4lhnPwb184s1bkc8kdVg/+h988dro8GRDpmYQ==}
 
-  '@kadoui/css@1.4.83':
-    resolution: {integrity: sha512-Ir1YCpJK+sGCk+v8kvtVjBP5r99FEMxbyiPLNZqeRuDd1TMJGt7By0kTzAVd1XKuIrbJBPMDEqNqhhf3cUl3Ig==}
+  '@kadoui/css@1.4.85':
+    resolution: {integrity: sha512-rDm2JxeXPq9V2vzSulv8/CYdKsWBJoJeOe3Uq5EW4fMEkMiMhb7r9U02KOJNhwC3lS3iZ22ZnHKTM6UUY2Sk1Q==}
 
   '@mantine/hooks@8.2.4':
     resolution: {integrity: sha512-ZXQ0uk6UtJa6Gl+ZWMBh4wC7UqCAoWWvau1TOoe05sBrkyGcXSVrTfoCVzjEQaB/h8VEOUWLGtJokkiMQKcMzA==}
@@ -2211,7 +2211,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.4
 
-  '@kadoui/css@1.4.83': {}
+  '@kadoui/css@1.4.85': {}
 
   '@mantine/hooks@8.2.4(react@19.1.0)':
     dependencies:

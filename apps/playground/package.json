@@ -2,8 +2,8 @@
   "name": "playground",
   "private": true,
   "scripts": {
-    "dev": "rm -rf ./next && next dev",
-    "build": "rm -rf ./next && next build",
+    "dev": "next dev -H 192.168.43.110",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "tsconfig": "workspace:*",
-    "@kadoui/css": "^1.4.83",
+    "@kadoui/css": "^1.4.85",
     "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^19",
