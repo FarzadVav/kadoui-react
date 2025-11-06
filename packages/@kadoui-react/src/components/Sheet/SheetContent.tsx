@@ -1,3 +1,5 @@
+"use client";
+
 import { HTMLAttributes } from "react";
 
 export type SheetContentPropsT = HTMLAttributes<HTMLDivElement>;
